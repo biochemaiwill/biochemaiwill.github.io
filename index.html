@@ -21,7 +21,7 @@
   <header class="site-header">
     <a class="brand" href="#top" aria-label="Tianxiang Wu home">
       <span class="brand-mark">TW</span>
-      <span class="brand-copy">Tianxiang Wu</span>
+      <span class="brand-copy" data-i18n="brand.name">Tianxiang Wu</span>
     </a>
     <nav class="nav" aria-label="Primary navigation">
       <a href="#profile" data-i18n="nav.profile">Profile</a>
@@ -50,16 +50,16 @@
 
       <div class="hero-copy reveal">
         <div class="eyebrow">
-          <span>AI × Drug Discovery</span>
+          <span data-i18n="hero.domain">AI × Drug Discovery</span>
           <span class="eyebrow-rule"></span>
           <span data-i18n="hero.profile">Research profile</span>
         </div>
 
         <h1>
-          <span class="hero-first">Tianxiang</span>
-          <span class="hero-last">Wu</span>
+          <span class="hero-first" data-i18n="hero.name.first">Tianxiang</span>
+          <span class="hero-last" data-i18n="hero.name.last">Wu</span>
         </h1>
-        <div class="cn-name">吴天翔</div>
+        <div class="cn-name" data-i18n="hero.cnName">吴天翔</div>
 
         <p class="hero-lede" data-i18n-html="hero.lede">
           Building <em>reliable scientific data systems</em> and <em>representation learning methods</em>
@@ -76,92 +76,26 @@
         </div>
       </div>
 
-      <div class="hero-visual reveal" aria-label="Abstract research map connecting data, models, proteins and molecules">
-        <div class="visual-card">
-          <div class="visual-topline">
-            <span data-i18n="visual.topline">RESEARCH GRAPH / LIVE</span>
-            <span>01—04</span>
+      <div class="hero-visual reveal" aria-label="Formal portrait of Tianxiang Wu">
+        <div class="portrait-card">
+          <img src="assets/profile/formal-headshot.jpg" alt="Formal portrait of Tianxiang Wu" />
+          <div class="portrait-meta">
+            <span data-i18n="portrait.kicker">Recommendation profile</span>
+            <strong data-i18n="portrait.name">Tianxiang Wu / 吴天翔</strong>
+            <p data-i18n="portrait.desc">Computer Science undergraduate · AI for Drug Discovery</p>
           </div>
-
-          <svg class="research-map" viewBox="0 0 620 620" role="img" aria-labelledby="graphTitle graphDesc">
-            <title id="graphTitle" data-i18n="visual.title">Research map</title>
-            <desc id="graphDesc" data-i18n="visual.desc">An abstract network linking scientific data, molecular models, protein structure and drug discovery.</desc>
-            <defs>
-              <linearGradient id="lineFade" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#7bdcff" stop-opacity=".95" />
-                <stop offset="1" stop-color="#7bdcff" stop-opacity=".05" />
-              </linearGradient>
-              <radialGradient id="nodeGlow">
-                <stop offset="0" stop-color="#b9f4ff" stop-opacity="1" />
-                <stop offset="1" stop-color="#52c9ff" stop-opacity="0" />
-              </radialGradient>
-              <filter id="blurGlow"><feGaussianBlur stdDeviation="8" /></filter>
-            </defs>
-
-            <circle cx="310" cy="310" r="230" class="orbit orbit-a" />
-            <circle cx="310" cy="310" r="166" class="orbit orbit-b" />
-            <circle cx="310" cy="310" r="104" class="orbit orbit-c" />
-
-            <path class="graph-line line-a" d="M120 390 C180 270, 250 235, 315 300 S450 380, 502 230" />
-            <path class="graph-line line-b" d="M176 178 C270 240, 318 210, 383 152 S472 187, 510 310" />
-            <path class="graph-line line-c" d="M145 470 C250 452, 330 430, 425 488" />
-
-            <g class="node node-main" transform="translate(310 310)">
-              <circle r="68" class="node-halo" />
-              <circle r="31" class="node-core" />
-              <circle r="7" class="node-pulse" />
-            </g>
-
-            <g class="node" transform="translate(160 180)">
-              <circle r="25" class="node-halo" />
-              <circle r="8" class="node-core" />
-            </g>
-            <g class="node" transform="translate(500 228)">
-              <circle r="28" class="node-halo" />
-              <circle r="9" class="node-core" />
-            </g>
-            <g class="node" transform="translate(438 492)">
-              <circle r="22" class="node-halo" />
-              <circle r="7" class="node-core" />
-            </g>
-            <g class="node" transform="translate(128 430)">
-              <circle r="20" class="node-halo" />
-              <circle r="7" class="node-core" />
-            </g>
-
-            <g class="graph-label label-data" transform="translate(90 150)">
-              <rect width="134" height="52" rx="12" />
-              <text x="18" y="22" data-i18n="graph.data1">SCIENTIFIC</text>
-              <text x="18" y="39" data-i18n="graph.data2">DATA</text>
-            </g>
-            <g class="graph-label label-protein" transform="translate(438 170)">
-              <rect width="126" height="52" rx="12" />
-              <text x="18" y="22" data-i18n="graph.protein1">PROTEIN</text>
-              <text x="18" y="39" data-i18n="graph.protein2">STRUCTURE</text>
-            </g>
-            <g class="graph-label label-model" transform="translate(245 340)">
-              <rect width="132" height="52" rx="12" />
-              <text x="18" y="22" data-i18n="graph.model1">AI MODEL</text>
-              <text x="18" y="39" data-i18n="graph.model2">REPRESENTATION</text>
-            </g>
-            <g class="graph-label label-drug" transform="translate(382 505)">
-              <rect width="146" height="52" rx="12" />
-              <text x="18" y="22" data-i18n="graph.drug1">DRUG</text>
-              <text x="18" y="39" data-i18n="graph.drug2">DISCOVERY</text>
-            </g>
-          </svg>
-
-          <div class="visual-caption">
-            <span data-i18n="visual.caption">Evidence → Representation → Prediction</span>
-            <span class="coordinate">34.260° N · 108.947° E</span>
+          <div class="portrait-strip">
+            <span data-i18n="portrait.badge1">National Scholarship</span>
+            <span data-i18n="portrait.badge2">Bioinformatics · CCF A</span>
+            <span data-i18n="portrait.badge3">Rank 2 / 96</span>
           </div>
         </div>
       </div>
 
       <div class="hero-facts reveal">
-        <div class="fact"><span class="fact-label" data-i18n="facts.current.label">Current</span><strong>Tsinghua AIR</strong><small data-i18n="facts.current.value">Research Intern</small></div>
-        <div class="fact"><span class="fact-label" data-i18n="facts.education.label">Education</span><strong>Xidian University</strong><small data-i18n="facts.education.value">Computer Science</small></div>
-        <div class="fact"><span class="fact-label" data-i18n="facts.focus.label">Focus</span><strong>AI4Science</strong><small data-i18n="facts.focus.value">Data · Molecules · Proteins</small></div>
+        <div class="fact"><span class="fact-label" data-i18n="facts.current.label">Current</span><strong data-i18n="facts.current.org">Tsinghua AIR</strong><small data-i18n="facts.current.value">Research Intern</small></div>
+        <div class="fact"><span class="fact-label" data-i18n="facts.education.label">Education</span><strong data-i18n="facts.education.org">Xidian University</strong><small data-i18n="facts.education.value">Computer Science</small></div>
+        <div class="fact"><span class="fact-label" data-i18n="facts.focus.label">Focus</span><strong data-i18n="facts.focus.org">AI4Science</strong><small data-i18n="facts.focus.value">Data · Molecules · Proteins</small></div>
       </div>
 
       <a class="scroll-cue" href="#research"><span data-i18n="scroll">Scroll to research</span><i></i></a>
@@ -216,9 +150,45 @@
       <div class="credential-gallery reveal">
         <div class="credential-heading">
           <span data-i18n="credentials.kicker">Selected evidence</span>
-          <h3 data-i18n="credentials.title">Certificates from competitions and academic exchange.</h3>
+          <h3 data-i18n="credentials.title">A compact evidence wall across scholarships, papers, honors and campus work.</h3>
         </div>
         <div class="credential-grid">
+          <figure class="proof-feature">
+            <a href="assets/evidence/national-scholarship.jpg" target="_blank" rel="noreferrer">
+              <img src="assets/evidence/national-scholarship.jpg" alt="National Scholarship certificate" loading="lazy" />
+            </a>
+            <figcaption data-i18n="credentials.nationalScholarship">National Scholarship certificate, 2024-2025.</figcaption>
+          </figure>
+          <figure class="proof-feature">
+            <a href="assets/evidence/bioinformatics-accepted.jpg" target="_blank" rel="noreferrer">
+              <img src="assets/evidence/bioinformatics-accepted.jpg" alt="Bioinformatics manuscript accepted notice" loading="lazy" />
+            </a>
+            <figcaption data-i18n="credentials.bioAccepted">Bioinformatics manuscript accepted, CCF A journal.</figcaption>
+          </figure>
+          <figure>
+            <a href="assets/evidence/bioinformatics-title.jpg" target="_blank" rel="noreferrer">
+              <img src="assets/evidence/bioinformatics-title.jpg" alt="Bioinformatics paper title and authors" loading="lazy" />
+            </a>
+            <figcaption data-i18n="credentials.bioTitle">Peptide engineering language model paper, second author / undergraduate lead author.</figcaption>
+          </figure>
+          <figure>
+            <a href="assets/evidence/aaai-submission.jpg" target="_blank" rel="noreferrer">
+              <img src="assets/evidence/aaai-submission.jpg" alt="AAAI 2027 submission record" loading="lazy" />
+            </a>
+            <figcaption data-i18n="credentials.aaai">3D-MPG manuscript submitted to AAAI 2027, CCF A conference.</figcaption>
+          </figure>
+          <figure>
+            <a href="assets/evidence/peptide-benchmark-title.jpg" target="_blank" rel="noreferrer">
+              <img src="assets/evidence/peptide-benchmark-title.jpg" alt="Peptide benchmark manuscript title and authors" loading="lazy" />
+            </a>
+            <figcaption data-i18n="credentials.bib">Peptide property prediction benchmark manuscript submitted to Briefings in Bioinformatics.</figcaption>
+          </figure>
+          <figure>
+            <a href="assets/profile/youth-honor.jpg" target="_blank" rel="noreferrer">
+              <img src="assets/profile/youth-honor.jpg" alt="Outstanding League Member Model poster" loading="lazy" />
+            </a>
+            <figcaption data-i18n="credentials.youthHonor">Outstanding Communist Youth League Member Model profile poster.</figcaption>
+          </figure>
           <figure>
             <a href="assets/evidence/xinghuo-special-prize.jpg" target="_blank" rel="noreferrer">
               <img src="assets/evidence/xinghuo-special-prize.jpg" alt="Xinghuo Cup special prize certificate" loading="lazy" />
@@ -226,16 +196,28 @@
             <figcaption data-i18n="credentials.xinghuoSpecial">Xinghuo Cup special prize for task-adaptive molecular pretraining.</figcaption>
           </figure>
           <figure>
-            <a href="assets/evidence/xinghuo-first-prize.jpg" target="_blank" rel="noreferrer">
-              <img src="assets/evidence/xinghuo-first-prize.jpg" alt="Xinghuo Cup first prize certificate" loading="lazy" />
-            </a>
-            <figcaption data-i18n="credentials.xinghuoFirst">Xinghuo Cup first prize for an on-device AI campus application.</figcaption>
-          </figure>
-          <figure>
             <a href="assets/evidence/cambridge-certificate.jpg" target="_blank" rel="noreferrer">
               <img src="assets/evidence/cambridge-certificate.jpg" alt="Cambridge St Edmund's Global Programme certificate" loading="lazy" />
             </a>
             <figcaption data-i18n="credentials.cambridge">Certificate of completion from the St Edmund's Global Programme in Computer Science and Coding.</figcaption>
+          </figure>
+          <figure>
+            <a href="assets/life/national-scholarship-defense.jpg" target="_blank" rel="noreferrer">
+              <img src="assets/life/national-scholarship-defense.jpg" alt="National Scholarship defense scene" loading="lazy" />
+            </a>
+            <figcaption data-i18n="credentials.defense">National Scholarship defense scene.</figcaption>
+          </figure>
+          <figure>
+            <a href="assets/life/study-notes.jpg" target="_blank" rel="noreferrer">
+              <img src="assets/life/study-notes.jpg" alt="Study and mentoring scene" loading="lazy" />
+            </a>
+            <figcaption data-i18n="credentials.study">Study and mentoring work beyond coursework.</figcaption>
+          </figure>
+          <figure>
+            <a href="assets/life/student-meeting.jpg" target="_blank" rel="noreferrer">
+              <img src="assets/life/student-meeting.jpg" alt="Student committee meeting scene" loading="lazy" />
+            </a>
+            <figcaption data-i18n="credentials.meeting">Student committee and campus service work.</figcaption>
           </figure>
         </div>
       </div>
@@ -354,7 +336,7 @@
         <article class="timeline-item reveal">
           <div class="timeline-year" data-i18n="timeline.current">CURRENT</div>
           <div class="timeline-main">
-            <span class="timeline-place">Tsinghua University · Institute for AI Industry Research</span>
+            <span class="timeline-place" data-i18n="timeline.intern.place">Tsinghua University · Institute for AI Industry Research</span>
             <h3 data-i18n="timeline.intern.title">Research Intern</h3>
             <p data-i18n="timeline.intern.desc">AI for Drug Discovery, scientific data extraction, and autonomous research systems.</p>
           </div>
@@ -363,7 +345,7 @@
         <article class="timeline-item reveal">
           <div class="timeline-year" data-i18n="timeline.undergrad">UNDERGRAD</div>
           <div class="timeline-main">
-            <span class="timeline-place">Xidian University</span>
+            <span class="timeline-place" data-i18n="timeline.degree.place">Xidian University</span>
             <h3 data-i18n="timeline.degree.title">B.Sc. · Computer Science & Technology</h3>
             <p data-i18n="timeline.degree.desc">Computer science training with a research focus on AI for scientific discovery.</p>
           </div>
@@ -376,12 +358,44 @@
       <div class="section-kicker reveal"><span>04</span><p data-i18n="outputs.kicker">Publications & outputs</p></div>
       <div class="output-layout">
         <div class="output-title reveal">
-          <h2 data-i18n-html="outputs.heading">Work in progress.<br><em>Public releases next.</em></h2>
+          <h2 data-i18n-html="outputs.heading">Published and submitted<br><em>A-level research outputs.</em></h2>
         </div>
         <div class="output-copy reveal">
-          <p data-i18n="outputs.desc">Public papers, datasets, software releases, and preprints will be listed here when they become available.</p>
+          <p data-i18n="outputs.desc">The publication record is listed directly rather than hidden behind a future-update placeholder.</p>
           <a class="text-link" href="https://orcid.org/0009-0006-8833-3070" target="_blank" rel="noreferrer"><span data-i18n="outputs.orcid">View ORCID record</span> <span>↗</span></a>
         </div>
+      </div>
+      <div class="publication-list reveal">
+        <article class="publication-card publication-featured">
+          <div>
+            <span data-i18n="pub1.status">Published / accepted · Bioinformatics · CCF A</span>
+            <h3>Bridging Linguistic Reasoning and Biophysical Reality for Peptide Engineering via Instruction-Tuned Language Model</h3>
+            <p data-i18n="pub1.desc">Second author / undergraduate lead author. The work connects instruction-tuned language modeling with peptide engineering tasks and has been accepted by Bioinformatics.</p>
+          </div>
+          <a href="assets/evidence/bioinformatics-title.jpg" target="_blank" rel="noreferrer">
+            <img src="assets/evidence/bioinformatics-title.jpg" alt="Bioinformatics paper title evidence" loading="lazy" />
+          </a>
+        </article>
+        <article class="publication-card">
+          <div>
+            <span data-i18n="pub2.status">Submitted · AAAI 2027 · CCF A</span>
+            <h3>3D-MPG: Relational Geometry Pretraining through Intramolecular Region-Pair Arrangements</h3>
+            <p data-i18n="pub2.desc">Second author / undergraduate lead author. The manuscript focuses on 3D molecular geometry pretraining for molecular representation learning.</p>
+          </div>
+          <a href="assets/evidence/aaai-submission.jpg" target="_blank" rel="noreferrer">
+            <img src="assets/evidence/aaai-submission.jpg" alt="AAAI submission evidence" loading="lazy" />
+          </a>
+        </article>
+        <article class="publication-card">
+          <div>
+            <span data-i18n="pub3.status">Submitted · Briefings in Bioinformatics · JCR Q1</span>
+            <h3>A Systematic Benchmark for Peptide Property Prediction</h3>
+            <p data-i18n="pub3.desc">Third author. The manuscript builds a systematic benchmark for peptide property prediction.</p>
+          </div>
+          <a href="assets/evidence/peptide-benchmark-title.jpg" target="_blank" rel="noreferrer">
+            <img src="assets/evidence/peptide-benchmark-title.jpg" alt="Peptide benchmark manuscript evidence" loading="lazy" />
+          </a>
+        </article>
       </div>
     </section>
 
@@ -399,8 +413,8 @@
   </main>
 
   <footer class="site-footer">
-    <span>© <span id="year"></span> Tianxiang Wu</span>
-    <span>AI × Drug Discovery</span>
+    <span>© <span id="year"></span> <span data-i18n="footer.name">Tianxiang Wu</span></span>
+    <span data-i18n="footer.domain">AI × Drug Discovery</span>
     <a href="#top" data-i18n="footer.top">Back to top ↑</a>
   </footer>
 </body>
