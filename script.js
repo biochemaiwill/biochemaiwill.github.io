@@ -455,4 +455,18 @@ if (matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion
       visual.style.transform = '';
     });
   }
+
+  document.querySelectorAll('.research-mosaic .project').forEach((card) => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      card.style.setProperty('--mx', `${x.toFixed(1)}%`);
+      card.style.setProperty('--my', `${y.toFixed(1)}%`);
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.removeProperty('--mx');
+      card.style.removeProperty('--my');
+    });
+  });
 }

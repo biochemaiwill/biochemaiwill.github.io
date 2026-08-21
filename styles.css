@@ -252,8 +252,20 @@ a:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
 
 /* Research mosaic revision */
 .research-section{background:linear-gradient(180deg,#f4f5f1 0,#eef1ed 100%)}
-.research-mosaic{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:18px;align-items:stretch}
-.research-mosaic .project{grid-column:span 4;display:flex;flex-direction:column}
+.research-mosaic{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:18px;align-items:stretch;grid-auto-flow:dense}
+.research-mosaic .project{grid-column:span 4;display:flex;flex-direction:column;position:relative;isolation:isolate;overflow:hidden;will-change:transform}
+.research-mosaic .project:before{
+  content:'';
+  position:absolute;
+  inset:-1px;
+  z-index:1;
+  pointer-events:none;
+  opacity:0;
+  background:radial-gradient(circle at var(--mx,50%) var(--my,32%),rgba(119,216,255,.18),rgba(137,185,120,.1) 24%,transparent 54%);
+  transition:opacity .22s ease;
+}
+.research-mosaic .project:hover:before{opacity:1}
+.research-mosaic .project>*{position:relative;z-index:2}
 .research-mosaic .project-wide{grid-column:span 8}
 .research-mosaic .project-featured{grid-column:span 8;display:grid;grid-template-columns:.95fr 1.05fr}
 .research-mosaic .project-featured .project-visual{min-height:460px;border-right:1px solid var(--line);border-bottom:0}
@@ -273,7 +285,21 @@ a:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
 .research-figure{background:#fff}
 .research-figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:fill;padding:0;background:#fff}
 .research-figure:after{content:'';position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 0 1px rgba(11,18,32,.08)}
+.project-3d .project-visual{min-height:560px}
+.project-3d .research-figure img{object-fit:contain;padding:18px}
+.project-3d .research-figure{background:linear-gradient(180deg,#fff 0,#f7faf8 100%)}
+.project-foundation .project-visual{min-height:380px}
+.project-foundation .research-figure img{object-fit:contain;padding:14px}
 .research-visual{background:radial-gradient(circle at 70% 18%,#1e3f57,#0b1523 55%,#08111f)}
+.research-visual:after{
+  content:'';
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(115deg,transparent 0,rgba(255,255,255,.09) 42%,transparent 62%);
+  transform:translateX(-120%);
+  animation:visualSweep 9s ease-in-out infinite;
+}
 .patent-paper{animation:float 7s ease-in-out infinite}.p2{animation-delay:-1.5s}.p3{animation-delay:-3s}
 .pipeline-node{animation:nodePulse 3.4s ease-in-out infinite}.pn2{animation-delay:-1.1s}.pn3{animation-delay:-2.2s}
 .admet-visual{overflow:hidden}.admet-visual:before{content:'';position:absolute;inset:12%;border:1px dashed rgba(119,216,255,.28);transform:skewX(-12deg);animation:dash 16s linear infinite}
@@ -289,6 +315,11 @@ a:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
 .agent-ring{position:absolute;left:50%;top:50%;width:210px;height:210px;margin:-105px 0 0 -105px;border:1px dashed rgba(119,216,255,.3);border-radius:50%;animation:spin 22s linear infinite}
 .agent-step{position:absolute;width:94px;height:42px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);background:rgba(255,255,255,.06);color:#c6ebf8;font:800 9px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;box-shadow:0 20px 46px rgba(0,0,0,.18)}
 .as1{left:12%;top:18%}.as2{right:11%;top:24%}.as3{right:16%;bottom:18%}.as4{left:13%;bottom:22%}
+
+@keyframes visualSweep{
+  0%,18%{transform:translateX(-120%)}
+  42%,100%{transform:translateX(120%)}
+}
 
 /* Publication images: same footprint, no text clipping */
 @media(min-width:1051px){
@@ -306,11 +337,19 @@ a:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
   .research-mosaic .project-featured{grid-column:auto;transform:none!important}
   .research-mosaic .project-featured{display:flex}
   .research-mosaic .project-featured .project-visual{border-right:0;border-bottom:1px solid var(--line);min-height:330px}
+  .project-3d .project-visual{min-height:520px}
 }
 @media(max-width:760px){
   .research-mosaic{grid-template-columns:1fr}
   .research-mosaic .project-visual{min-height:280px}
+  .project-3d .project-visual{min-height:360px}
+  .project-3d .research-figure img{padding:10px}
+  .project-foundation .project-visual{min-height:260px}
   .research-figure img{object-fit:contain}
   .publication-card img,
   .publication-featured img{object-fit:fill;padding:0}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .research-visual:after{animation:none}
 }
