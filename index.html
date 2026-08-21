@@ -24,6 +24,7 @@
       <span class="brand-copy">Tianxiang Wu</span>
     </a>
     <nav class="nav" aria-label="Primary navigation">
+      <a href="#profile" data-i18n="nav.profile">Profile</a>
       <a href="#research" data-i18n="nav.research">Research</a>
       <a href="#about" data-i18n="nav.about">About</a>
       <a href="#experience" data-i18n="nav.experience">Experience</a>
@@ -31,7 +32,8 @@
     </nav>
     <div class="header-tools">
       <button class="lang-toggle" type="button" data-lang-toggle aria-label="Switch language">
-        <span data-lang-current>中文</span>
+        <span class="lang-option" data-lang-en>EN</span>
+        <span class="lang-option" data-lang-zh>中</span>
       </button>
       <div class="header-meta">
         <span class="status-dot"></span>
@@ -163,6 +165,80 @@
       </div>
 
       <a class="scroll-cue" href="#research"><span data-i18n="scroll">Scroll to research</span><i></i></a>
+    </section>
+
+    <section class="section profile-section" id="profile">
+      <div class="section-kicker reveal"><span>00</span><p data-i18n="profile.kicker">Academic snapshot</p></div>
+      <div class="profile-layout">
+        <div class="profile-lead reveal">
+          <h2 data-i18n-html="profile.heading">A recommendation-ready profile for <em>AI for Science.</em></h2>
+          <p data-i18n="profile.summary">Computer Science undergraduate at Xidian University with research training across AIDD agents, ADMET data systems, molecular representation learning and peptide modeling.</p>
+        </div>
+        <div class="metric-grid reveal">
+          <div class="metric"><span data-i18n="metric.gpa.label">GPA</span><strong>3.9 / 4.0</strong><small data-i18n="metric.gpa.note">Core average 92+</small></div>
+          <div class="metric"><span data-i18n="metric.rank.label">Rank</span><strong>2 / 96</strong><small data-i18n="metric.rank.note">Track ranking</small></div>
+          <div class="metric"><span data-i18n="metric.english.label">English</span><strong>CET-6 555</strong><small data-i18n="metric.english.note">Literature reading</small></div>
+          <div class="metric"><span data-i18n="metric.scholarship.label">Scholarship</span><strong data-i18n="metric.scholarship.value">National</strong><small data-i18n="metric.scholarship.note">2024-2025</small></div>
+        </div>
+      </div>
+
+      <div class="evidence-board reveal">
+        <article>
+          <span data-i18n="profile.awards.kicker">Honors</span>
+          <h3 data-i18n="profile.awards.title">Scholarships & competitions</h3>
+          <ul>
+            <li data-i18n="profile.awards.item1">National Scholarship for undergraduates, 2024-2025.</li>
+            <li data-i18n="profile.awards.item2">Lenovo Scholarship, 2025-2026, the only recipient in the grade.</li>
+            <li data-i18n="profile.awards.item3">Outstanding Communist Youth League Member Model, university-level top-ten selection.</li>
+            <li data-i18n="profile.awards.item4">Xinghuo Cup awards in LLM Agent and academic A-track competitions.</li>
+          </ul>
+        </article>
+        <article>
+          <span data-i18n="profile.outputs.kicker">Outputs</span>
+          <h3 data-i18n="profile.outputs.title">Papers & manuscripts</h3>
+          <ul>
+            <li data-i18n="profile.outputs.item1">Bioinformatics paper on peptide engineering language models, published as second author / undergraduate lead author.</li>
+            <li data-i18n="profile.outputs.item2">3D-MPG molecular pretraining manuscript submitted to AAAI 2027 as second author / undergraduate lead author.</li>
+            <li data-i18n="profile.outputs.item3">Peptide property prediction benchmark manuscript submitted to Briefings in Bioinformatics.</li>
+          </ul>
+        </article>
+        <article>
+          <span data-i18n="profile.broader.kicker">Broader profile</span>
+          <h3 data-i18n="profile.broader.title">Service, exchange & arts</h3>
+          <ul>
+            <li data-i18n="profile.broader.item1">Cambridge summer visiting program project lead, first-prize completion award.</li>
+            <li data-i18n="profile.broader.item2">714 hours of volunteer service across community, education and public-service activities.</li>
+            <li data-i18n="profile.broader.item3">Violinist in Xidian University Symphony Orchestra and student committee service in class.</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="credential-gallery reveal">
+        <div class="credential-heading">
+          <span data-i18n="credentials.kicker">Selected evidence</span>
+          <h3 data-i18n="credentials.title">Certificates from competitions and academic exchange.</h3>
+        </div>
+        <div class="credential-grid">
+          <figure>
+            <a href="assets/evidence/xinghuo-special-prize.jpg" target="_blank" rel="noreferrer">
+              <img src="assets/evidence/xinghuo-special-prize.jpg" alt="Xinghuo Cup special prize certificate" loading="lazy" />
+            </a>
+            <figcaption data-i18n="credentials.xinghuoSpecial">Xinghuo Cup special prize for task-adaptive molecular pretraining.</figcaption>
+          </figure>
+          <figure>
+            <a href="assets/evidence/xinghuo-first-prize.jpg" target="_blank" rel="noreferrer">
+              <img src="assets/evidence/xinghuo-first-prize.jpg" alt="Xinghuo Cup first prize certificate" loading="lazy" />
+            </a>
+            <figcaption data-i18n="credentials.xinghuoFirst">Xinghuo Cup first prize for an on-device AI campus application.</figcaption>
+          </figure>
+          <figure>
+            <a href="assets/evidence/cambridge-certificate.jpg" target="_blank" rel="noreferrer">
+              <img src="assets/evidence/cambridge-certificate.jpg" alt="Cambridge St Edmund's Global Programme certificate" loading="lazy" />
+            </a>
+            <figcaption data-i18n="credentials.cambridge">Certificate of completion from the St Edmund's Global Programme in Computer Science and Coding.</figcaption>
+          </figure>
+        </div>
+      </div>
     </section>
 
     <section class="ticker" aria-label="Research interests">
