@@ -78,13 +78,13 @@ const translations = {
     'profile.broader.item3': '<strong class="highlight">Cambridge University summer visiting program</strong> project lead, Xidian Symphony Orchestra violinist, and student committee service in class.',
     'credentials.kicker': 'Selected records',
     'credentials.title': 'Scholarships, publications, honors and campus engagement.',
-    'credentials.nationalScholarship': 'National Scholarship certificate, 2024-2025.',
+    'credentials.nationalScholarship': 'National Scholarship, 2024-2025.',
     'credentials.bioAccepted': 'ORCID detailed record for the Bioinformatics paper.',
     'credentials.bioTitle': 'Peptide engineering language model work, second author / undergraduate lead author.',
     'credentials.aaai': '3D-MPG manuscript submitted to AAAI 2027, CCF A conference.',
     'credentials.bib': 'Peptide property prediction benchmark manuscript submitted to Briefings in Bioinformatics.',
     'credentials.youthHonor': 'Outstanding Communist Youth League Member Model.',
-    'credentials.xinghuoSpecial': 'Xinghuo Cup university first prize for task-adaptive molecular pretraining.',
+    'credentials.xinghuoSpecial': 'Xinghuo Cup university first prize and college-level special prize for task-adaptive molecular pretraining.',
     'credentials.xinghuoFirst': 'Xinghuo Cup school-level first prize for an on-device AI campus application.',
     'credentials.cambridge': 'St Edmund\'s Global Programme in Computer Science and Coding, Cambridge University.',
     'credentials.defense': 'Career-planning sharing session for junior students.',
@@ -97,19 +97,42 @@ const translations = {
     'ticker.protein': 'Protein Modeling',
     'research.kicker': 'Selected research',
     'research.heading': 'From scientific data<br>to <em>drug discovery models.</em>',
-    'research.summary': 'Research work spans patent-scale data agents, condition-aware ADMET modeling, peptide engineering, molecular pretraining and drug-discovery agents.',
-    'project1.type': '01 / Data agents and ADMET modeling',
+    'research.summary': 'Research work now spans patent-scale data agents, condition-aware ADMET modeling, protein-ligand foundation models, drug-discovery agents, molecular pretraining and peptide engineering.',
+    'project1.type': '01 / Patent-scale scientific data agents',
     'status.ongoing': 'Ongoing',
-    'project1.title': 'Patent agents and<br><em>condition-aware ADMET</em>',
-    'project1.desc': 'At Tsinghua AIR ATOM Lab, building an agent-driven patent extraction and quality-control system for molecular structures, ADMET endpoints, assay conditions, values and units; extending it into a unified two-tower ADMET prediction framework.',
-    'project2.type': '02 / Peptide engineering',
+    'status.applied': 'Applied',
+    'status.academic': 'Academic',
+    'project1.title': 'Patent extraction<br><em>and quality control</em>',
+    'project1.desc': 'At Tsinghua AIR ATOM Lab, leading an agent-driven patent extraction and quality-control system for molecular structures, ADMET endpoints, assay conditions, values and units, with original evidence preserved for traceability.',
+    'project2.type': '02 / Condition-aware prediction',
+    'project2.title': 'Unified two-tower<br><em>ADMET modeling</em>',
+    'project2.desc': 'Designing a unified two-tower ADMET prediction framework that jointly encodes molecular structure with endpoint, assay, experimental condition and unit semantics for conditional property prediction.',
+    'project3.type': '03 / Peptide engineering language model',
     'status.research': 'Research',
-    'project2.title': 'Peptide language models<br><em>and property benchmarks</em>',
-    'project2.desc': 'Built and trained an instruction-tuned peptide language model with LoRA, covering function description, sequence design, property prediction and optimization; related outputs include Bioinformatics (CCF A) and a Briefings in Bioinformatics submission (JCR Q1).',
-    'project3.type': '03 / Molecular pretraining and agents',
+    'project3.title': 'Instruction-tuned<br><em>peptide LLM</em>',
+    'project3.desc': 'Built and trained a peptide instruction model with LLaMA-2 LoRA, covering function description, sequence design, property prediction and physicochemical optimization; published in Bioinformatics.',
+    'project4.type': '04 / Peptide property benchmark',
+    'project4.title': 'Systematic benchmark<br><em>for peptide prediction</em>',
+    'project4.desc': 'Contributed to a systematic benchmark for peptide property prediction, including classic model testing and AAC peptide encoding experiments with reported gains across multiple datasets.',
+    'project5.type': '05 / 3D molecular pretraining',
+    'project5.title': '3D-MPG geometry<br><em>pretraining</em>',
+    'project5.desc': 'Led a 3D molecular pretraining subproject, introducing E(3)-equivariant heads and geometry-aware pretraining tasks for conformation generation and molecule-ligand interaction prediction; submitted to AAAI 2027.',
+    'project6.type': '06 / Task-adaptive molecular platform',
+    'project6.title': 'Molecular pretraining<br><em>platform</em>',
+    'project6.desc': 'Built a task-adaptive molecular pretraining platform covering pretraining, fine-tuning, optimization, packaging and visualization; recognized with Xinghuo Cup university first prize and college-level special prize.',
+    'project7.type': '07 / Drug-discovery agents',
     'status.exploration': 'Exploration',
-    'project3.title': '3D-MPG, platforms<br><em>and PharmAgent</em>',
-    'project3.desc': 'Leading or contributing to 3D molecular pretraining, a task-adaptive molecular pretraining platform, and PharmAgent workflows; 3D-MPG has been submitted to AAAI 2027, a CCF A conference.',
+    'project7.title': 'PharmAgent<br><em>research workflows</em>',
+    'project7.desc': 'Working on PharmAgent, a multi-agent AI Scientist system for drug discovery with Router-Planner-Executor-Reflector collaboration, ReAct execution, replanning, memory and tool/skill integration.',
+    'project8.type': '08 / On-device AI application',
+    'project8.title': 'On-device AI<br><em>campus application</em>',
+    'project8.desc': 'Developed an on-device AI campus lost-item recognition and management application, awarded Xinghuo Cup college-level first prize in the LLM Agent track.',
+    'project9.type': '09 / Cambridge visiting programme',
+    'project9.title': 'St Edmund\'s programme<br><em>project lead</em>',
+    'project9.desc': 'Served as project lead in the St Edmund\'s Global Programme in Computer Science and Coding, with the project receiving first prize at completion.',
+    'project10.type': '10 / Protein-ligand foundation model',
+    'project10.title': 'Dual-tower<br><em>foundation model</em>',
+    'project10.desc': 'Improving the sequence tower of a DrugCLIP-style protein-ligand foundation model with ESM-C representations and hyperbolic latent structure for OOD generalization across targets, scaffolds and low-data settings.',
     'tag.llm': 'LLM Agents',
     'tag.patent': 'Patent Mining',
     'tag.quality': 'Data Quality',
@@ -234,13 +257,13 @@ const translations = {
     'profile.broader.item3': '<strong class="highlight">剑桥大学暑期访学项目</strong>负责人，西电交响乐团小提琴成员，并担任班级学习委员、心理委员等学生工作。',
     'credentials.kicker': '代表性材料',
     'credentials.title': '奖学金、论文、荣誉与校园经历。',
-    'credentials.nationalScholarship': '2024-2025 学年本科生国家奖学金荣誉证书。',
+    'credentials.nationalScholarship': '2024-2025 学年本科生国家奖学金。',
     'credentials.bioAccepted': 'ORCID 详细记录：Bioinformatics 论文已发表。',
     'credentials.bioTitle': '多肽工程语言模型工作，第二作者 / 本科生一作。',
     'credentials.aaai': '3D-MPG 稿件投稿 AAAI 2027，CCF A 会议。',
     'credentials.bib': '多肽性质预测基准稿件投稿 Briefings in Bioinformatics。',
     'credentials.youthHonor': '优秀共青团员标兵。',
-    'credentials.xinghuoSpecial': '星火杯校级一等奖：面向任务自适应的分子预训练平台。',
+    'credentials.xinghuoSpecial': '星火杯校级一等奖、院赛特等奖：面向任务自适应的分子预训练平台。',
     'credentials.xinghuoFirst': '星火杯院级一等奖：基于端侧 AI 的校园失物智能识别与管理应用。',
     'credentials.cambridge': '剑桥大学 St Edmund\'s Global Programme 计算机科学与编程项目。',
     'credentials.defense': '向低年级同学进行生涯规划分享。',
@@ -253,19 +276,42 @@ const translations = {
     'ticker.protein': '蛋白质建模',
     'research.kicker': '代表性研究',
     'research.heading': '从科学数据<br>到<em>药物发现模型。</em>',
-    'research.summary': '科研工作覆盖专利尺度数据智能体、条件感知 ADMET 建模、多肽工程、分子预训练与药物研发智能体。',
-    'project1.type': '01 / 数据智能体与 ADMET 建模',
+    'research.summary': '科研工作覆盖专利尺度数据智能体、条件感知 ADMET 建模、蛋白-配体基础模型、药物研发智能体、分子预训练与多肽工程。',
+    'project1.type': '01 / 专利尺度科学数据智能体',
     'status.ongoing': '进行中',
-    'project1.title': '专利抽取 Agent 与<br><em>条件感知 ADMET</em>',
-    'project1.desc': '在清华 AIR ATOM Lab 推进面向专利的智能体抽取与质量控制系统，解析分子结构、ADMET endpoint、assay 条件、测量值与单位；并进一步设计面向 ADMET 的统一双塔预测框架。',
-    'project2.type': '02 / 多肽工程',
+    'status.applied': '应用',
+    'status.academic': '学术交流',
+    'project1.title': '专利抽取<br><em>与质量控制</em>',
+    'project1.desc': '在清华 AIR ATOM Lab 负责面向专利的智能体抽取与质量控制系统，解析分子结构、ADMET endpoint、assay 条件、测量值与单位，并保留原始证据与标准化结果以支持可追溯数据资源建设。',
+    'project2.type': '02 / 条件感知性质预测',
+    'project2.title': '统一双塔<br><em>ADMET 建模</em>',
+    'project2.desc': '设计面向 ADMET 的统一双塔预测框架，将分子结构表征与 endpoint、assay、实验条件、单位等语义信息联合编码，把传统独立任务统一为条件化预测问题。',
+    'project3.type': '03 / 多肽工程语言模型',
     'status.research': '研究',
-    'project2.title': '多肽语言模型与<br><em>性质预测基准</em>',
-    'project2.desc': '负责肽指令微调大模型的结构搭建与训练实现，完成 LLaMA-2 LoRA 微调，以及功能描述、序列设计、性质预测、理化优化实验；相关成果包括 Bioinformatics（CCF A）和 Briefings in Bioinformatics 投稿（JCR Q1）。',
-    'project3.type': '03 / 分子预训练与智能体',
+    'project3.title': '指令调优<br><em>多肽 LLM</em>',
+    'project3.desc': '负责肽指令微调大模型的结构搭建与训练实现，完成 LLaMA-2 LoRA 高效微调，以及功能描述、序列设计、性质预测、理化优化全流程实验；成果发表于 Bioinformatics。',
+    'project4.type': '04 / 多肽性质预测基准',
+    'project4.title': '多肽预测<br><em>系统性基准</em>',
+    'project4.desc': '围绕多肽功能研究需求完成经典模型系统化基准测试，提出 AAC 多肽编码方法并用于多模型训练与评估，在多个数据集上提升准确率 5%–25%。',
+    'project5.type': '05 / 三维分子预训练',
+    'project5.title': '3D-MPG 几何<br><em>预训练</em>',
+    'project5.desc': '作为三维分子预训练子课题负责人，在二维预训练模型中引入 EGNN 的 E(3) 等变头，设计分子适配打分与构象微调预训练任务，并投稿 AAAI 2027。',
+    'project6.type': '06 / 任务自适应分子平台',
+    'project6.title': '分子预训练<br><em>工程化平台</em>',
+    'project6.desc': '负责模型预训练、微调优化、封装及可视化平台开发，构建可迭代、可扩展的任务自适应分子预训练系统；获星火杯校级一等奖和院赛特等奖。',
+    'project7.type': '07 / 药物研发智能体',
     'status.exploration': '探索',
-    'project3.title': '3D-MPG、平台<br><em>与 PharmAgent</em>',
-    'project3.desc': '覆盖三维分子几何预训练、任务自适应分子预训练平台与药物研发多智能体工作流；3D-MPG 已投稿 AAAI 2027（CCF A），相关平台获星火杯校级一等奖。',
+    'project7.title': 'PharmAgent<br><em>科研工作流</em>',
+    'project7.desc': '参与构建面向药物研发的多智能体 AI Scientist 系统，采用 Router-Planner-Executor-Reflector 协作架构，结合 ReAct 执行、动态重规划、三级记忆与药物发现工具/Skill 集成。',
+    'project8.type': '08 / 端侧 AI 应用',
+    'project8.title': '端侧 AI<br><em>校园应用</em>',
+    'project8.desc': '开发基于端侧 AI 的校园失物智能识别与管理应用，获星火杯“大模型 Agent”赛道院级一等奖。',
+    'project9.type': '09 / 剑桥暑期访学项目',
+    'project9.title': 'St Edmund\'s 项目<br><em>负责人</em>',
+    'project9.desc': '参加剑桥大学 St Edmund\'s Global Programme 计算机科学与编程项目，担任项目负责人并获结项一等奖。',
+    'project10.type': '10 / 蛋白-配体基础模型',
+    'project10.title': '双塔<br><em>foundation model</em>',
+    'project10.desc': '基于 DrugCLIP 双塔框架改进蛋白-配体基础模型的序列塔，引入 ESM-C 蛋白表征与双曲潜空间，面向新靶点、新骨架和低样本场景提升 OOD 泛化能力。',
     'tag.llm': 'LLM 智能体',
     'tag.patent': '专利挖掘',
     'tag.quality': '数据质量',
@@ -372,11 +418,29 @@ langToggle?.addEventListener('click', () => {
 });
 
 const header = document.querySelector('.site-header');
-const onScroll = () => header?.classList.toggle('scrolled', window.scrollY > 24);
+const progress = document.querySelector('.scroll-progress');
+const onScroll = () => {
+  header?.classList.toggle('scrolled', window.scrollY > 24);
+
+  if (progress) {
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    const ratio = maxScroll > 0 ? Math.min(window.scrollY / maxScroll, 1) : 0;
+    progress.style.transform = `scaleX(${ratio.toFixed(4)})`;
+  }
+};
 onScroll();
 window.addEventListener('scroll', onScroll, { passive: true });
 
 const revealEls = document.querySelectorAll('.reveal');
+const revealIfInView = (el) => {
+  const rect = el.getBoundingClientRect();
+  if (rect.top < window.innerHeight * 0.96 && rect.bottom > 0) {
+    el.classList.add('visible');
+    return true;
+  }
+  return false;
+};
+
 if ('IntersectionObserver' in window) {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -387,13 +451,17 @@ if ('IntersectionObserver' in window) {
     });
   }, { threshold: 0.09, rootMargin: '0px 0px -4% 0px' });
 
-  revealEls.forEach((el) => observer.observe(el));
+  revealEls.forEach((el) => {
+    if (!revealIfInView(el)) observer.observe(el);
+  });
 } else {
   revealEls.forEach((el) => el.classList.add('visible'));
 }
 
+document.documentElement.classList.add('js');
+
 if (matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  const visual = document.querySelector('.visual-card');
+  const visual = document.querySelector('.portrait-card');
   if (visual) {
     visual.addEventListener('mousemove', (e) => {
       const rect = visual.getBoundingClientRect();
