@@ -6,14 +6,14 @@ Static academic website for GitHub Pages.
 
 Create a **Repository** named exactly:
 
-`Will-Wu-hub.github.io`
+`biochemaiwill.github.io`
 
 Then place all files from this folder in the repository root and enable GitHub Pages from the `main` branch.
 
 ## Main links
 
 - ORCID: https://orcid.org/0009-0006-8833-3070
-- GitHub: https://github.com/Will-Wu-hub
+- GitHub: https://github.com/biochemaiwill
 
 ## Files
 

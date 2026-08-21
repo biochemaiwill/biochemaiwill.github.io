@@ -6,16 +6,21 @@ const onScroll = () => header?.classList.toggle('scrolled', window.scrollY > 24)
 onScroll();
 window.addEventListener('scroll', onScroll, { passive: true });
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.09, rootMargin: '0px 0px -4% 0px' });
+const revealEls = document.querySelectorAll('.reveal');
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.09, rootMargin: '0px 0px -4% 0px' });
 
-document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+  revealEls.forEach((el) => observer.observe(el));
+} else {
+  revealEls.forEach((el) => el.classList.add('visible'));
+}
 
 if (matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
   const visual = document.querySelector('.visual-card');
