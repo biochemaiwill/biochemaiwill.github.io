@@ -12,8 +12,8 @@
   <meta property="og:url" content="https://biochemaiwill.github.io/" />
   <link rel="canonical" href="https://biochemaiwill.github.io/" />
   <title>Tianxiang Wu — AI × Drug Discovery</title>
-  <link rel="stylesheet" href="styles.css?v=20260821-3" />
-  <script defer src="script.js?v=20260821-3"></script>
+  <link rel="stylesheet" href="styles.css?v=20260821-4" />
+  <script defer src="script.js?v=20260821-4"></script>
 </head>
 <body>
   <div class="page-noise" aria-hidden="true"></div>
@@ -252,10 +252,14 @@
         <p data-i18n="research.summary">Current work centers on scientific data extraction, context-aware molecular modeling, and computational drug discovery.</p>
       </div>
 
-      <div class="projects">
-        <article class="project project-featured reveal">
-          <div class="project-visual project-image-visual" aria-hidden="true">
-            <img src="assets/evidence/admet-workflow-visual.png" alt="" loading="lazy" />
+      <div class="projects research-mosaic">
+        <article class="project project-featured project-wide reveal">
+          <div class="project-visual patent-visual research-visual" aria-hidden="true">
+            <div class="patent-paper p1">PATENT<i></i><i></i><i></i></div>
+            <div class="patent-paper p2">ASSAY<i></i><i></i><i></i></div>
+            <div class="patent-paper p3">ADMET<i></i><i></i><i></i></div>
+            <div class="pipeline-line pl1"></div><div class="pipeline-line pl2"></div>
+            <div class="pipeline-node pn1">MOL</div><div class="pipeline-node pn2">CTX</div><div class="pipeline-node pn3">QC</div>
           </div>
           <div class="project-copy">
             <div class="project-top"><span data-i18n="project1.type">01 / Patent-scale scientific data agents</span><span data-i18n="status.ongoing">Ongoing</span></div>
@@ -265,13 +269,11 @@
           </div>
         </article>
 
-        <article class="project reveal">
-          <div class="project-visual patent-visual" aria-hidden="true">
-            <div class="patent-paper p1">ASSAY<i></i><i></i><i></i></div>
-            <div class="patent-paper p2">ADMET<i></i><i></i><i></i></div>
-            <div class="patent-paper p3">VALUE<i></i><i></i><i></i></div>
-            <div class="pipeline-line pl1"></div><div class="pipeline-line pl2"></div>
-            <div class="pipeline-node pn1">MOL</div><div class="pipeline-node pn2">CTX</div><div class="pipeline-node pn3">Y</div>
+        <article class="project project-compact reveal">
+          <div class="project-visual admet-visual research-visual" aria-hidden="true">
+            <div class="assay-stack"><span>endpoint</span><span>assay</span><span>unit</span></div>
+            <div class="tower tower-left">MOL</div><div class="tower tower-right">CTX</div>
+            <div class="fusion-core">Y</div>
           </div>
           <div class="project-copy">
             <div class="project-top"><span data-i18n="project2.type">02 / Condition-aware prediction</span><span data-i18n="status.ongoing">Ongoing</span></div>
@@ -281,9 +283,10 @@
           </div>
         </article>
 
-        <article class="project reveal">
-          <div class="project-visual project-image-visual peptide-work-visual" aria-hidden="true">
-            <img src="assets/evidence/peptide-instruction-dataset.png" alt="" loading="lazy" />
+        <article class="project project-compact reveal">
+          <div class="project-visual peptide-visual research-visual" aria-hidden="true">
+            <div class="sequence-ribbon">A R G L P V K T M</div>
+            <div class="peptide-node pn-a">LoRA</div><div class="peptide-node pn-b">DESIGN</div><div class="peptide-node pn-c">PREDICT</div>
           </div>
           <div class="project-copy">
             <div class="project-top"><span data-i18n="project3.type">03 / Peptide engineering language model</span><span data-i18n="status.research">Research</span></div>
@@ -293,86 +296,20 @@
           </div>
         </article>
 
-        <article class="project reveal">
-          <div class="project-visual project-image-visual peptide-work-visual" aria-hidden="true">
-            <img src="assets/evidence/peptide-benchmark-title.jpg" alt="" loading="lazy" />
+        <article class="project project-wide reveal">
+          <div class="project-visual project-image-visual research-figure" aria-hidden="true">
+            <img src="assets/evidence/3d-mpg-workflow.png" alt="" loading="lazy" />
           </div>
           <div class="project-copy">
-            <div class="project-top"><span data-i18n="project4.type">04 / Peptide property benchmark</span><span data-i18n="status.research">Research</span></div>
-            <h3 data-i18n-html="project4.title">Systematic benchmark<br><em>for peptide prediction</em></h3>
-            <p data-i18n="project4.desc">Contributed to a systematic peptide property prediction benchmark, connecting task definition, model evaluation and manuscript evidence for a Briefings in Bioinformatics submission.</p>
-            <div class="project-tags"><span>Benchmark</span><span>QSAR</span><span>JCR Q1</span></div>
+            <div class="project-top"><span data-i18n="project4.type">04 / 3D molecular pretraining</span><span data-i18n="status.research">Research</span></div>
+            <h3 data-i18n-html="project4.title">3D-MPG geometry<br><em>pretraining</em></h3>
+            <p data-i18n="project4.desc">Contributed to 3D-MPG, a molecular representation learning manuscript on relational geometry pretraining through intramolecular region-pair arrangements, submitted to AAAI 2027.</p>
+            <div class="project-tags"><span>3D Geometry</span><span>EGNN</span><span>AAAI 2027</span></div>
           </div>
         </article>
 
-        <article class="project reveal">
-          <div class="project-visual protein-visual" aria-hidden="true">
-            <div class="protein-orbit po1"></div><div class="protein-orbit po2"></div><div class="protein-orbit po3"></div>
-            <div class="protein-core"><span>3D</span></div>
-            <div class="protein-chip pc1">POCKET</div><div class="protein-chip pc2">LIGAND</div><div class="protein-chip pc3">SCORE</div>
-          </div>
-          <div class="project-copy">
-            <div class="project-top"><span data-i18n="project5.type">05 / 3D molecular pretraining</span><span data-i18n="status.research">Research</span></div>
-            <h3 data-i18n-html="project5.title">3D-MPG geometry<br><em>pretraining</em></h3>
-            <p data-i18n="project5.desc">Contributed to 3D-MPG, a molecular representation learning manuscript on relational geometry pretraining through intramolecular region-pair arrangements, submitted to AAAI 2027.</p>
-            <div class="project-tags"><span data-i18n="tag.protein">Protein Modeling</span><span data-i18n="tag.screening">Virtual Screening</span><span>AI4Science</span></div>
-          </div>
-        </article>
-
-        <article class="project reveal">
-          <div class="project-visual project-image-visual" aria-hidden="true">
-            <img src="assets/evidence/xinghuo-special-prize.jpg" alt="" loading="lazy" />
-          </div>
-          <div class="project-copy">
-            <div class="project-top"><span data-i18n="project6.type">06 / Task-adaptive molecular platform</span><span data-i18n="status.research">Research</span></div>
-            <h3 data-i18n-html="project6.title">Molecular pretraining<br><em>platform</em></h3>
-            <p data-i18n="project6.desc">Built a task-adaptive molecular pretraining platform recognized with Xinghuo Cup university first prize and college-level special prize.</p>
-            <div class="project-tags"><span>Molecular Pretraining</span><span data-i18n="tag.quality">Data Quality</span><span>Awarded</span></div>
-          </div>
-        </article>
-
-        <article class="project reveal">
-          <div class="project-visual patent-visual" aria-hidden="true">
-            <div class="patent-paper p1">PLAN<i></i><i></i><i></i></div>
-            <div class="patent-paper p2">AGENT<i></i><i></i><i></i></div>
-            <div class="patent-paper p3">REPORT<i></i><i></i><i></i></div>
-            <div class="pipeline-line pl1"></div><div class="pipeline-line pl2"></div>
-            <div class="pipeline-node pn1">ASK</div><div class="pipeline-node pn2">RUN</div><div class="pipeline-node pn3">EVAL</div>
-          </div>
-          <div class="project-copy">
-            <div class="project-top"><span data-i18n="project7.type">07 / Drug-discovery agents</span><span data-i18n="status.exploration">Exploration</span></div>
-            <h3 data-i18n-html="project7.title">PharmAgent<br><em>research workflows</em></h3>
-            <p data-i18n="project7.desc">Exploring PharmAgent workflows that connect autonomous research planning, molecular evidence and downstream drug-discovery tasks.</p>
-            <div class="project-tags"><span>Agent Workflow</span><span data-i18n="tag.llm">LLM Agents</span><span>Drug Discovery</span></div>
-          </div>
-        </article>
-
-        <article class="project reveal">
-          <div class="project-visual project-image-visual" aria-hidden="true">
-            <img src="assets/evidence/xinghuo-first-prize.jpg" alt="" loading="lazy" />
-          </div>
-          <div class="project-copy">
-            <div class="project-top"><span data-i18n="project8.type">08 / On-device AI application</span><span data-i18n="status.applied">Applied</span></div>
-            <h3 data-i18n-html="project8.title">On-device AI<br><em>campus application</em></h3>
-            <p data-i18n="project8.desc">Developed an on-device AI campus lost-item recognition and management application, awarded Xinghuo Cup college-level first prize.</p>
-            <div class="project-tags"><span>On-device AI</span><span>Application</span><span>Awarded</span></div>
-          </div>
-        </article>
-
-        <article class="project reveal">
-          <div class="project-visual project-image-visual" aria-hidden="true">
-            <img src="assets/evidence/cambridge-certificate.jpg" alt="" loading="lazy" />
-          </div>
-          <div class="project-copy">
-            <div class="project-top"><span data-i18n="project9.type">09 / Cambridge visiting programme</span><span data-i18n="status.academic">Academic</span></div>
-            <h3 data-i18n-html="project9.title">St Edmund's programme<br><em>project lead</em></h3>
-            <p data-i18n="project9.desc">Served as project lead in the St Edmund's Global Programme in Computer Science and Coding, connecting academic exchange with software and computing training.</p>
-            <div class="project-tags"><span>Cambridge</span><span>Project Lead</span><span>Computer Science</span></div>
-          </div>
-        </article>
-
-        <article class="project reveal">
-          <div class="project-visual molecule-visual" aria-hidden="true">
+        <article class="project project-compact reveal">
+          <div class="project-visual molecule-visual research-visual" aria-hidden="true">
             <svg viewBox="0 0 520 340" role="img">
               <g class="mol-lines">
                 <path d="M92 160 L168 96 L260 132 L338 82 L428 150" />
@@ -380,26 +317,42 @@
                 <path d="M260 132 L286 250 L410 238" />
               </g>
               <g class="mol-nodes">
-                <circle cx="92" cy="160" r="20" />
-                <circle cx="168" cy="96" r="18" />
-                <circle cx="260" cy="132" r="22" />
-                <circle cx="338" cy="82" r="17" />
-                <circle cx="428" cy="150" r="20" />
-                <circle cx="184" cy="216" r="18" />
-                <circle cx="286" cy="250" r="21" />
-                <circle cx="410" cy="238" r="18" />
+                <circle cx="92" cy="160" r="20" /><circle cx="168" cy="96" r="18" /><circle cx="260" cy="132" r="22" /><circle cx="338" cy="82" r="17" />
+                <circle cx="428" cy="150" r="20" /><circle cx="184" cy="216" r="18" /><circle cx="286" cy="250" r="21" /><circle cx="410" cy="238" r="18" />
               </g>
-              <g class="mol-labels">
-                <text x="70" y="52">PROTEIN TOWER</text>
-                <text x="314" y="310">LIGAND TOWER</text>
-              </g>
+              <g class="mol-labels"><text x="70" y="52">PRETRAIN</text><text x="314" y="310">FINETUNE</text></g>
             </svg>
             <div class="embedding-grid"></div>
           </div>
           <div class="project-copy">
-            <div class="project-top"><span data-i18n="project10.type">10 / Protein-ligand foundation model</span><span data-i18n="status.ongoing">Ongoing</span></div>
-            <h3 data-i18n-html="project10.title">Dual-tower<br><em>foundation model</em></h3>
-            <p data-i18n="project10.desc">Improving the sequence tower of a DrugCLIP-style protein-ligand foundation model with ESM-C representations and hyperbolic latent structure for OOD generalization across targets, scaffolds and low-data settings.</p>
+            <div class="project-top"><span data-i18n="project5.type">05 / Task-adaptive molecular platform</span><span data-i18n="status.research">Research</span></div>
+            <h3 data-i18n-html="project5.title">Molecular pretraining<br><em>platform</em></h3>
+            <p data-i18n="project5.desc">Built a task-adaptive molecular pretraining platform recognized with Xinghuo Cup university first prize and college-level special prize.</p>
+            <div class="project-tags"><span>Molecular Pretraining</span><span data-i18n="tag.quality">Data Quality</span><span>Awarded</span></div>
+          </div>
+        </article>
+
+        <article class="project project-compact reveal">
+          <div class="project-visual agent-visual research-visual" aria-hidden="true">
+            <div class="agent-ring"></div>
+            <div class="agent-step as1">Router</div><div class="agent-step as2">Planner</div><div class="agent-step as3">Executor</div><div class="agent-step as4">Reflector</div>
+          </div>
+          <div class="project-copy">
+            <div class="project-top"><span data-i18n="project6.type">06 / Drug-discovery agents</span><span data-i18n="status.exploration">Exploration</span></div>
+            <h3 data-i18n-html="project6.title">PharmAgent<br><em>research workflows</em></h3>
+            <p data-i18n="project6.desc">Exploring PharmAgent workflows that connect autonomous research planning, molecular evidence and downstream drug-discovery tasks.</p>
+            <div class="project-tags"><span>Agent Workflow</span><span data-i18n="tag.llm">LLM Agents</span><span>Drug Discovery</span></div>
+          </div>
+        </article>
+
+        <article class="project project-wide reveal">
+          <div class="project-visual project-image-visual research-figure" aria-hidden="true">
+            <img src="assets/evidence/protein-ligand-foundation-model.png" alt="" loading="lazy" />
+          </div>
+          <div class="project-copy">
+            <div class="project-top"><span data-i18n="project7.type">07 / Protein-ligand foundation model</span><span data-i18n="status.ongoing">Ongoing</span></div>
+            <h3 data-i18n-html="project7.title">Dual-tower<br><em>foundation model</em></h3>
+            <p data-i18n="project7.desc">Improving the sequence tower of a DrugCLIP-style protein-ligand foundation model with ESM-C representations and hyperbolic latent structure for OOD generalization across targets, scaffolds and low-data settings.</p>
             <div class="project-tags"><span>DrugCLIP</span><span>ESM-C</span><span>OOD</span></div>
           </div>
         </article>
