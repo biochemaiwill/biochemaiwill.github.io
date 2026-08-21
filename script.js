@@ -1,6 +1,243 @@
 const year = document.getElementById('year');
 if (year) year.textContent = new Date().getFullYear();
 
+const translations = {
+  en: {
+    metaTitle: 'Tianxiang Wu — AI × Drug Discovery',
+    metaDescription: 'Tianxiang Wu — research profile in AI for drug discovery, scientific information extraction, and molecular representation learning.',
+    langButton: '中文',
+    langLabel: 'Switch to Chinese',
+    'nav.research': 'Research',
+    'nav.about': 'About',
+    'nav.experience': 'Experience',
+    'nav.links': 'Links',
+    status: 'Researching · 2026',
+    'hero.profile': 'Research profile',
+    'hero.lede': 'Building <em>reliable scientific data systems</em> and <em>representation learning methods</em> for computational drug discovery.',
+    'visual.topline': 'RESEARCH GRAPH / LIVE',
+    'visual.title': 'Research map',
+    'visual.desc': 'An abstract network linking scientific data, molecular models, protein structure and drug discovery.',
+    'visual.caption': 'Evidence → Representation → Prediction',
+    'graph.data1': 'SCIENTIFIC',
+    'graph.data2': 'DATA',
+    'graph.protein1': 'PROTEIN',
+    'graph.protein2': 'STRUCTURE',
+    'graph.model1': 'AI MODEL',
+    'graph.model2': 'REPRESENTATION',
+    'graph.drug1': 'DRUG',
+    'graph.drug2': 'DISCOVERY',
+    'facts.current.label': 'Current',
+    'facts.current.value': 'Research Intern',
+    'facts.education.label': 'Education',
+    'facts.education.value': 'Computer Science',
+    'facts.focus.label': 'Focus',
+    'facts.focus.value': 'Data · Molecules · Proteins',
+    scroll: 'Scroll to research',
+    'ticker.aidd': 'AI for Drug Discovery',
+    'ticker.ie': 'Scientific Information Extraction',
+    'ticker.admet': 'ADMET Data Infrastructure',
+    'ticker.mrl': 'Molecular Representation Learning',
+    'ticker.protein': 'Protein Modeling',
+    'research.kicker': 'Selected research',
+    'research.heading': 'From messy evidence<br>to <em>useful models.</em>',
+    'research.summary': 'Current work centers on scientific data extraction, context-aware molecular modeling, and computational drug discovery.',
+    'project1.type': '01 / Autonomous research system',
+    'status.ongoing': 'Ongoing',
+    'project1.title': 'Patent IE for<br><em>ADMET data infrastructure</em>',
+    'project1.desc': 'An autonomous pipeline for extracting condition-aware ADMET and assay records from pharmaceutical patents, with evidence verification, standardization, conflict handling, and quality routing.',
+    'project2.type': '02 / Representation learning',
+    'status.research': 'Research',
+    'project2.title': 'Condition-aware<br><em>molecular modeling</em>',
+    'project2.desc': 'Exploring representations that combine molecular structure with assay context, endpoints, units, and measurement conditions for more realistic ADMET prediction.',
+    'project3.type': '03 / Computational discovery',
+    'status.exploration': 'Exploration',
+    'project3.title': 'Protein–ligand<br><em>target-focused discovery</em>',
+    'project3.desc': 'Exploration around protein representation, structure-aware modeling, virtual screening, and target-focused computational drug discovery.',
+    'tag.llm': 'LLM Agents',
+    'tag.patent': 'Patent Mining',
+    'tag.quality': 'Data Quality',
+    'tag.multitask': 'Multitask',
+    'tag.assay': 'Assay Context',
+    'tag.protein': 'Protein Modeling',
+    'tag.screening': 'Virtual Screening',
+    'about.kicker': 'About',
+    'about.question': 'I care about one question:',
+    'about.heading': 'How do we make AI systems <em>scientifically useful</em>, not just benchmark-good?',
+    'about.lede': 'I am a Computer Science undergraduate at Xidian University and a research intern at the Institute for AI Industry Research (AIR), Tsinghua University.',
+    'about.interests': 'My current interests include AI for Drug Discovery, patent-scale scientific information extraction, high-quality ADMET data construction, and representation learning for molecules and proteins.',
+    'about.systems': 'I am especially interested in systems that connect robust data infrastructure with predictive models that remain useful outside curated benchmarks.',
+    'principle1.title': 'Evidence first',
+    'principle1.desc': 'Predictions should remain traceable to scientific evidence.',
+    'principle2.title': 'Context matters',
+    'principle2.desc': 'Model assay and experimental context, not only molecules.',
+    'principle3.title': 'Quality is research',
+    'principle3.desc': 'Data quality is part of the scientific method, not cleanup.',
+    'experience.kicker': 'Experience',
+    'experience.heading': 'Academic trajectory.',
+    'experience.summary': 'Computer science → AI4Science → drug discovery.',
+    'timeline.current': 'CURRENT',
+    'timeline.intern.title': 'Research Intern',
+    'timeline.intern.desc': 'AI for Drug Discovery, scientific data extraction, and autonomous research systems.',
+    'timeline.undergrad': 'UNDERGRAD',
+    'timeline.degree.title': 'B.Sc. · Computer Science & Technology',
+    'timeline.degree.desc': 'Computer science training with a research focus on AI for scientific discovery.',
+    'outputs.kicker': 'Publications & outputs',
+    'outputs.heading': 'Work in progress.<br><em>Public releases next.</em>',
+    'outputs.desc': 'Public papers, datasets, software releases, and preprints will be listed here when they become available.',
+    'outputs.orcid': 'View ORCID record',
+    'contact.kicker': 'Research · Collaboration · Academic exchange',
+    'contact.heading': 'Find me<br><em>online.</em>',
+    'contact.github': 'Code & projects',
+    'contact.orcid': 'Research identity',
+    'footer.top': 'Back to top ↑'
+  },
+  zh: {
+    metaTitle: '吴天翔 / Tianxiang Wu — AI × 药物发现',
+    metaDescription: '吴天翔的研究主页：AI 药物发现、科学信息抽取、ADMET 数据与分子表征学习。',
+    langButton: 'EN',
+    langLabel: 'Switch to English',
+    'nav.research': '研究',
+    'nav.about': '关于',
+    'nav.experience': '经历',
+    'nav.links': '链接',
+    status: '研究中 · 2026',
+    'hero.profile': '研究主页',
+    'hero.lede': '构建用于计算药物发现的<em>可靠科学数据系统</em>与<em>表征学习方法</em>。',
+    'visual.topline': '研究图谱 / LIVE',
+    'visual.title': '研究图谱',
+    'visual.desc': '连接科学数据、分子模型、蛋白结构与药物发现的抽象研究网络。',
+    'visual.caption': '证据 → 表征 → 预测',
+    'graph.data1': '科学',
+    'graph.data2': '数据',
+    'graph.protein1': '蛋白',
+    'graph.protein2': '结构',
+    'graph.model1': 'AI 模型',
+    'graph.model2': '表征',
+    'graph.drug1': '药物',
+    'graph.drug2': '发现',
+    'facts.current.label': '当前',
+    'facts.current.value': '研究实习生',
+    'facts.education.label': '教育',
+    'facts.education.value': '计算机科学',
+    'facts.focus.label': '方向',
+    'facts.focus.value': '数据 · 分子 · 蛋白质',
+    scroll: '查看研究',
+    'ticker.aidd': 'AI 药物发现',
+    'ticker.ie': '科学信息抽取',
+    'ticker.admet': 'ADMET 数据基础设施',
+    'ticker.mrl': '分子表征学习',
+    'ticker.protein': '蛋白质建模',
+    'research.kicker': '代表性研究',
+    'research.heading': '从混乱证据<br>到<em>可用模型。</em>',
+    'research.summary': '当前工作聚焦于科学数据抽取、上下文感知的分子建模与计算药物发现。',
+    'project1.type': '01 / 自主研究系统',
+    'status.ongoing': '进行中',
+    'project1.title': '面向<br><em>ADMET 数据基础设施</em>的专利信息抽取',
+    'project1.desc': '面向药物专利的自主抽取流程，用于构建带实验条件的 ADMET 与 assay 记录，并处理证据核验、标准化、冲突判断与质量分流。',
+    'project2.type': '02 / 表征学习',
+    'status.research': '研究',
+    'project2.title': '条件感知的<br><em>分子建模</em>',
+    'project2.desc': '探索将分子结构与 assay 上下文、终点、单位和测量条件结合的表征方法，使 ADMET 预测更接近真实研究场景。',
+    'project3.type': '03 / 计算发现',
+    'status.exploration': '探索',
+    'project3.title': '蛋白-配体<br><em>靶点导向发现</em>',
+    'project3.desc': '围绕蛋白表征、结构感知建模、虚拟筛选与靶点导向的计算药物发现开展探索。',
+    'tag.llm': 'LLM 智能体',
+    'tag.patent': '专利挖掘',
+    'tag.quality': '数据质量',
+    'tag.multitask': '多任务',
+    'tag.assay': 'Assay 上下文',
+    'tag.protein': '蛋白建模',
+    'tag.screening': '虚拟筛选',
+    'about.kicker': '关于',
+    'about.question': '我关心一个问题：',
+    'about.heading': '如何让 AI 系统<em>真正对科学有用</em>，而不只是 benchmark 表现好？',
+    'about.lede': '我是西安电子科技大学计算机科学与技术专业本科生，目前在清华大学智能产业研究院（AIR）担任研究实习生。',
+    'about.interests': '我的当前兴趣包括 AI 药物发现、专利尺度科学信息抽取、高质量 ADMET 数据构建，以及面向分子和蛋白质的表征学习。',
+    'about.systems': '我尤其关注把稳健的数据基础设施与在精心整理 benchmark 之外仍然有用的预测模型连接起来的系统。',
+    'principle1.title': '证据优先',
+    'principle1.desc': '预测应能追溯到具体科学证据。',
+    'principle2.title': '上下文重要',
+    'principle2.desc': '不仅建模分子，也建模 assay 与实验上下文。',
+    'principle3.title': '质量也是研究',
+    'principle3.desc': '数据质量不是清理工作，而是科学方法的一部分。',
+    'experience.kicker': '经历',
+    'experience.heading': '学术轨迹。',
+    'experience.summary': '计算机科学 → AI4Science → 药物发现。',
+    'timeline.current': '当前',
+    'timeline.intern.title': '研究实习生',
+    'timeline.intern.desc': 'AI 药物发现、科学数据抽取与自主研究系统。',
+    'timeline.undergrad': '本科',
+    'timeline.degree.title': '本科 · 计算机科学与技术',
+    'timeline.degree.desc': '计算机科学训练，研究兴趣聚焦于面向科学发现的 AI。',
+    'outputs.kicker': '论文与产出',
+    'outputs.heading': '工作进行中。<br><em>公开产出随后更新。</em>',
+    'outputs.desc': '公开论文、数据集、软件发布和预印本将在可公开时列在这里。',
+    'outputs.orcid': '查看 ORCID 记录',
+    'contact.kicker': '研究 · 合作 · 学术交流',
+    'contact.heading': '在线<br><em>找到我。</em>',
+    'contact.github': '代码与项目',
+    'contact.orcid': '研究身份',
+    'footer.top': '回到顶部 ↑'
+  }
+};
+
+const getSavedLanguage = () => {
+  try {
+    return localStorage.getItem('siteLanguage');
+  } catch {
+    return null;
+  }
+};
+
+const saveLanguage = (lang) => {
+  try {
+    localStorage.setItem('siteLanguage', lang);
+  } catch {
+    // Ignore storage failures; the language switch still works for this page view.
+  }
+};
+
+const setLanguage = (lang) => {
+  const activeLang = translations[lang] ? lang : 'en';
+  const copy = translations[activeLang];
+
+  document.documentElement.lang = activeLang === 'zh' ? 'zh-CN' : 'en';
+  document.title = copy.metaTitle;
+  document.querySelector('meta[name="description"]')?.setAttribute('content', copy.metaDescription);
+  document.querySelector('meta[property="og:title"]')?.setAttribute('content', copy.metaTitle);
+  document.querySelector('meta[property="og:description"]')?.setAttribute('content', copy.metaDescription);
+
+  document.querySelectorAll('[data-i18n]').forEach((el) => {
+    const value = copy[el.dataset.i18n];
+    if (value) el.textContent = value;
+  });
+
+  document.querySelectorAll('[data-i18n-html]').forEach((el) => {
+    const value = copy[el.dataset.i18nHtml];
+    if (value) el.innerHTML = value;
+  });
+
+  const toggle = document.querySelector('[data-lang-toggle]');
+  const label = document.querySelector('[data-lang-current]');
+  if (toggle && label) {
+    label.textContent = copy.langButton;
+    toggle.setAttribute('aria-label', copy.langLabel);
+    toggle.setAttribute('aria-pressed', String(activeLang === 'zh'));
+  }
+
+  saveLanguage(activeLang);
+};
+
+const langToggle = document.querySelector('[data-lang-toggle]');
+const queryLang = new URLSearchParams(window.location.search).get('lang');
+const requestedLang = translations[queryLang] ? queryLang : getSavedLanguage();
+setLanguage(requestedLang || 'en');
+langToggle?.addEventListener('click', () => {
+  const current = document.documentElement.lang === 'zh-CN' ? 'zh' : 'en';
+  setLanguage(current === 'zh' ? 'en' : 'zh');
+});
+
 const header = document.querySelector('.site-header');
 const onScroll = () => header?.classList.toggle('scrolled', window.scrollY > 24);
 onScroll();
