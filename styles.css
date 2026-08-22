@@ -519,3 +519,116 @@ a:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
   .credential-grid a:after,
   .life-card a:before{animation:none;transition:none}
 }
+
+/* Density pass: reduce empty vertical bands while keeping evidence readable. */
+@media(min-width:761px){
+  .section{padding-top:92px;padding-bottom:92px}
+  .profile-section{padding-top:88px}
+  .section-kicker{margin-bottom:30px}
+  .section-heading{margin-bottom:52px}
+  .profile-layout{gap:5vw;margin-bottom:46px}
+  .credential-gallery{margin-top:46px}
+  .credential-heading{gap:12px;margin-bottom:20px}
+  .credential-grid{columns:4 260px;column-gap:14px}
+  .credential-grid figure{margin:0 0 14px}
+  .credential-grid a,
+  .credential-grid .proof-feature a,
+  .credential-grid .orcid-record a{height:220px;aspect-ratio:auto}
+  .credential-grid .material-wide a,
+  .credential-grid .material-paper a{height:190px;aspect-ratio:auto}
+  .credential-grid .material-certificate a,
+  .credential-grid .material-poster a,
+  .credential-grid .material-letter a{height:300px;aspect-ratio:auto}
+  .credential-grid .material-photo a{height:210px;aspect-ratio:auto}
+  .credential-grid figcaption{min-height:0;padding:10px 12px;font-size:12.5px;line-height:1.35}
+  .life-heading{margin-bottom:30px}
+  .research-mosaic{gap:16px}
+  .research-mosaic .project-visual{min-height:260px}
+  .research-mosaic .project-featured .project-visual{min-height:360px}
+  .project-3d .project-visual{min-height:420px}
+  .project-foundation .project-visual{min-height:300px}
+  .project-copy{padding:26px 28px 30px}
+  .project h3{font-size:clamp(34px,3.25vw,54px);margin-bottom:16px}
+  .project p{font-size:15px;line-height:1.55;margin-bottom:22px}
+  .project-top{margin-bottom:18px}
+  .about-copy{padding-top:40px}
+  .principle-grid{margin-top:36px}
+  .experience-heading{margin-bottom:46px}
+  .timeline-item{padding:30px 0}
+  .publication-list{margin-top:42px;gap:12px}
+  .publication-card{padding:22px 24px}
+  .publication-card a,
+  .publication-featured a,
+  .publication-thumb{height:190px}
+  .publication-card h3{font-size:clamp(24px,2.35vw,36px);line-height:1.08}
+  .contact-section{padding-top:86px;padding-bottom:86px}
+}
+
+@media(min-width:1600px){
+  .credential-grid{columns:5 260px}
+  .section{padding-left:5vw;padding-right:5vw}
+  .research-mosaic .project-visual{min-height:240px}
+  .research-mosaic .project-featured .project-visual{min-height:330px}
+  .project-3d .project-visual{min-height:390px}
+}
+
+@media(max-width:760px){
+  .section{padding-top:58px;padding-bottom:58px}
+  .hero{padding-top:92px}
+  .spotlight-section{padding-top:12px}
+  .spotlight-card{padding:16px 16px}
+  .profile-section{padding-top:58px}
+  .profile-layout{gap:28px;margin-bottom:34px}
+  .profile-lead p{margin-top:18px;line-height:1.55}
+  .metric{min-height:96px;padding:18px}
+  .metric span{margin-bottom:16px}
+  .evidence-board article{padding:22px 18px!important}
+  .evidence-board li{padding-top:10px;padding-bottom:10px}
+  .credential-gallery{margin-top:34px}
+  .credential-heading{gap:10px;margin-bottom:18px}
+  .credential-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .credential-grid figure,
+  .credential-grid .proof-feature,
+  .credential-grid .material-wide{grid-column:auto;width:auto}
+  .credential-grid .proof-feature,
+  .credential-grid .material-wide,
+  .credential-grid .material-civic{grid-column:1/-1}
+  .credential-grid a,
+  .credential-grid .proof-feature a,
+  .credential-grid .material-wide a{aspect-ratio:1.5/1}
+  .credential-grid .material-paper a{aspect-ratio:1.25/1}
+  .credential-grid .material-certificate a,
+  .credential-grid .material-poster a,
+  .credential-grid .material-letter a{aspect-ratio:3/4}
+  .credential-grid figcaption{padding:10px 12px;font-size:12.5px;line-height:1.35}
+  .life-heading{margin-bottom:20px}
+  .life-heading p{font-size:15px;line-height:1.5}
+  .life-card a,
+  .life-feature a{aspect-ratio:4/3}
+  .research-mosaic{display:flex;flex-direction:column;gap:14px}
+  .research-mosaic .project,
+  .research-mosaic .project-wide,
+  .research-mosaic .project-featured{width:100%;display:flex;flex-direction:column;transform:none!important}
+  .research-mosaic .project-featured .project-visual,
+  .research-mosaic .project-visual{width:100%;min-height:220px;border-right:0;border-bottom:1px solid var(--line)}
+  .project-3d .project-visual{min-height:300px}
+  .project-foundation .project-visual{min-height:220px}
+  .project-copy{padding:20px 18px 22px}
+  .project h3{font-size:32px;margin-bottom:14px}
+  .project p{font-size:14.5px;line-height:1.5;margin-bottom:18px}
+  .project-top{margin-bottom:14px}
+  .about-copy .about-lede{font-size:22px}
+  .about-copy>p{line-height:1.58}
+  .principle-grid{margin-top:28px}
+  .experience-heading{margin-bottom:34px}
+  .timeline-item{padding:28px 0}
+  .output-layout{gap:34px}
+  .output-copy p{font-size:16px;line-height:1.5;margin-bottom:22px}
+  .publication-list{margin-top:32px}
+  .publication-card{padding:18px 16px;gap:16px}
+  .publication-card h3{font-size:26px;line-height:1.08}
+  .publication-card p{font-size:13.5px;line-height:1.5}
+  .publication-card a,
+  .publication-thumb{height:auto;aspect-ratio:1.65/1}
+  .contact-section{padding-top:62px;padding-bottom:62px}
+}
