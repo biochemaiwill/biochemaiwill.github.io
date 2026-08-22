@@ -71,7 +71,7 @@ const translations = {
     scroll: 'Scroll to research',
     'profile.kicker': 'Academic snapshot',
     'profile.heading': 'A profile across <em>research, honors and service.</em>',
-    'profile.summary': 'Computer Science undergraduate at Xidian University with research training across AIDD agents, ADMET data systems, molecular representation learning and peptide modeling.',
+    'profile.summary': 'Computer Science undergraduate at Xidian University with research training across AIDD agents, ADMET data systems, molecular representation learning and peptide modeling; leading a national innovation project and an NSFC General Program subproject.',
     'metric.gpa.label': 'GPA',
     'metric.gpa.note': 'Core average 92+',
     'metric.rank.label': 'Rank',
@@ -81,6 +81,18 @@ const translations = {
     'metric.scholarship.label': 'Scholarship',
     'metric.scholarship.value': 'National',
     'metric.scholarship.note': '2024-2025',
+    'impact.innovation.kicker': 'Project',
+    'impact.innovation.value': 'National Innovation Program',
+    'impact.innovation.note': 'Project lead',
+    'impact.nsfc.kicker': 'Research',
+    'impact.nsfc.value': 'NSFC General Program',
+    'impact.nsfc.note': 'Subproject lead',
+    'impact.pku.kicker': 'Collaboration',
+    'impact.pku.value': 'Peking University Hospital of Stomatology',
+    'impact.pku.note': 'Research collaboration proof',
+    'impact.cambridge.kicker': 'International',
+    'impact.cambridge.value': 'Cambridge visiting program',
+    'impact.cambridge.note': 'Project first prize',
     'profile.awards.kicker': 'Honors',
     'profile.awards.title': 'Scholarships & competitions',
     'profile.awards.item1': '<strong class="highlight">National Scholarship</strong> for undergraduates, 2024-2025.',
@@ -104,23 +116,28 @@ const translations = {
     'credentials.bioTitle': 'Peptide engineering language model work, second author / undergraduate lead author',
     'credentials.aaai': '3D-MPG manuscript submitted to AAAI 2027, CCF A conference',
     'credentials.bib': 'Peptide property prediction benchmark manuscript submitted to Briefings in Bioinformatics',
+    'credentials.pkuCollaboration': 'Peking University Hospital of Stomatology collaboration proof',
     'credentials.youthHonor': 'Outstanding Communist Youth League Member Model',
     'credentials.xinghuoSpecial': 'Xinghuo Cup university first prize and college-level special prize for task-adaptive molecular pretraining',
     'credentials.lenovoScholarship': '2025 Lenovo Scholarship',
     'credentials.youthLeagueCert': 'Outstanding Communist Youth League Member, 2024-2025',
     'credentials.volunteerCert': 'Volunteer service for career-planning education work',
     'credentials.cambridgeCertificate': 'Cambridge University summer visiting program',
-    'credentials.airForceThanks': 'Thank-you letter from Air Force Engineering University to Xidian University',
+    'credentials.cambridgeFirstPrize': 'Cambridge visiting program first prize',
+    'credentials.airForcePolitical': 'Air Force Engineering University Political Work Office thank-you letter',
+    'credentials.airForceGraduate': 'Air Force Engineering University graduate office performance certificate',
     'credentials.defense': 'Career-planning sharing session for junior students',
     'credentials.study': 'Study, academic exchange and peer support beyond coursework',
     'credentials.meeting': 'Student committee and campus service work',
     'life.kicker': 'Life moments',
     'life.heading': 'Research, service<br><em>and life in motion</em>',
     'life.summary': 'Research training, academic sharing, international exchange and orchestra performance',
+    'life.researchInstitute': 'Computational Bioinformatics Institute research training',
     'life.air': 'Tsinghua AIR research internship',
     'life.orchestra': 'Xidian Symphony Orchestra performance',
     'life.careerSharing': 'Career-planning sharing session',
     'life.cambridge': 'Cambridge summer visit',
+    'life.exchange': 'International academic exchange',
     'ticker.aidd': 'AI for Drug Discovery',
     'ticker.ie': 'Scientific Information Extraction',
     'ticker.admet': 'ADMET Data Infrastructure',
@@ -273,7 +290,7 @@ const translations = {
     scroll: '查看研究',
     'profile.kicker': '学术概览',
     'profile.heading': '本科阶段的<em>综合发展总览。</em>',
-    'profile.summary': '西安电子科技大学计算机科学与技术本科生，研究训练覆盖 AI 药物发现智能体、ADMET 数据系统、分子表征学习与多肽建模。',
+    'profile.summary': '西安电子科技大学计算机科学与技术本科生，研究训练覆盖 AI 药物发现智能体、ADMET 数据系统、分子表征学习与多肽建模；主持国家级大创项目，并担任国家自然科学基金面上项目子课题负责人。',
     'metric.gpa.label': 'GPA',
     'metric.gpa.note': '核心课程均分 92+',
     'metric.rank.label': '排名',
@@ -283,6 +300,18 @@ const translations = {
     'metric.scholarship.label': '奖学金',
     'metric.scholarship.value': '国家奖学金',
     'metric.scholarship.note': '2024-2025',
+    'impact.innovation.kicker': '项目',
+    'impact.innovation.value': '国家级大创项目',
+    'impact.innovation.note': '项目负责人',
+    'impact.nsfc.kicker': '科研',
+    'impact.nsfc.value': '国家自然科学基金面上项目',
+    'impact.nsfc.note': '子课题负责人',
+    'impact.pku.kicker': '合作',
+    'impact.pku.value': '北京大学口腔医院',
+    'impact.pku.note': '科研合作证明',
+    'impact.cambridge.kicker': '国际交流',
+    'impact.cambridge.value': '剑桥大学访学',
+    'impact.cambridge.note': '项目结项一等奖',
     'profile.awards.kicker': '荣誉',
     'profile.awards.title': '奖学金与竞赛',
     'profile.awards.item1': '2024-2025 学年本科生<strong class="highlight">国家奖学金</strong>。',
@@ -306,23 +335,28 @@ const translations = {
     'credentials.bioTitle': '多肽工程语言模型工作，第二作者 / 本科生一作',
     'credentials.aaai': '3D-MPG 稿件投稿 AAAI 2027，CCF A 会议',
     'credentials.bib': '多肽性质预测基准稿件投稿 Briefings in Bioinformatics',
+    'credentials.pkuCollaboration': '北京大学口腔医院科研合作证明',
     'credentials.youthHonor': '优秀共青团员标兵',
     'credentials.xinghuoSpecial': '星火杯校级一等奖、院赛特等奖：面向任务自适应的分子预训练平台',
     'credentials.lenovoScholarship': '2025联想奖学金',
     'credentials.youthLeagueCert': '2024-2025 年度优秀共青团员',
     'credentials.volunteerCert': '生涯规划教育学会志愿服务',
     'credentials.cambridgeCertificate': '剑桥大学暑期访学项目',
-    'credentials.airForceThanks': '空军工程大学致西电感谢信',
+    'credentials.cambridgeFirstPrize': '剑桥大学访学项目结项一等奖',
+    'credentials.airForcePolitical': '空军工程大学政治工作处感谢信',
+    'credentials.airForceGraduate': '空军工程大学研究生院招生培养处参演证书',
     'credentials.defense': '向低年级同学进行生涯规划分享',
     'credentials.study': '课程之外的学习、交流与帮扶',
     'credentials.meeting': '学生工作与校园服务',
     'life.kicker': '综合发展',
     'life.heading': '科研、服务与<br><em>综合发展</em>',
     'life.summary': '科研实习、生涯规划分享、国际交流与文艺实践共同构成本科阶段的综合成长经历',
+    'life.researchInstitute': '计算生物信息学研究所科研训练',
     'life.air': '清华大学智能产业研究院科研实习',
     'life.orchestra': '西电交响乐团演出',
     'life.careerSharing': '生涯规划分享',
     'life.cambridge': '剑桥大学访学',
+    'life.exchange': '国际学术交流',
     'ticker.aidd': 'AI 药物发现',
     'ticker.ie': '科学信息抽取',
     'ticker.admet': 'ADMET 数据基础设施',
@@ -491,7 +525,7 @@ const setupTicker = () => {
   tickerTrack.style.transform = '';
 };
 
-setLanguage(requestedLang || 'en');
+setLanguage(requestedLang || 'zh');
 setupTicker();
 langToggle?.addEventListener('click', () => {
   const current = document.documentElement.lang === 'zh-CN' ? 'zh' : 'en';
@@ -507,6 +541,7 @@ const header = document.querySelector('.site-header');
 const progress = document.querySelector('.scroll-progress');
 const onScroll = () => {
   header?.classList.toggle('scrolled', window.scrollY > 24);
+  document.body.classList.toggle('show-mobile-nav', window.scrollY > window.innerHeight * 0.55);
 
   if (progress) {
     const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
@@ -570,6 +605,12 @@ if (internalAnchorLinks.length) {
     const margin = parseFloat(getComputedStyle(target).scrollMarginTop) || 96;
     const top = Math.max(0, window.scrollY + target.getBoundingClientRect().top - margin);
     window.scrollTo({ top, behavior: smooth && !prefersReducedMotion ? 'smooth' : 'auto' });
+
+    const horizontalScroller = target.closest('.credential-grid, .research-mosaic, .publication-list, .evidence-board');
+    if (horizontalScroller && horizontalScroller.scrollWidth > horizontalScroller.clientWidth + 8) {
+      const left = Math.max(0, target.offsetLeft - (horizontalScroller.clientWidth - target.clientWidth) / 2);
+      horizontalScroller.scrollTo({ left, behavior: smooth && !prefersReducedMotion ? 'smooth' : 'auto' });
+    }
   };
 
   internalAnchorLinks.forEach((link) => {
@@ -632,6 +673,50 @@ if (matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion
       card.style.removeProperty('--my');
     });
   });
+
+  document.querySelectorAll('.credential-grid, .research-mosaic, .publication-list, .evidence-board, .life-gallery').forEach((scroller) => {
+    let startX = 0;
+    let startScroll = 0;
+    let dragging = false;
+    let moved = false;
+    let suppressClick = false;
+
+    scroller.addEventListener('pointerdown', (event) => {
+      if (event.button !== 0 || scroller.scrollWidth <= scroller.clientWidth + 8) return;
+      dragging = true;
+      moved = false;
+      startX = event.clientX;
+      startScroll = scroller.scrollLeft;
+      scroller.classList.add('is-dragging');
+      scroller.setPointerCapture?.(event.pointerId);
+    });
+
+    scroller.addEventListener('pointermove', (event) => {
+      if (!dragging) return;
+      const delta = event.clientX - startX;
+      if (Math.abs(delta) > 4) moved = true;
+      scroller.scrollLeft = startScroll - delta;
+    });
+
+    const stopDrag = (event) => {
+      if (!dragging) return;
+      dragging = false;
+      scroller.classList.remove('is-dragging');
+      scroller.releasePointerCapture?.(event.pointerId);
+      if (moved) {
+        suppressClick = true;
+        window.setTimeout(() => { suppressClick = false; }, 90);
+      }
+    };
+
+    scroller.addEventListener('pointerup', stopDrag);
+    scroller.addEventListener('pointercancel', stopDrag);
+    scroller.addEventListener('click', (event) => {
+      if (!suppressClick) return;
+      event.preventDefault();
+      event.stopPropagation();
+    }, true);
+  });
 }
 
 const galleryLinks = document.querySelectorAll('.credential-grid a[href^="assets/"], .life-gallery a[href^="assets/"], .publication-card a[href^="assets/"]');
@@ -640,7 +725,7 @@ if (galleryLinks.length) {
   lightbox.className = 'lightbox';
   lightbox.setAttribute('role', 'dialog');
   lightbox.setAttribute('aria-modal', 'true');
-  lightbox.innerHTML = '<button class="lightbox-close" type="button" aria-label="Close preview">×</button><img alt=""><div class="lightbox-caption"></div>';
+  lightbox.innerHTML = '<button class="lightbox-close" type="button" aria-label="Close preview">×</button><img alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="><div class="lightbox-caption"></div>';
   document.body.appendChild(lightbox);
 
   const lightboxImage = lightbox.querySelector('img');
