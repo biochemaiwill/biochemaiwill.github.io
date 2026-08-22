@@ -563,6 +563,32 @@ if (navLinks.length && sections.length) {
   window.addEventListener('resize', setActiveNav);
 }
 
+const internalAnchorLinks = [...document.querySelectorAll('a[href^="#"]')];
+if (internalAnchorLinks.length) {
+  const prefersReducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const scrollToTarget = (target, smooth = true) => {
+    const margin = parseFloat(getComputedStyle(target).scrollMarginTop) || 96;
+    const top = Math.max(0, window.scrollY + target.getBoundingClientRect().top - margin);
+    window.scrollTo({ top, behavior: smooth && !prefersReducedMotion ? 'smooth' : 'auto' });
+  };
+
+  internalAnchorLinks.forEach((link) => {
+    link.addEventListener('click', (event) => {
+      const hash = link.getAttribute('href');
+      if (!hash || hash === '#') return;
+      const target = document.querySelector(hash);
+      if (!target) return;
+
+      event.preventDefault();
+      history.pushState(null, '', hash);
+      scrollToTarget(target);
+      [650, 1400].forEach((delay) => {
+        window.setTimeout(() => scrollToTarget(target, false), delay);
+      });
+    });
+  });
+}
+
 document.documentElement.classList.add('js');
 
 if (matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches) {

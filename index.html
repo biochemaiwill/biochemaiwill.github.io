@@ -12,8 +12,8 @@
   <meta property="og:url" content="https://biochemaiwill.github.io/" />
   <link rel="canonical" href="https://biochemaiwill.github.io/" />
   <title>Tianxiang Wu — AI × Drug Discovery</title>
-  <link rel="stylesheet" href="styles.css?v=20260822-15" />
-  <script defer src="script.js?v=20260822-15"></script>
+  <link rel="stylesheet" href="styles.css?v=20260822-17" />
+  <script defer src="script.js?v=20260822-17"></script>
 </head>
 <body>
   <div class="page-noise" aria-hidden="true"></div>
@@ -109,10 +109,10 @@
         <span data-i18n="mobile.kicker">Mobile overview</span>
         <strong data-i18n="mobile.title">Research, honors and projects at a glance</strong>
         <div class="mobile-stat-grid">
-          <a href="#profile"><b>2 / 96</b><small data-i18n="mobile.rank">Track ranking</small></a>
+          <a href="#metric-rank"><b>2 / 96</b><small data-i18n="mobile.rank">Track ranking</small></a>
           <a href="https://doi.org/10.1093/bioinformatics/btag618" target="_blank" rel="noreferrer"><b>CCF A</b><small data-i18n="mobile.paper">Published work</small></a>
-          <a href="#records"><b data-i18n="mobile.scholarship.value">National</b><small data-i18n="mobile.scholarship">Scholarship</small></a>
-          <a href="#experience"><b>714 h</b><small data-i18n="mobile.service">Service record</small></a>
+          <a href="#record-national-scholarship"><b data-i18n="mobile.scholarship.value">National</b><small data-i18n="mobile.scholarship">Scholarship</small></a>
+          <a href="#record-volunteer-service"><b>714 h</b><small data-i18n="mobile.service">Service record</small></a>
         </div>
       </div>
 
@@ -121,7 +121,7 @@
 
     <section class="spotlight-section" aria-label="Key achievements">
       <div class="spotlight-track">
-        <a class="spotlight-card" href="#records">
+        <a class="spotlight-card" href="#record-national-scholarship">
           <span data-i18n="spotlight.scholarship.kicker">Scholarship</span>
           <strong data-i18n="spotlight.scholarship.value">National</strong>
           <small data-i18n="spotlight.scholarship.note">2024-2025 National Scholarship</small>
@@ -136,12 +136,12 @@
           <strong data-i18n="spotlight.geometry.value">AAAI 2027</strong>
           <small data-i18n="spotlight.geometry.note">3D molecular pretraining</small>
         </a>
-        <a class="spotlight-card" href="#profile">
+        <a class="spotlight-card" href="#metric-rank">
           <span data-i18n="spotlight.rank.kicker">Academic</span>
           <strong>2 / 96</strong>
           <small data-i18n="spotlight.rank.note">Track ranking</small>
         </a>
-        <a class="spotlight-card" href="#experience">
+        <a class="spotlight-card" href="#record-volunteer-service">
           <span data-i18n="spotlight.service.kicker">Service</span>
           <strong>714 h</strong>
           <small data-i18n="spotlight.service.note">Volunteer service record</small>
@@ -158,7 +158,7 @@
         </div>
         <div class="metric-grid reveal">
           <div class="metric"><span data-i18n="metric.gpa.label">GPA</span><strong>3.9 / 4.0</strong><small data-i18n="metric.gpa.note">Core average 92+</small></div>
-          <div class="metric"><span data-i18n="metric.rank.label">Rank</span><strong>2 / 96</strong><small data-i18n="metric.rank.note">Track ranking</small></div>
+          <div class="metric" id="metric-rank"><span data-i18n="metric.rank.label">Rank</span><strong>2 / 96</strong><small data-i18n="metric.rank.note">Track ranking</small></div>
           <div class="metric"><span data-i18n="metric.english.label">English</span><strong>CET-6 555</strong><small data-i18n="metric.english.note">Literature reading</small></div>
           <div class="metric"><span data-i18n="metric.scholarship.label">Scholarship</span><strong data-i18n="metric.scholarship.value">National</strong><small data-i18n="metric.scholarship.note">2024-2025</small></div>
         </div>
@@ -201,7 +201,7 @@
           <h3 data-i18n="credentials.title">Scholarships, publications, honors and campus engagement</h3>
         </div>
         <div class="credential-grid">
-          <figure class="fit-contain material-wide">
+          <figure class="fit-contain material-wide" id="record-national-scholarship">
             <a href="assets/evidence/national-scholarship.jpg" target="_blank" rel="noreferrer">
               <img src="assets/evidence/national-scholarship.jpg" alt="National Scholarship certificate" loading="lazy" />
             </a>
@@ -255,7 +255,7 @@
             </a>
             <figcaption data-i18n="credentials.youthLeagueCert">Outstanding Communist Youth League Member, 2024-2025</figcaption>
           </figure>
-          <figure class="fit-contain material-wide material-civic">
+          <figure class="fit-contain material-wide material-civic" id="record-volunteer-service">
             <a href="assets/evidence/volunteer-certificate.jpg" target="_blank" rel="noreferrer">
               <img src="assets/evidence/volunteer-certificate.jpg" alt="Volunteer service honor" loading="lazy" />
             </a>
@@ -509,7 +509,7 @@
             <img src="assets/evidence/orcid-bioinformatics-detail.png" alt="ORCID detailed publication record for Bioinformatics paper" loading="lazy" />
           </div>
         </a>
-        <article class="publication-card">
+        <article class="publication-card" id="publication-aaai">
           <div>
             <span data-i18n-html="pub2.status">Submitted · AAAI 2027 · <strong>CCF A</strong></span>
             <h3>3D-MPG: Relational Geometry Pretraining through Intramolecular Region-Pair Arrangements</h3>

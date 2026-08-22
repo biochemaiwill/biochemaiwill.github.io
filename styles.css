@@ -632,3 +632,34 @@ a:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
   .publication-thumb{height:auto;aspect-ratio:1.65/1}
   .contact-section{padding-top:62px;padding-bottom:62px}
 }
+
+/* Make the hero research jump look and behave like a primary action. */
+.scroll-cue{
+  bottom:28px;
+  gap:15px;
+  padding:15px 20px 15px 22px;
+  border:1px solid rgba(119,216,255,.42);
+  border-radius:999px;
+  background:rgba(9,19,34,.72);
+  color:#e9f8ff;
+  font:850 13px/1 var(--mono);
+  letter-spacing:.08em;
+  box-shadow:0 18px 54px rgba(4,13,24,.34),inset 0 1px 0 rgba(255,255,255,.08);
+  backdrop-filter:blur(16px);
+  transition:transform .22s ease,border-color .22s ease,background .22s ease,box-shadow .22s ease;
+}
+.scroll-cue:hover{
+  transform:translateY(-3px);
+  border-color:rgba(119,216,255,.8);
+  background:rgba(14,41,61,.86);
+  box-shadow:0 24px 70px rgba(22,139,184,.24),inset 0 1px 0 rgba(255,255,255,.12);
+}
+.scroll-cue span{white-space:nowrap}
+.scroll-cue i{width:60px;background:linear-gradient(90deg,var(--blue),rgba(119,216,255,.22))}
+.scroll-cue i:after{border-color:#b7ecff}
+#metric-rank,
+#record-national-scholarship,
+#record-volunteer-service,
+#publication-aaai{
+  scroll-margin-top:110px;
+}
