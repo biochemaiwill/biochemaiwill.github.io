@@ -20,8 +20,6 @@ const translations = {
     'hero.name.last': 'Wu',
     'hero.cnName': '吴天翔',
     'hero.lede': 'Building <em>reliable scientific data systems</em> and <em>representation learning methods</em> for computational drug discovery.',
-    'showcase.open': 'Showcase ✦',
-    'showcase.close': 'Exit mode ✕',
     'portrait.kicker': 'Academic profile',
     'portrait.name': 'Tianxiang Wu / 吴天翔',
     'portrait.desc': 'Computer Science undergraduate · AI for Drug Discovery',
@@ -92,20 +90,28 @@ const translations = {
     'profile.broader.item2': 'Community second-level grid worker, with <strong class="highlight">714 hours</strong> of volunteer service across community, education and public-service activities.',
     'profile.broader.item3': '<strong class="highlight">Cambridge University summer visiting program</strong> project lead, Xidian Symphony Orchestra violinist, and student committee service in class.',
     'credentials.kicker': 'Selected records',
-    'credentials.title': 'Scholarships, publications, honors and campus engagement.',
-    'credentials.nationalScholarship': 'National Scholarship, 2024-2025.',
-    'credentials.bioAccepted': 'ORCID detailed record for the Bioinformatics paper.',
-    'credentials.bioTitle': 'Peptide engineering language model work, second author / undergraduate lead author.',
-    'credentials.aaai': '3D-MPG manuscript submitted to AAAI 2027, CCF A conference.',
-    'credentials.bib': 'Peptide property prediction benchmark manuscript submitted to Briefings in Bioinformatics.',
-    'credentials.youthHonor': 'Outstanding Communist Youth League Member Model.',
-    'credentials.xinghuoSpecial': 'Xinghuo Cup university first prize and college-level special prize for task-adaptive molecular pretraining.',
-    'credentials.lenovoScholarship': '2025 Lenovo Scholarship.',
-    'credentials.youthLeagueCert': 'Outstanding Communist Youth League Member, 2024-2025.',
-    'credentials.volunteerCert': 'Volunteer service for career-planning education work.',
-    'credentials.defense': 'Career-planning sharing session for junior students.',
-    'credentials.study': 'Study, academic exchange and peer support beyond coursework.',
-    'credentials.meeting': 'Student committee and campus service work.',
+    'credentials.title': 'Scholarships, publications, honors and campus engagement',
+    'credentials.nationalScholarship': 'National Scholarship, 2024-2025',
+    'credentials.bioAccepted': 'ORCID detailed record for the Bioinformatics paper',
+    'credentials.bioTitle': 'Peptide engineering language model work, second author / undergraduate lead author',
+    'credentials.aaai': '3D-MPG manuscript submitted to AAAI 2027, CCF A conference',
+    'credentials.bib': 'Peptide property prediction benchmark manuscript submitted to Briefings in Bioinformatics',
+    'credentials.youthHonor': 'Outstanding Communist Youth League Member Model',
+    'credentials.xinghuoSpecial': 'Xinghuo Cup university first prize and college-level special prize for task-adaptive molecular pretraining',
+    'credentials.lenovoScholarship': '2025 Lenovo Scholarship',
+    'credentials.youthLeagueCert': 'Outstanding Communist Youth League Member, 2024-2025',
+    'credentials.volunteerCert': 'Volunteer service for career-planning education work',
+    'credentials.airForceThanks': 'Thank-you letter from Air Force Engineering University',
+    'credentials.defense': 'Career-planning sharing session for junior students',
+    'credentials.study': 'Study, academic exchange and peer support beyond coursework',
+    'credentials.meeting': 'Student committee and campus service work',
+    'life.kicker': 'Life moments',
+    'life.heading': 'Research, service<br><em>and life in motion</em>',
+    'life.summary': 'Research training, international exchange, orchestra performance and volunteer service',
+    'life.air': 'Tsinghua AIR research internship',
+    'life.orchestra': 'Xidian Symphony Orchestra violin performance',
+    'life.volunteer': 'Volunteer service and youth outreach',
+    'life.cambridge': 'Cambridge summer visit',
     'ticker.aidd': 'AI for Drug Discovery',
     'ticker.ie': 'Scientific Information Extraction',
     'ticker.admet': 'ADMET Data Infrastructure',
@@ -206,8 +212,6 @@ const translations = {
     'hero.name.last': 'Tianxiang Wu',
     'hero.cnName': '西安电子科技大学 · 计算机科学与技术',
     'hero.lede': '构建用于计算药物发现的<em>可靠科学数据系统</em>与<em>表征学习方法</em>。',
-    'showcase.open': '演示 ✦',
-    'showcase.close': '退出 ✕',
     'portrait.kicker': '个人学术主页',
     'portrait.name': '吴天翔 / Tianxiang Wu',
     'portrait.desc': '计算机科学与技术本科生 · AI 药物发现方向',
@@ -278,20 +282,28 @@ const translations = {
     'profile.broader.item2': '社区二级网格员，累计 <strong class="highlight">714 小时</strong>志愿服务，覆盖社区、教育与公共服务活动。',
     'profile.broader.item3': '<strong class="highlight">剑桥大学暑期访学项目</strong>负责人，西电交响乐团小提琴成员，并担任班级学习委员、心理委员等学生工作。',
     'credentials.kicker': '代表性材料',
-    'credentials.title': '奖学金、论文、荣誉与校园经历。',
-    'credentials.nationalScholarship': '2024-2025 学年本科生国家奖学金。',
-    'credentials.bioAccepted': 'ORCID 详细记录：Bioinformatics 论文已发表。',
-    'credentials.bioTitle': '多肽工程语言模型工作，第二作者 / 本科生一作。',
-    'credentials.aaai': '3D-MPG 稿件投稿 AAAI 2027，CCF A 会议。',
-    'credentials.bib': '多肽性质预测基准稿件投稿 Briefings in Bioinformatics。',
-    'credentials.youthHonor': '优秀共青团员标兵。',
-    'credentials.xinghuoSpecial': '星火杯校级一等奖、院赛特等奖：面向任务自适应的分子预训练平台。',
-    'credentials.lenovoScholarship': '2025联想奖学金。',
-    'credentials.youthLeagueCert': '2024-2025 年度优秀共青团员。',
-    'credentials.volunteerCert': '生涯规划教育学会志愿服务。',
-    'credentials.defense': '向低年级同学进行生涯规划分享。',
-    'credentials.study': '课程之外的学习、交流与帮扶。',
-    'credentials.meeting': '学生工作与校园服务。',
+    'credentials.title': '奖学金、论文、荣誉与校园经历',
+    'credentials.nationalScholarship': '2024-2025 学年本科生国家奖学金',
+    'credentials.bioAccepted': 'ORCID 详细记录：Bioinformatics 论文已发表',
+    'credentials.bioTitle': '多肽工程语言模型工作，第二作者 / 本科生一作',
+    'credentials.aaai': '3D-MPG 稿件投稿 AAAI 2027，CCF A 会议',
+    'credentials.bib': '多肽性质预测基准稿件投稿 Briefings in Bioinformatics',
+    'credentials.youthHonor': '优秀共青团员标兵',
+    'credentials.xinghuoSpecial': '星火杯校级一等奖、院赛特等奖：面向任务自适应的分子预训练平台',
+    'credentials.lenovoScholarship': '2025联想奖学金',
+    'credentials.youthLeagueCert': '2024-2025 年度优秀共青团员',
+    'credentials.volunteerCert': '生涯规划教育学会志愿服务',
+    'credentials.airForceThanks': '空军工程大学感谢信',
+    'credentials.defense': '向低年级同学进行生涯规划分享',
+    'credentials.study': '课程之外的学习、交流与帮扶',
+    'credentials.meeting': '学生工作与校园服务',
+    'life.kicker': '生活剪影',
+    'life.heading': '科研、服务与<br><em>真实生活现场</em>',
+    'life.summary': '保留更有辨识度的科研实习、国际交流、交响乐团演出和志愿服务瞬间',
+    'life.air': '清华 AIR 科研实习',
+    'life.orchestra': '西电交响乐团小提琴演出',
+    'life.volunteer': '志愿服务与青少年公益活动',
+    'life.cambridge': '剑桥大学访学',
     'ticker.aidd': 'AI 药物发现',
     'ticker.ie': '科学信息抽取',
     'ticker.admet': 'ADMET 数据基础设施',
@@ -392,15 +404,6 @@ const saveLanguage = (lang) => {
   }
 };
 
-const updateShowcaseToggleCopy = () => {
-  const toggle = document.querySelector('[data-showcase-toggle]');
-  if (!toggle) return;
-  const activeLang = document.documentElement.lang === 'zh-CN' ? 'zh' : 'en';
-  const key = document.body.classList.contains('showcase-mode') ? 'showcase.close' : 'showcase.open';
-  toggle.textContent = translations[activeLang][key] || translations.en[key];
-  toggle.setAttribute('aria-pressed', String(document.body.classList.contains('showcase-mode')));
-};
-
 const setLanguage = (lang) => {
   const activeLang = translations[lang] ? lang : 'en';
   const copy = translations[activeLang];
@@ -428,7 +431,6 @@ const setLanguage = (lang) => {
     toggle.setAttribute('aria-pressed', String(activeLang === 'zh'));
   }
 
-  updateShowcaseToggleCopy();
   saveLanguage(activeLang);
 };
 
@@ -439,12 +441,6 @@ setLanguage(requestedLang || 'en');
 langToggle?.addEventListener('click', () => {
   const current = document.documentElement.lang === 'zh-CN' ? 'zh' : 'en';
   setLanguage(current === 'zh' ? 'en' : 'zh');
-});
-
-const showcaseToggle = document.querySelector('[data-showcase-toggle]');
-showcaseToggle?.addEventListener('click', () => {
-  document.body.classList.toggle('showcase-mode');
-  updateShowcaseToggleCopy();
 });
 
 const header = document.querySelector('.site-header');
@@ -551,7 +547,7 @@ if (matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion
   });
 }
 
-const galleryLinks = document.querySelectorAll('.credential-grid a[href^="assets/"], .publication-card a[href^="assets/"]');
+const galleryLinks = document.querySelectorAll('.credential-grid a[href^="assets/"], .life-gallery a[href^="assets/"], .publication-card a[href^="assets/"]');
 if (galleryLinks.length) {
   const lightbox = document.createElement('div');
   lightbox.className = 'lightbox';
