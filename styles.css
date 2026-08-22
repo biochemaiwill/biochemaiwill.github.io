@@ -1290,3 +1290,127 @@ a:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
     aspect-ratio:1.65/1;
   }
 }
+
+/* Balanced life gallery: keep Cambridge first without making the rest feel secondary. */
+@media(min-width:761px){
+  .life-gallery{
+    grid-template-columns:repeat(5,minmax(0,1fr))!important;
+    align-items:stretch;
+    gap:14px;
+  }
+  .life-gallery .life-card,
+  .life-gallery .life-feature{
+    grid-column:auto!important;
+    grid-row:auto!important;
+  }
+  .life-gallery .life-card a,
+  .life-gallery .life-feature a,
+  .life-gallery .life-card:not(.life-feature) a{
+    height:clamp(230px,19vw,290px)!important;
+    aspect-ratio:auto!important;
+    box-sizing:border-box!important;
+    padding:10px!important;
+  }
+  .life-gallery .life-card img,
+  .life-gallery .life-feature img{
+    width:100%;
+    height:100%!important;
+    object-fit:contain!important;
+    object-position:center!important;
+  }
+}
+
+/* Evidence gallery: prioritize complete, readable certificates and screenshots. */
+.credential-grid a,
+.credential-grid .proof-feature a,
+.credential-grid .orcid-record a,
+.credential-grid .material-wide a,
+.credential-grid .material-paper a,
+.credential-grid .material-certificate a,
+.credential-grid .material-poster a,
+.credential-grid .material-letter a{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  overflow:hidden!important;
+  background:#fff!important;
+}
+.credential-grid img,
+.credential-grid .fit-contain img,
+.credential-grid .material-poster img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:100%!important;
+  max-height:100%!important;
+  box-sizing:border-box!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  padding:8px!important;
+  background:#fff!important;
+}
+.credential-grid .material-poster img{
+  padding:4px!important;
+}
+
+@media(min-width:761px){
+  .credential-grid{
+    grid-auto-columns:calc((100% - 48px)/5)!important;
+  }
+  .credential-grid a,
+  .credential-grid .proof-feature a,
+  .credential-grid .orcid-record a,
+  .credential-grid .material-wide a,
+  .credential-grid .material-paper a{
+    height:166px!important;
+  }
+  .credential-grid .material-certificate a,
+  .credential-grid .material-poster a,
+  .credential-grid .material-letter a{
+    height:246px!important;
+  }
+}
+
+@media(max-width:760px){
+  .credential-grid{
+    grid-auto-columns:100%!important;
+  }
+  .credential-grid a,
+  .credential-grid .proof-feature a,
+  .credential-grid .material-wide a,
+  .credential-grid .material-paper a{
+    height:158px!important;
+  }
+  .credential-grid .material-certificate a,
+  .credential-grid .material-poster a,
+  .credential-grid .material-letter a{
+    height:230px!important;
+  }
+}
+
+@media(max-width:760px){
+  .life-gallery{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:10px;
+  }
+  .life-gallery .life-card,
+  .life-gallery .life-feature{
+    grid-column:auto!important;
+    grid-row:auto!important;
+  }
+  .life-gallery .life-card a,
+  .life-gallery .life-feature a,
+  .life-gallery .life-card:not(.life-feature) a{
+    height:220px!important;
+    aspect-ratio:auto!important;
+    box-sizing:border-box!important;
+    padding:8px!important;
+  }
+  .life-gallery .life-card img,
+  .life-gallery .life-feature img{
+    width:100%;
+    height:100%!important;
+    object-fit:contain!important;
+    object-position:center!important;
+  }
+}
