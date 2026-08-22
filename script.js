@@ -47,6 +47,13 @@ const translations = {
     'facts.focus.label': 'Focus',
     'facts.focus.org': 'AI4Science',
     'facts.focus.value': 'Data · Molecules · Proteins',
+    'mobile.kicker': 'Mobile overview',
+    'mobile.title': 'Research, honors and projects at a glance',
+    'mobile.rank': 'Track ranking',
+    'mobile.paper': 'Published work',
+    'mobile.scholarship.value': 'National',
+    'mobile.scholarship': 'Scholarship',
+    'mobile.service': 'Service record',
     'spotlight.scholarship.kicker': 'Scholarship',
     'spotlight.scholarship.value': 'National',
     'spotlight.scholarship.note': '2024-2025 National Scholarship',
@@ -107,10 +114,10 @@ const translations = {
     'credentials.meeting': 'Student committee and campus service work',
     'life.kicker': 'Life moments',
     'life.heading': 'Research, service<br><em>and life in motion</em>',
-    'life.summary': 'Research training, scholarship defense, international exchange and orchestra performance',
+    'life.summary': 'Research training, academic sharing, international exchange and orchestra performance',
     'life.air': 'Tsinghua AIR research internship',
-    'life.orchestra': 'Xidian Symphony Orchestra violin performance',
-    'life.defense': 'National Scholarship defense',
+    'life.orchestra': 'Xidian Symphony Orchestra performance',
+    'life.careerSharing': 'Career-planning sharing session',
     'life.cambridge': 'Cambridge summer visit',
     'ticker.aidd': 'AI for Drug Discovery',
     'ticker.ie': 'Scientific Information Extraction',
@@ -239,6 +246,13 @@ const translations = {
     'facts.focus.label': '方向',
     'facts.focus.org': 'AI for Science',
     'facts.focus.value': '数据 · 分子 · 蛋白质',
+    'mobile.kicker': '手机版概览',
+    'mobile.title': '研究、成果与经历快速查看',
+    'mobile.rank': '专业方向排名',
+    'mobile.paper': '已发表论文',
+    'mobile.scholarship.value': '国家奖学金',
+    'mobile.scholarship': '奖学金',
+    'mobile.service': '志愿服务记录',
     'spotlight.scholarship.kicker': '奖学金',
     'spotlight.scholarship.value': '国家奖学金',
     'spotlight.scholarship.note': '2024-2025 学年本科生国家奖学金',
@@ -299,10 +313,10 @@ const translations = {
     'credentials.meeting': '学生工作与校园服务',
     'life.kicker': '生活剪影',
     'life.heading': '科研、服务与<br><em>真实生活现场</em>',
-    'life.summary': '保留更有辨识度的科研实习、国家奖学金答辩、国际交流和交响乐团演出瞬间',
+    'life.summary': '保留更有辨识度的科研实习、生涯规划分享、国际交流和交响乐团演出瞬间',
     'life.air': '清华 AIR 科研实习',
-    'life.orchestra': '西电交响乐团小提琴演出',
-    'life.defense': '国家奖学金答辩',
+    'life.orchestra': '西电交响乐团演出',
+    'life.careerSharing': '生涯规划分享',
     'life.cambridge': '剑桥大学访学',
     'ticker.aidd': 'AI 药物发现',
     'ticker.ie': '科学信息抽取',
@@ -484,9 +498,10 @@ if ('IntersectionObserver' in window) {
   revealEls.forEach((el) => el.classList.add('visible'));
 }
 
-const navLinks = [...document.querySelectorAll('.nav a[href^="#"]')];
-const sections = navLinks
-  .map((link) => ({ link, section: document.querySelector(link.getAttribute('href')) }))
+const navLinks = [...document.querySelectorAll('.nav a[href^="#"], .mobile-bottom-nav a[href^="#"]')];
+const sectionMap = new Map(navLinks.map((link) => [link.getAttribute('href'), document.querySelector(link.getAttribute('href'))]));
+const sections = [...sectionMap.entries()]
+  .map(([href, section]) => ({ href, section }))
   .filter((item) => item.section);
 if (navLinks.length && sections.length) {
   const setActiveNav = () => {
@@ -495,7 +510,7 @@ if (navLinks.length && sections.length) {
     sections.forEach((item) => {
       if (item.section.offsetTop <= marker) active = item;
     });
-    navLinks.forEach((link) => link.classList.toggle('active', link === active.link));
+    navLinks.forEach((link) => link.classList.toggle('active', link.getAttribute('href') === active.href));
   };
   setActiveNav();
   window.addEventListener('scroll', setActiveNav, { passive: true });
