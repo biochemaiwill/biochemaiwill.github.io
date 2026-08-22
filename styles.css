@@ -1203,3 +1203,90 @@ a:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
     pointer-events:auto;
   }
 }
+
+/* Requested display refinements */
+@media(min-width:761px){
+  .life-gallery{
+    grid-template-columns:minmax(360px,1.25fr) repeat(4,minmax(0,.85fr));
+    gap:14px;
+    overflow:visible;
+    padding-bottom:0;
+  }
+  .life-gallery .life-feature{
+    grid-column:auto!important;
+    grid-row:auto!important;
+  }
+  .life-gallery .life-feature a{
+    height:clamp(330px,27vw,430px)!important;
+    padding:10px;
+  }
+  .life-gallery .life-feature img{
+    width:100%;
+    height:100%!important;
+    object-fit:contain!important;
+    object-position:center!important;
+  }
+  .life-gallery .life-card:not(.life-feature) a{
+    height:clamp(190px,16vw,250px)!important;
+  }
+}
+
+.publication-list{
+  display:grid;
+  grid-template-columns:1fr!important;
+  grid-auto-flow:row!important;
+  grid-auto-columns:auto!important;
+  overflow:visible!important;
+  padding:0!important;
+  cursor:auto;
+}
+.publication-card,
+.publication-featured{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) minmax(300px,.36fr)!important;
+  min-height:0!important;
+  width:100%!important;
+  align-items:center;
+}
+.publication-card a,
+.publication-featured a,
+.publication-thumb{
+  width:100%!important;
+  height:190px!important;
+  margin-top:0!important;
+}
+
+@media(max-width:760px){
+  .life-gallery{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    overflow:visible;
+    padding-bottom:0;
+  }
+  .life-gallery .life-feature{
+    grid-column:1/-1!important;
+  }
+  .life-gallery .life-feature a{
+    height:auto!important;
+    aspect-ratio:9/10!important;
+    padding:8px;
+  }
+  .life-gallery .life-feature img{
+    width:100%;
+    height:100%!important;
+    object-fit:contain!important;
+  }
+  .life-gallery .life-card:not(.life-feature) a{
+    height:190px!important;
+  }
+  .publication-card,
+  .publication-featured{
+    grid-template-columns:1fr!important;
+    gap:18px;
+  }
+  .publication-card a,
+  .publication-featured a,
+  .publication-thumb{
+    height:auto!important;
+    aspect-ratio:1.65/1;
+  }
+}
