@@ -451,10 +451,50 @@ const setLanguage = (lang) => {
 const langToggle = document.querySelector('[data-lang-toggle]');
 const queryLang = new URLSearchParams(window.location.search).get('lang');
 const requestedLang = translations[queryLang] ? queryLang : getSavedLanguage();
+const tickerTrack = document.querySelector('.ticker-track');
+let tickerResizeTimer;
+const setupTicker = () => {
+  if (!tickerTrack) return;
+
+  const groups = [...tickerTrack.querySelectorAll('.ticker-group')];
+  const template = groups[0];
+  if (!template) return;
+
+  groups.slice(1).forEach((group) => group.remove());
+  template.removeAttribute('aria-hidden');
+  tickerTrack.style.animation = 'none';
+  tickerTrack.style.transform = 'translateX(0)';
+
+  const groupWidth = template.getBoundingClientRect().width || template.scrollWidth;
+  if (!groupWidth) {
+    tickerTrack.style.animation = '';
+    tickerTrack.style.transform = '';
+    return;
+  }
+
+  const minTrackWidth = window.innerWidth + groupWidth * 2;
+  const copyCount = Math.max(4, Math.ceil(minTrackWidth / groupWidth));
+  for (let i = 1; i < copyCount; i += 1) {
+    const clone = template.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    tickerTrack.appendChild(clone);
+  }
+
+  tickerTrack.style.setProperty('--ticker-distance', `${groupWidth}px`);
+  tickerTrack.style.animation = '';
+  tickerTrack.style.transform = '';
+};
+
 setLanguage(requestedLang || 'en');
+setupTicker();
 langToggle?.addEventListener('click', () => {
   const current = document.documentElement.lang === 'zh-CN' ? 'zh' : 'en';
   setLanguage(current === 'zh' ? 'en' : 'zh');
+  setupTicker();
+});
+window.addEventListener('resize', () => {
+  window.clearTimeout(tickerResizeTimer);
+  tickerResizeTimer = window.setTimeout(setupTicker, 120);
 });
 
 const header = document.querySelector('.site-header');
