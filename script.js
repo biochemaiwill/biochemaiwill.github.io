@@ -20,6 +20,8 @@ const translations = {
     'hero.name.last': 'Wu',
     'hero.cnName': '吴天翔',
     'hero.lede': 'Building <em>reliable scientific data systems</em> and <em>representation learning methods</em> for computational drug discovery.',
+    'showcase.open': 'Showcase ✦',
+    'showcase.close': 'Exit mode ✕',
     'portrait.kicker': 'Academic profile',
     'portrait.name': 'Tianxiang Wu / 吴天翔',
     'portrait.desc': 'Computer Science undergraduate · AI for Drug Discovery',
@@ -47,6 +49,19 @@ const translations = {
     'facts.focus.label': 'Focus',
     'facts.focus.org': 'AI4Science',
     'facts.focus.value': 'Data · Molecules · Proteins',
+    'spotlight.scholarship.kicker': 'Scholarship',
+    'spotlight.scholarship.value': 'National',
+    'spotlight.scholarship.note': '2024-2025 National Scholarship',
+    'spotlight.paper.kicker': 'Publication',
+    'spotlight.paper.value': 'CCF A',
+    'spotlight.paper.note': 'Bioinformatics accepted work',
+    'spotlight.geometry.kicker': 'Submission',
+    'spotlight.geometry.value': 'AAAI 2027',
+    'spotlight.geometry.note': '3D molecular pretraining',
+    'spotlight.rank.kicker': 'Academic',
+    'spotlight.rank.note': 'Track ranking',
+    'spotlight.service.kicker': 'Service',
+    'spotlight.service.note': 'Volunteer service record',
     scroll: 'Scroll to research',
     'profile.kicker': 'Academic snapshot',
     'profile.heading': 'A profile across <em>research, honors and service.</em>',
@@ -114,7 +129,7 @@ const translations = {
     'project3.desc': 'Built and trained a peptide instruction model with LLaMA-2 LoRA, covering function description, sequence design, property prediction and physicochemical optimization; published in Bioinformatics.',
     'project4.type': '04 / 3D molecular pretraining',
     'project4.title': '3D-MPG geometry<br><em>pretraining</em>',
-    'project4.desc': 'Led a 3D molecular pretraining subproject, introducing E(3)-equivariant heads and geometry-aware pretraining tasks for conformation generation and molecule-ligand interaction prediction; submitted to AAAI 2027.',
+    'project4.desc': 'Led a subproject under a National Natural Science Foundation of China General Program, introducing E(3)-equivariant heads and geometry-aware pretraining tasks for conformation generation and molecule-ligand interaction prediction; submitted to AAAI 2027.',
     'project5.type': '05 / Task-adaptive molecular platform',
     'project5.title': 'Molecular pretraining<br><em>platform</em>',
     'project5.desc': 'Built a task-adaptive molecular pretraining platform covering pretraining, fine-tuning, optimization, packaging and visualization; recognized with Xinghuo Cup university first prize and college-level special prize.',
@@ -191,6 +206,8 @@ const translations = {
     'hero.name.last': 'Tianxiang Wu',
     'hero.cnName': '西安电子科技大学 · 计算机科学与技术',
     'hero.lede': '构建用于计算药物发现的<em>可靠科学数据系统</em>与<em>表征学习方法</em>。',
+    'showcase.open': '演示 ✦',
+    'showcase.close': '退出 ✕',
     'portrait.kicker': '个人学术主页',
     'portrait.name': '吴天翔 / Tianxiang Wu',
     'portrait.desc': '计算机科学与技术本科生 · AI 药物发现方向',
@@ -218,6 +235,19 @@ const translations = {
     'facts.focus.label': '方向',
     'facts.focus.org': 'AI for Science',
     'facts.focus.value': '数据 · 分子 · 蛋白质',
+    'spotlight.scholarship.kicker': '奖学金',
+    'spotlight.scholarship.value': '国家奖学金',
+    'spotlight.scholarship.note': '2024-2025 学年本科生国家奖学金',
+    'spotlight.paper.kicker': '论文',
+    'spotlight.paper.value': 'CCF A',
+    'spotlight.paper.note': 'Bioinformatics 已接收工作',
+    'spotlight.geometry.kicker': '投稿',
+    'spotlight.geometry.value': 'AAAI 2027',
+    'spotlight.geometry.note': '三维分子预训练稿件',
+    'spotlight.rank.kicker': '学业',
+    'spotlight.rank.note': '专业方向排名',
+    'spotlight.service.kicker': '服务',
+    'spotlight.service.note': '累计志愿服务记录',
     scroll: '查看研究',
     'profile.kicker': '学术概览',
     'profile.heading': '本科阶段的<em>综合发展总览。</em>',
@@ -285,7 +315,7 @@ const translations = {
     'project3.desc': '负责肽指令微调大模型的结构搭建与训练实现，完成 LLaMA-2 LoRA 高效微调，以及功能描述、序列设计、性质预测、理化优化全流程实验；成果发表于 Bioinformatics。',
     'project4.type': '04 / 三维分子预训练',
     'project4.title': '3D-MPG 几何<br><em>预训练</em>',
-    'project4.desc': '作为三维分子预训练子课题负责人，在二维预训练模型中引入 EGNN 的 E(3) 等变头，设计分子适配打分与构象微调预训练任务，并投稿 AAAI 2027。',
+    'project4.desc': '作为国家自然科学基金面上项目子课题负责人，在二维预训练模型中引入 EGNN 的 E(3) 等变头，设计分子适配打分与构象微调预训练任务，并投稿 AAAI 2027。',
     'project5.type': '05 / 任务自适应分子平台',
     'project5.title': '分子预训练<br><em>工程化平台</em>',
     'project5.desc': '负责模型预训练、微调优化、封装及可视化平台开发，构建可迭代、可扩展的任务自适应分子预训练系统；获星火杯校级一等奖和院赛特等奖。',
@@ -362,6 +392,15 @@ const saveLanguage = (lang) => {
   }
 };
 
+const updateShowcaseToggleCopy = () => {
+  const toggle = document.querySelector('[data-showcase-toggle]');
+  if (!toggle) return;
+  const activeLang = document.documentElement.lang === 'zh-CN' ? 'zh' : 'en';
+  const key = document.body.classList.contains('showcase-mode') ? 'showcase.close' : 'showcase.open';
+  toggle.textContent = translations[activeLang][key] || translations.en[key];
+  toggle.setAttribute('aria-pressed', String(document.body.classList.contains('showcase-mode')));
+};
+
 const setLanguage = (lang) => {
   const activeLang = translations[lang] ? lang : 'en';
   const copy = translations[activeLang];
@@ -389,6 +428,7 @@ const setLanguage = (lang) => {
     toggle.setAttribute('aria-pressed', String(activeLang === 'zh'));
   }
 
+  updateShowcaseToggleCopy();
   saveLanguage(activeLang);
 };
 
@@ -399,6 +439,12 @@ setLanguage(requestedLang || 'en');
 langToggle?.addEventListener('click', () => {
   const current = document.documentElement.lang === 'zh-CN' ? 'zh' : 'en';
   setLanguage(current === 'zh' ? 'en' : 'zh');
+});
+
+const showcaseToggle = document.querySelector('[data-showcase-toggle]');
+showcaseToggle?.addEventListener('click', () => {
+  document.body.classList.toggle('showcase-mode');
+  updateShowcaseToggleCopy();
 });
 
 const header = document.querySelector('.site-header');
