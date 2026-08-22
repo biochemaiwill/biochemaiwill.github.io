@@ -85,8 +85,9 @@ const translations = {
     'credentials.bib': 'Peptide property prediction benchmark manuscript submitted to Briefings in Bioinformatics.',
     'credentials.youthHonor': 'Outstanding Communist Youth League Member Model.',
     'credentials.xinghuoSpecial': 'Xinghuo Cup university first prize and college-level special prize for task-adaptive molecular pretraining.',
-    'credentials.xinghuoFirst': 'Xinghuo Cup school-level first prize for an on-device AI campus application.',
-    'credentials.cambridge': 'St Edmund\'s Global Programme in Computer Science and Coding, Cambridge University.',
+    'credentials.lenovoScholarship': '2025 Lenovo Scholarship.',
+    'credentials.youthLeagueCert': 'Outstanding Communist Youth League Member, 2024-2025.',
+    'credentials.volunteerCert': 'Volunteer service for career-planning education work.',
     'credentials.defense': 'Career-planning sharing session for junior students.',
     'credentials.study': 'Study, academic exchange and peer support beyond coursework.',
     'credentials.meeting': 'Student committee and campus service work.',
@@ -255,8 +256,9 @@ const translations = {
     'credentials.bib': '多肽性质预测基准稿件投稿 Briefings in Bioinformatics。',
     'credentials.youthHonor': '优秀共青团员标兵。',
     'credentials.xinghuoSpecial': '星火杯校级一等奖、院赛特等奖：面向任务自适应的分子预训练平台。',
-    'credentials.xinghuoFirst': '星火杯院级一等奖：基于端侧 AI 的校园失物智能识别与管理应用。',
-    'credentials.cambridge': '剑桥大学 St Edmund\'s Global Programme 计算机科学与编程项目。',
+    'credentials.lenovoScholarship': '2025联想奖学金。',
+    'credentials.youthLeagueCert': '2024-2025 年度优秀共青团员。',
+    'credentials.volunteerCert': '生涯规划教育学会志愿服务。',
     'credentials.defense': '向低年级同学进行生涯规划分享。',
     'credentials.study': '课程之外的学习、交流与帮扶。',
     'credentials.meeting': '学生工作与校园服务。',
@@ -440,6 +442,24 @@ if ('IntersectionObserver' in window) {
   revealEls.forEach((el) => el.classList.add('visible'));
 }
 
+const navLinks = [...document.querySelectorAll('.nav a[href^="#"]')];
+const sections = navLinks
+  .map((link) => ({ link, section: document.querySelector(link.getAttribute('href')) }))
+  .filter((item) => item.section);
+if (navLinks.length && sections.length) {
+  const setActiveNav = () => {
+    const marker = window.scrollY + 130;
+    let active = sections[0];
+    sections.forEach((item) => {
+      if (item.section.offsetTop <= marker) active = item;
+    });
+    navLinks.forEach((link) => link.classList.toggle('active', link === active.link));
+  };
+  setActiveNav();
+  window.addEventListener('scroll', setActiveNav, { passive: true });
+  window.addEventListener('resize', setActiveNav);
+}
+
 document.documentElement.classList.add('js');
 
 if (matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -468,5 +488,57 @@ if (matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion
       card.style.removeProperty('--mx');
       card.style.removeProperty('--my');
     });
+  });
+
+  document.querySelectorAll('.credential-grid figure').forEach((card) => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      card.style.setProperty('--mx', `${x.toFixed(1)}%`);
+      card.style.setProperty('--my', `${y.toFixed(1)}%`);
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.removeProperty('--mx');
+      card.style.removeProperty('--my');
+    });
+  });
+}
+
+const galleryLinks = document.querySelectorAll('.credential-grid a[href^="assets/"], .publication-card a[href^="assets/"]');
+if (galleryLinks.length) {
+  const lightbox = document.createElement('div');
+  lightbox.className = 'lightbox';
+  lightbox.setAttribute('role', 'dialog');
+  lightbox.setAttribute('aria-modal', 'true');
+  lightbox.innerHTML = '<button class="lightbox-close" type="button" aria-label="Close preview">×</button><img alt=""><div class="lightbox-caption"></div>';
+  document.body.appendChild(lightbox);
+
+  const lightboxImage = lightbox.querySelector('img');
+  const lightboxCaption = lightbox.querySelector('.lightbox-caption');
+  const closeLightbox = () => {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  };
+
+  galleryLinks.forEach((link) => {
+    link.addEventListener('click', (event) => {
+      const image = link.querySelector('img');
+      if (!image) return;
+      event.preventDefault();
+      lightboxImage.src = link.href;
+      lightboxImage.alt = image.alt || '';
+      lightboxCaption.textContent = link.closest('figure, article')?.querySelector('figcaption, h3')?.textContent?.trim() || image.alt || '';
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  lightbox.querySelector('.lightbox-close')?.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (event) => {
+    if (event.target === lightbox) closeLightbox();
+  });
+  window.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
   });
 }
