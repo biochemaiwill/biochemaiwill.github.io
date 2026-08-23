@@ -1466,8 +1466,18 @@ a:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
 }
 .scroll-button span{
   display:block;
-  transform:translateY(-1px);
-  font:800 42px/1 var(--serif);
+  width:16px;
+  height:16px;
+  border-top:4px solid currentColor;
+  border-right:4px solid currentColor;
+  border-radius:2px;
+  filter:drop-shadow(0 0 10px rgba(121,219,255,.24));
+}
+.scroll-button-prev span{
+  transform:translateX(3px) rotate(-135deg);
+}
+.scroll-button-next span{
+  transform:translateX(-3px) rotate(45deg);
 }
 .scroll-button-prev{left:14px}
 .scroll-button-next{right:14px}
@@ -1538,7 +1548,11 @@ a:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
     height:44px;
     box-shadow:0 18px 42px rgba(6,17,31,.3),0 0 0 5px rgba(255,255,255,.6);
   }
-  .scroll-button span{font-size:34px}
+  .scroll-button span{
+    width:13px;
+    height:13px;
+    border-width:3px;
+  }
   .scroll-button-prev{left:8px}
   .scroll-button-next{right:8px}
   .has-horizontal-scroll::-webkit-scrollbar{height:14px}

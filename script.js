@@ -662,7 +662,7 @@ const setupHorizontalAffordances = () => {
       const controls = document.createElement('div');
       controls.className = 'scroll-controls';
       controls.setAttribute('aria-hidden', 'true');
-      controls.innerHTML = '<button class="scroll-button scroll-button-prev" type="button" tabindex="-1"><span>‹</span></button><button class="scroll-button scroll-button-next" type="button" tabindex="-1"><span>›</span></button>';
+      controls.innerHTML = '<button class="scroll-button scroll-button-prev" type="button" tabindex="-1"><span></span></button><button class="scroll-button scroll-button-next" type="button" tabindex="-1"><span></span></button>';
       shell.appendChild(controls);
 
       hint.querySelector('[data-i18n="scroll.hint"]').textContent = translations[document.documentElement.lang === 'zh-CN' ? 'zh' : 'en']['scroll.hint'];
