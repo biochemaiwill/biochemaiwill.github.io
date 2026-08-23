@@ -207,6 +207,7 @@ const translations = {
     'outputs.desc': 'Selected published and submitted work is presented with current status, authorship role and supporting records.',
     'outputs.orcid': 'View ORCID record',
     'outputs.paperLink': 'View published paper',
+    'scroll.hint': 'Drag or scroll sideways',
     'pub1.status': 'Published · Bioinformatics · <strong>CCF A</strong>',
     'pub1.desc': 'Second author / undergraduate lead author. The work connects instruction-tuned language modeling with peptide engineering tasks and was published in Bioinformatics.',
     'pub2.status': 'Submitted · AAAI 2027 · <strong>CCF A</strong>',
@@ -426,6 +427,7 @@ const translations = {
     'outputs.desc': '已发表论文与投稿中稿件列明发表状态、作者贡献及相关学术记录。',
     'outputs.orcid': '查看 ORCID 记录',
     'outputs.paperLink': '查看已发表论文',
+    'scroll.hint': '拖动查看更多',
     'pub1.status': '已发表 · Bioinformatics · <strong>CCF A</strong>',
     'pub1.desc': '第二作者 / 本科生一作。工作将指令微调语言模型与多肽工程任务结合，发表于 Bioinformatics。',
     'pub2.status': '投稿中 · AAAI 2027 · <strong>CCF A</strong>',
@@ -632,6 +634,56 @@ if (internalAnchorLinks.length) {
 
 document.documentElement.classList.add('js');
 
+const horizontalScrollerSelector = '.credential-grid, .research-mosaic, .publication-list, .evidence-board, .life-gallery';
+const horizontalScrollers = [...document.querySelectorAll(horizontalScrollerSelector)];
+
+const setupHorizontalAffordances = () => {
+  horizontalScrollers.forEach((scroller) => {
+    let shell = scroller.parentElement?.classList.contains('scroll-shell') ? scroller.parentElement : null;
+
+    if (!shell) {
+      shell = document.createElement('div');
+      shell.className = 'scroll-shell';
+      scroller.parentNode.insertBefore(shell, scroller);
+      shell.appendChild(scroller);
+
+      const hint = document.createElement('div');
+      hint.className = 'scroll-affordance';
+      hint.setAttribute('aria-hidden', 'true');
+      hint.innerHTML = '<span data-i18n="scroll.hint"></span><b></b>';
+      shell.appendChild(hint);
+
+      const progressRail = document.createElement('div');
+      progressRail.className = 'scroll-rail';
+      progressRail.setAttribute('aria-hidden', 'true');
+      progressRail.innerHTML = '<i></i>';
+      shell.appendChild(progressRail);
+
+      hint.querySelector('[data-i18n="scroll.hint"]').textContent = translations[document.documentElement.lang === 'zh-CN' ? 'zh' : 'en']['scroll.hint'];
+    }
+
+    const updateState = () => {
+      const maxScroll = scroller.scrollWidth - scroller.clientWidth;
+      const scrollable = maxScroll > 8;
+      const progressValue = scrollable ? Math.min(Math.max(scroller.scrollLeft / maxScroll, 0), 1) : 0;
+
+      shell.classList.toggle('is-scrollable', scrollable);
+      shell.classList.toggle('can-scroll-left', scrollable && scroller.scrollLeft > 8);
+      shell.classList.toggle('can-scroll-right', scrollable && scroller.scrollLeft < maxScroll - 8);
+      shell.classList.toggle('has-been-scrolled', scrollable && scroller.scrollLeft > 24);
+      shell.style.setProperty('--scroll-progress', progressValue.toFixed(4));
+      scroller.classList.toggle('has-horizontal-scroll', scrollable);
+    };
+
+    updateState();
+    scroller.addEventListener('scroll', updateState, { passive: true });
+    window.addEventListener('resize', updateState);
+    window.setTimeout(updateState, 450);
+  });
+};
+
+setupHorizontalAffordances();
+
 if (matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
   const visual = document.querySelector('.portrait-card');
   if (visual) {
@@ -674,7 +726,7 @@ if (matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion
     });
   });
 
-  document.querySelectorAll('.credential-grid, .research-mosaic, .publication-list, .evidence-board, .life-gallery').forEach((scroller) => {
+  horizontalScrollers.forEach((scroller) => {
     let startX = 0;
     let startScroll = 0;
     let dragging = false;
