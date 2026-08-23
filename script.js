@@ -207,7 +207,7 @@ const translations = {
     'outputs.desc': 'Selected published and submitted work is presented with current status, authorship role and supporting records.',
     'outputs.orcid': 'View ORCID record',
     'outputs.paperLink': 'View published paper',
-    'scroll.hint': 'Drag or scroll sideways',
+    'scroll.hint': 'Click arrows or drag sideways',
     'pub1.status': 'Published · Bioinformatics · <strong>CCF A</strong>',
     'pub1.desc': 'Second author / undergraduate lead author. The work connects instruction-tuned language modeling with peptide engineering tasks and was published in Bioinformatics.',
     'pub2.status': 'Submitted · AAAI 2027 · <strong>CCF A</strong>',
@@ -427,7 +427,7 @@ const translations = {
     'outputs.desc': '已发表论文与投稿中稿件列明发表状态、作者贡献及相关学术记录。',
     'outputs.orcid': '查看 ORCID 记录',
     'outputs.paperLink': '查看已发表论文',
-    'scroll.hint': '拖动查看更多',
+    'scroll.hint': '点击箭头或拖动查看更多',
     'pub1.status': '已发表 · Bioinformatics · <strong>CCF A</strong>',
     'pub1.desc': '第二作者 / 本科生一作。工作将指令微调语言模型与多肽工程任务结合，发表于 Bioinformatics。',
     'pub2.status': '投稿中 · AAAI 2027 · <strong>CCF A</strong>',
@@ -659,13 +659,28 @@ const setupHorizontalAffordances = () => {
       progressRail.innerHTML = '<i></i>';
       shell.appendChild(progressRail);
 
+      const controls = document.createElement('div');
+      controls.className = 'scroll-controls';
+      controls.setAttribute('aria-hidden', 'true');
+      controls.innerHTML = '<button class="scroll-button scroll-button-prev" type="button" tabindex="-1"><span>‹</span></button><button class="scroll-button scroll-button-next" type="button" tabindex="-1"><span>›</span></button>';
+      shell.appendChild(controls);
+
       hint.querySelector('[data-i18n="scroll.hint"]').textContent = translations[document.documentElement.lang === 'zh-CN' ? 'zh' : 'en']['scroll.hint'];
+
+      controls.querySelector('.scroll-button-prev').addEventListener('click', () => {
+        scroller.scrollBy({ left: -Math.max(scroller.clientWidth * 0.82, 280), behavior: 'smooth' });
+      });
+      controls.querySelector('.scroll-button-next').addEventListener('click', () => {
+        scroller.scrollBy({ left: Math.max(scroller.clientWidth * 0.82, 280), behavior: 'smooth' });
+      });
     }
 
     const updateState = () => {
       const maxScroll = scroller.scrollWidth - scroller.clientWidth;
       const scrollable = maxScroll > 8;
       const progressValue = scrollable ? Math.min(Math.max(scroller.scrollLeft / maxScroll, 0), 1) : 0;
+      const prevButton = shell.querySelector('.scroll-button-prev');
+      const nextButton = shell.querySelector('.scroll-button-next');
 
       shell.classList.toggle('is-scrollable', scrollable);
       shell.classList.toggle('can-scroll-left', scrollable && scroller.scrollLeft > 8);
@@ -673,6 +688,8 @@ const setupHorizontalAffordances = () => {
       shell.classList.toggle('has-been-scrolled', scrollable && scroller.scrollLeft > 24);
       shell.style.setProperty('--scroll-progress', progressValue.toFixed(4));
       scroller.classList.toggle('has-horizontal-scroll', scrollable);
+      if (prevButton) prevButton.disabled = !scrollable || scroller.scrollLeft <= 8;
+      if (nextButton) nextButton.disabled = !scrollable || scroller.scrollLeft >= maxScroll - 8;
     };
 
     updateState();
