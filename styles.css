@@ -1321,6 +1321,64 @@ a:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
 }
 
 /* Clear horizontal browsing affordance for public demos. */
+.arts-proof{
+  display:grid;
+  grid-template-columns:auto minmax(230px,.55fr) 1fr;
+  gap:14px 18px;
+  align-items:center;
+  margin:-18px 0 24px;
+  padding:16px 18px;
+  border:1px solid rgba(11,18,32,.12);
+  border-radius:var(--radius);
+  background:linear-gradient(135deg,rgba(255,255,255,.82),rgba(233,242,239,.66));
+  box-shadow:0 18px 54px rgba(19,35,53,.08);
+  position:relative;
+  overflow:hidden;
+}
+.arts-proof:before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(110deg,transparent 0,rgba(79,201,255,.1) 35%,rgba(215,173,88,.12) 58%,transparent 85%);
+  pointer-events:none;
+}
+.arts-proof>*{position:relative;z-index:1}
+.arts-proof>span{
+  padding:8px 10px;
+  border:1px solid rgba(34,117,150,.18);
+  border-radius:999px;
+  background:rgba(255,255,255,.72);
+  font:800 9px/1 var(--mono);
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  color:#227596;
+}
+.arts-proof strong{
+  font:750 clamp(21px,2vw,34px)/1 var(--sans);
+  letter-spacing:-.045em;
+  color:#0d1828;
+}
+.arts-proof p{margin:0;font:15px/1.55 var(--serif);color:#5b6670}
+.arts-proof div{
+  grid-column:1/-1;
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.arts-proof b{
+  display:inline-flex;
+  align-items:center;
+  min-height:30px;
+  padding:0 11px;
+  border:1px solid rgba(11,18,32,.1);
+  border-radius:999px;
+  background:rgba(255,255,255,.76);
+  font:800 10px/1 var(--mono);
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:#334454;
+}
+
 .scroll-shell{
   position:relative;
   isolation:isolate;
@@ -1536,6 +1594,16 @@ a:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
 }
 
 @media(max-width:760px){
+  .arts-proof{
+    grid-template-columns:1fr;
+    gap:10px;
+    margin:0 0 16px;
+    padding:14px;
+  }
+  .arts-proof>span{justify-self:start}
+  .arts-proof strong{font-size:24px}
+  .arts-proof p{font-size:14px;line-height:1.5}
+  .arts-proof b{font-size:9px;letter-spacing:.04em;min-height:28px}
   .scroll-shell:before,
   .scroll-shell:after{
     bottom:18px;
@@ -1628,13 +1696,11 @@ a:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
   .credential-grid a,
   .credential-grid .proof-feature a,
   .credential-grid .material-wide a,
-  .credential-grid .material-paper a{
-    height:158px!important;
-  }
+  .credential-grid .material-paper a,
   .credential-grid .material-certificate a,
   .credential-grid .material-poster a,
   .credential-grid .material-letter a{
-    height:230px!important;
+    height:166px!important;
   }
 }
 
