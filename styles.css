@@ -1294,7 +1294,7 @@ a:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
 /* Balanced life gallery: keep Cambridge first without making the rest feel secondary. */
 @media(min-width:761px){
   .life-gallery{
-    grid-template-columns:repeat(5,minmax(0,1fr))!important;
+    grid-template-columns:repeat(6,minmax(0,1fr))!important;
     align-items:stretch;
     gap:14px;
   }
