@@ -218,7 +218,7 @@ const translations = {
     'outputs.desc': 'Selected published and submitted work is presented with current status, authorship role and supporting records.',
     'outputs.orcid': 'View ORCID record',
     'outputs.paperLink': 'View published paper',
-    'scroll.hint': 'Click arrows or drag sideways',
+    'scroll.hint': 'Drag or click arrows',
     'pub1.status': 'Published · Bioinformatics · <strong>CCF A</strong>',
     'pub1.desc': 'Second author / undergraduate lead author. The work connects instruction-tuned language modeling with peptide engineering tasks and was published in Bioinformatics.',
     'pub2.status': 'Submitted · AAAI 2027 · <strong>CCF A</strong>',
@@ -449,7 +449,7 @@ const translations = {
     'outputs.desc': '已发表论文与投稿中稿件列明发表状态、作者贡献及相关学术记录。',
     'outputs.orcid': '查看 ORCID 记录',
     'outputs.paperLink': '查看已发表论文',
-    'scroll.hint': '点击箭头或拖动查看更多',
+    'scroll.hint': '拖动或点箭头查看更多',
     'pub1.status': '已发表 · Bioinformatics · <strong>CCF A</strong>',
     'pub1.desc': '第二作者 / 本科生一作。工作将指令微调语言模型与多肽工程任务结合，发表于 Bioinformatics。',
     'pub2.status': '投稿中 · AAAI 2027 · <strong>CCF A</strong>',
@@ -607,11 +607,14 @@ const navLinks = [...document.querySelectorAll('.nav a[href^="#"], .mobile-botto
 const sectionMap = new Map(navLinks.map((link) => [link.getAttribute('href'), document.querySelector(link.getAttribute('href'))]));
 const sections = [...sectionMap.entries()]
   .map(([href, section]) => ({ href, section }))
-  .filter((item) => item.section);
+  .filter((item) => item.section)
+  .sort((a, b) => (
+    a.section.compareDocumentPosition(b.section) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1
+  ));
 let syncActiveNav = () => {};
 if (navLinks.length && sections.length) {
   syncActiveNav = () => {
-    const marker = window.scrollY + Math.min(180, window.innerHeight * 0.3);
+    const marker = window.scrollY + Math.min(260, window.innerHeight * 0.35);
     let active = sections[0];
     sections.forEach((item) => {
       if (item.section.offsetTop <= marker) active = item;
@@ -623,7 +626,7 @@ if (navLinks.length && sections.length) {
     const hashMatch = sections.find((item) => item.href === window.location.hash);
     if (hashMatch) {
       const rect = hashMatch.section.getBoundingClientRect();
-      if (rect.top <= 190 && rect.bottom > 140) active = hashMatch;
+      if (rect.top <= Math.min(430, window.innerHeight * 0.55) && rect.bottom > 90) active = hashMatch;
     }
 
     navLinks.forEach((link) => link.classList.toggle('active', link.getAttribute('href') === active.href));
