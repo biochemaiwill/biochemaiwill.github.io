@@ -563,6 +563,7 @@ window.addEventListener('resize', () => {
 
 const header = document.querySelector('.site-header');
 const progress = document.querySelector('.scroll-progress');
+const rootStyle = document.documentElement.style;
 const onScroll = () => {
   header?.classList.toggle('scrolled', window.scrollY > 24);
   document.body.classList.toggle('show-mobile-nav', window.scrollY > window.innerHeight * 0.55);
@@ -575,6 +576,13 @@ const onScroll = () => {
 };
 onScroll();
 window.addEventListener('scroll', onScroll, { passive: true });
+
+if (matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  window.addEventListener('pointermove', (event) => {
+    rootStyle.setProperty('--cursor-x', `${event.clientX}px`);
+    rootStyle.setProperty('--cursor-y', `${event.clientY}px`);
+  }, { passive: true });
+}
 
 const revealEls = document.querySelectorAll('.reveal');
 const revealIfInView = (el) => {
@@ -662,10 +670,12 @@ if (internalAnchorLinks.length) {
       history.pushState(null, '', hash);
       scrollToTarget(target);
       syncActiveNav();
+      revealEls.forEach(revealIfInView);
       [650, 1400].forEach((delay) => {
         window.setTimeout(() => {
           scrollToTarget(target, false);
           syncActiveNav();
+          revealEls.forEach(revealIfInView);
         }, delay);
       });
     });
