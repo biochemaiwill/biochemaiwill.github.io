@@ -27,6 +27,8 @@ const translations = {
     'portrait.badge1': 'National Scholarship',
     'portrait.badge2': 'Bioinformatics · CCF A',
     'portrait.badge3': 'Rank 2 / 96',
+    'hero.cta.research': 'View research',
+    'hero.cta.outputs': 'View outputs',
     'visual.topline': 'RESEARCH GRAPH / LIVE',
     'visual.title': 'Research map',
     'visual.desc': 'An abstract network linking scientific data, molecular models, protein structure and drug discovery.',
@@ -55,6 +57,8 @@ const translations = {
     'mobile.scholarship.value': 'National',
     'mobile.scholarship': 'Scholarship',
     'mobile.service': 'Service record',
+    'mobile.cta.research': 'View research projects',
+    'mobile.cta.outputs': 'View papers and outputs',
     'spotlight.scholarship.kicker': 'Scholarship',
     'spotlight.scholarship.value': 'National',
     'spotlight.scholarship.note': '2024-2025 National Scholarship',
@@ -254,6 +258,8 @@ const translations = {
     'portrait.badge1': '国家奖学金',
     'portrait.badge2': 'Bioinformatics · CCF A',
     'portrait.badge3': '专业方向 2 / 96',
+    'hero.cta.research': '看研究项目',
+    'hero.cta.outputs': '看论文成果',
     'visual.topline': '研究图谱 / LIVE',
     'visual.title': '研究图谱',
     'visual.desc': '连接科学数据、分子模型、蛋白结构与药物发现的抽象研究网络。',
@@ -282,6 +288,8 @@ const translations = {
     'mobile.scholarship.value': '国家奖学金',
     'mobile.scholarship': '奖学金',
     'mobile.service': '志愿服务记录',
+    'mobile.cta.research': '看研究项目',
+    'mobile.cta.outputs': '看论文成果',
     'spotlight.scholarship.kicker': '奖学金',
     'spotlight.scholarship.value': '国家奖学金',
     'spotlight.scholarship.note': '2024-2025 学年本科生国家奖学金',
@@ -600,18 +608,29 @@ const sectionMap = new Map(navLinks.map((link) => [link.getAttribute('href'), do
 const sections = [...sectionMap.entries()]
   .map(([href, section]) => ({ href, section }))
   .filter((item) => item.section);
+let syncActiveNav = () => {};
 if (navLinks.length && sections.length) {
-  const setActiveNav = () => {
-    const marker = window.scrollY + 130;
+  syncActiveNav = () => {
+    const marker = window.scrollY + Math.min(180, window.innerHeight * 0.3);
     let active = sections[0];
     sections.forEach((item) => {
       if (item.section.offsetTop <= marker) active = item;
     });
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) {
+      active = sections[sections.length - 1];
+    }
+
+    const hashMatch = sections.find((item) => item.href === window.location.hash);
+    if (hashMatch) {
+      const rect = hashMatch.section.getBoundingClientRect();
+      if (rect.top <= 190 && rect.bottom > 140) active = hashMatch;
+    }
+
     navLinks.forEach((link) => link.classList.toggle('active', link.getAttribute('href') === active.href));
   };
-  setActiveNav();
-  window.addEventListener('scroll', setActiveNav, { passive: true });
-  window.addEventListener('resize', setActiveNav);
+  syncActiveNav();
+  window.addEventListener('scroll', syncActiveNav, { passive: true });
+  window.addEventListener('resize', syncActiveNav);
 }
 
 const internalAnchorLinks = [...document.querySelectorAll('a[href^="#"]')];
@@ -622,7 +641,7 @@ if (internalAnchorLinks.length) {
     const top = Math.max(0, window.scrollY + target.getBoundingClientRect().top - margin);
     window.scrollTo({ top, behavior: smooth && !prefersReducedMotion ? 'smooth' : 'auto' });
 
-    const horizontalScroller = target.closest('.credential-grid, .research-mosaic, .publication-list, .evidence-board');
+    const horizontalScroller = target.closest('.credential-grid, .research-mosaic, .publication-list, .evidence-board, .life-gallery');
     if (horizontalScroller && horizontalScroller.scrollWidth > horizontalScroller.clientWidth + 8) {
       const left = Math.max(0, target.offsetLeft - (horizontalScroller.clientWidth - target.clientWidth) / 2);
       horizontalScroller.scrollTo({ left, behavior: smooth && !prefersReducedMotion ? 'smooth' : 'auto' });
@@ -639,8 +658,12 @@ if (internalAnchorLinks.length) {
       event.preventDefault();
       history.pushState(null, '', hash);
       scrollToTarget(target);
+      syncActiveNav();
       [650, 1400].forEach((delay) => {
-        window.setTimeout(() => scrollToTarget(target, false), delay);
+        window.setTimeout(() => {
+          scrollToTarget(target, false);
+          syncActiveNav();
+        }, delay);
       });
     });
   });
