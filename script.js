@@ -634,7 +634,7 @@ if (navLinks.length && sections.length) {
     const hashMatch = sections.find((item) => item.href === window.location.hash);
     if (hashMatch) {
       const rect = hashMatch.section.getBoundingClientRect();
-      if (rect.top <= Math.min(430, window.innerHeight * 0.55) && rect.bottom > 90) active = hashMatch;
+      if (rect.top <= Math.min(720, window.innerHeight * 0.82) && rect.bottom > 90) active = hashMatch;
     }
 
     navLinks.forEach((link) => link.classList.toggle('active', link.getAttribute('href') === active.href));
@@ -835,6 +835,21 @@ if (matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion
       event.preventDefault();
       event.stopPropagation();
     }, true);
+
+    scroller.addEventListener('wheel', (event) => {
+      const maxScroll = scroller.scrollWidth - scroller.clientWidth;
+      if (maxScroll <= 8) return;
+
+      const verticalIntent = Math.abs(event.deltaY) > Math.abs(event.deltaX);
+      if (!verticalIntent) return;
+
+      const atStart = scroller.scrollLeft <= 0;
+      const atEnd = scroller.scrollLeft >= maxScroll - 1;
+      if ((event.deltaY < 0 && atStart) || (event.deltaY > 0 && atEnd)) return;
+
+      event.preventDefault();
+      scroller.scrollBy({ left: event.deltaY, behavior: 'auto' });
+    }, { passive: false });
   });
 }
 
