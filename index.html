@@ -13,8 +13,8 @@
   <link rel="canonical" href="https://biochemaiwill.github.io/" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <title>Tianxiang Wu — AI × Drug Discovery</title>
-  <link rel="stylesheet" href="styles.css?v=20260828-02" />
-  <script defer src="script.js?v=20260828-02"></script>
+  <link rel="stylesheet" href="styles.css?v=20260828-03" />
+  <script defer src="script.js?v=20260828-03"></script>
 </head>
 <body>
   <div class="ambient-spotlight" aria-hidden="true"></div>
@@ -30,6 +30,7 @@
       <a href="#profile" data-i18n="nav.profile">Profile</a>
       <a href="#research" data-i18n="nav.research">Research</a>
       <a href="#outputs" data-i18n="nav.outputs">Outputs</a>
+      <a href="#records" data-i18n="nav.records">Records</a>
       <a href="#experience" data-i18n="nav.experience">Experience</a>
       <a href="#contact" data-i18n="nav.links">Links</a>
     </nav>
@@ -48,7 +49,7 @@
     <a href="#profile" data-i18n="nav.profile">Profile</a>
     <a href="#research" data-i18n="nav.research">Research</a>
     <a href="#outputs" data-i18n="nav.outputs">Outputs</a>
-    <a href="#experience" data-i18n="nav.experience">Experience</a>
+    <a href="#records" data-i18n="nav.records">Records</a>
     <a href="#contact" data-i18n="nav.links">Links</a>
   </nav>
 
@@ -263,6 +264,7 @@
             <h3 data-i18n-html="project1.title">Patent extraction<br><em>and quality control</em></h3>
             <p data-i18n="project1.desc">At Tsinghua AIR ATOM Lab, building an agent-driven patent extraction and quality-control system for molecular structures, ADMET endpoints, assay conditions, values and units.</p>
             <div class="project-tags"><span data-i18n="tag.llm">LLM Agents</span><span data-i18n="tag.patent">Patent Mining</span><span>ADMET</span><span data-i18n="tag.quality">Data Quality</span></div>
+            <a class="project-link" href="#outputs"><span data-i18n="project.link.outputs">View related outputs</span><b>→</b></a>
           </div>
         </article>
 
@@ -277,6 +279,7 @@
             <h3 data-i18n-html="project2.title">Unified two-tower<br><em>ADMET modeling</em></h3>
             <p data-i18n="project2.desc">Designing a unified two-tower ADMET prediction framework that treats assay and experimental context as first-class model inputs rather than metadata left outside the model.</p>
             <div class="project-tags"><span>ADMET</span><span data-i18n="tag.assay">Assay Context</span><span data-i18n="tag.multitask">Multitask</span></div>
+            <a class="project-link" href="#project-foundation-model"><span data-i18n="project.link.foundation">View model work</span><b>→</b></a>
           </div>
         </article>
 
@@ -290,6 +293,7 @@
             <h3 data-i18n-html="project3.title">Instruction-tuned<br><em>peptide LLM</em></h3>
             <p data-i18n="project3.desc">Built and trained a peptide instruction model with LoRA, covering function description, sequence design, property prediction and physicochemical optimization.</p>
             <div class="project-tags"><span>LoRA</span><span>Peptide</span><span data-i18n="tag.multitask">Multitask</span></div>
+            <a class="project-link" href="https://doi.org/10.1093/bioinformatics/btag618" target="_blank" rel="noreferrer"><span data-i18n="project.link.paper">Open paper</span><b>↗</b></a>
           </div>
         </article>
 
@@ -302,6 +306,7 @@
             <h3 data-i18n-html="project4.title">3D-MPG geometry<br><em>pretraining</em></h3>
             <p data-i18n="project4.desc">Contributed to 3D-MPG, a molecular representation learning manuscript on relational geometry pretraining through intramolecular region-pair arrangements, submitted to AAAI 2027.</p>
             <div class="project-tags"><span>3D Geometry</span><span>EGNN</span><span>AAAI 2027</span></div>
+            <a class="project-link" href="#publication-aaai"><span data-i18n="project.link.submission">View submission record</span><b>→</b></a>
           </div>
         </article>
 
@@ -326,6 +331,7 @@
             <h3 data-i18n-html="project5.title">Molecular pretraining<br><em>platform</em></h3>
             <p data-i18n="project5.desc">Built a task-adaptive molecular pretraining platform recognized with Xinghuo Cup university first prize and college-level special prize.</p>
             <div class="project-tags"><span>Molecular Pretraining</span><span data-i18n="tag.quality">Data Quality</span><span>Awarded</span></div>
+            <a class="project-link" href="#record-xinghuo"><span data-i18n="project.link.award">View award record</span><b>→</b></a>
           </div>
         </article>
 
@@ -339,6 +345,7 @@
             <h3 data-i18n-html="project6.title">PharmAgent<br><em>research workflows</em></h3>
             <p data-i18n="project6.desc">Exploring PharmAgent workflows that connect autonomous research planning, molecular evidence and downstream drug-discovery tasks.</p>
             <div class="project-tags"><span>Agent Workflow</span><span data-i18n="tag.llm">LLM Agents</span><span>Drug Discovery</span></div>
+            <a class="project-link" href="#project-patent-agent"><span data-i18n="project.link.agent">View agent systems</span><b>→</b></a>
           </div>
         </article>
 
@@ -351,6 +358,7 @@
             <h3 data-i18n-html="project7.title">Dual-tower<br><em>foundation model</em></h3>
             <p data-i18n="project7.desc">Improving the sequence tower of a DrugCLIP-style protein-ligand foundation model with ESM-C representations and hyperbolic latent structure for OOD generalization across targets, scaffolds and low-data settings.</p>
             <div class="project-tags"><span>DrugCLIP</span><span>ESM-C</span><span>OOD</span></div>
+            <a class="project-link" href="#project-admet"><span data-i18n="project.link.admet">View ADMET work</span><b>→</b></a>
           </div>
         </article>
       </div>
@@ -383,6 +391,7 @@
             <span data-i18n-html="pub2.status">Submitted · AAAI 2027 · <strong>CCF A</strong></span>
             <h3>3D-MPG: Relational Geometry Pretraining through Intramolecular Region-Pair Arrangements</h3>
             <p data-i18n="pub2.desc">Second author / undergraduate lead author. The manuscript focuses on 3D molecular geometry pretraining for molecular representation learning.</p>
+            <a class="publication-action" href="assets/evidence/aaai-submission.jpg" target="_blank" rel="noreferrer"><span data-i18n="pub2.action">View submission record</span><b>↗</b></a>
           </div>
           <a href="assets/evidence/aaai-submission.jpg" target="_blank" rel="noreferrer">
             <img src="assets/evidence/aaai-submission.jpg" alt="AAAI submission evidence" loading="lazy" />
@@ -393,6 +402,7 @@
             <span data-i18n-html="pub3.status">Submitted · Briefings in Bioinformatics · <strong>JCR Q1</strong></span>
             <h3>A Systematic Benchmark for Peptide Property Prediction</h3>
             <p data-i18n="pub3.desc">Third author. The manuscript builds a systematic benchmark for peptide property prediction.</p>
+            <a class="publication-action" href="assets/evidence/peptide-benchmark-title.jpg" target="_blank" rel="noreferrer"><span data-i18n="pub3.action">View manuscript record</span><b>↗</b></a>
           </div>
           <a href="assets/evidence/peptide-benchmark-title.jpg" target="_blank" rel="noreferrer">
             <img src="assets/evidence/peptide-benchmark-title.jpg" alt="Peptide benchmark manuscript evidence" loading="lazy" />
@@ -506,7 +516,7 @@
             </a>
             <figcaption data-i18n="credentials.youthHonor">Outstanding Communist Youth League Member Model</figcaption>
           </figure>
-          <figure class="fit-contain material-certificate">
+          <figure class="fit-contain material-certificate" id="record-xinghuo">
             <a href="assets/evidence/xinghuo-special-prize.jpg" target="_blank" rel="noreferrer">
               <img src="assets/evidence/xinghuo-special-prize.jpg" alt="Xinghuo Cup special prize certificate" loading="lazy" />
             </a>

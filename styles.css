@@ -1983,3 +1983,117 @@ a:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
     text-overflow:ellipsis;
   }
 }
+
+/* Action affordances on research and publication cards. */
+.nav{
+  gap:22px;
+}
+.project-copy{
+  display:flex;
+  flex-direction:column;
+}
+.project-tags{
+  margin-bottom:16px;
+}
+.project-link,
+.publication-card .publication-action{
+  align-self:flex-start;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:9px!important;
+  min-height:34px!important;
+  height:auto!important;
+  width:auto!important;
+  margin-top:auto!important;
+  padding:0 13px!important;
+  border:1px solid rgba(34,117,150,.22)!important;
+  border-radius:999px!important;
+  background:rgba(255,255,255,.76)!important;
+  box-shadow:none!important;
+  color:#0e5f7a!important;
+  font:900 10px/1 var(--mono)!important;
+  letter-spacing:.07em!important;
+  text-transform:uppercase!important;
+  transition:transform .2s ease,border-color .2s ease,background .2s ease,color .2s ease!important;
+  overflow:visible!important;
+}
+.project-link:hover,
+.publication-card .publication-action:hover{
+  transform:translateY(-2px);
+  border-color:rgba(79,201,255,.58)!important;
+  background:#effaff!important;
+  color:#08111f!important;
+}
+.project-link b,
+.publication-card .publication-action b{
+  font-size:13px;
+  line-height:1;
+}
+.publication-card .publication-action{
+  margin-top:16px!important;
+}
+.publication-card>a,
+.publication-card>.publication-thumb,
+.publication-featured>a{
+  flex:none;
+}
+
+@media(max-width:760px){
+  .project-tags{
+    margin-bottom:12px;
+  }
+  .project-link,
+  .publication-card .publication-action{
+    min-height:38px!important;
+    padding:0 14px!important;
+    font-size:9.5px!important;
+  }
+}
+
+/* Final compact showcase pass. */
+.project-link,
+.publication-card .publication-action{
+  white-space:nowrap!important;
+  aspect-ratio:auto!important;
+}
+
+@media(min-width:1100px){
+  .output-title h2{
+    font-size:clamp(48px,5.3vw,78px)!important;
+    line-height:.9!important;
+  }
+  .output-copy{
+    padding:20px 22px!important;
+  }
+  .output-copy p{
+    margin-bottom:18px!important;
+    font-size:16px!important;
+    line-height:1.5!important;
+  }
+  .publication-list{
+    margin-top:24px!important;
+  }
+  .research-mosaic .project p{
+    line-height:1.4!important;
+    margin-bottom:13px!important;
+  }
+  .research-mosaic .project h3{
+    margin-bottom:10px!important;
+  }
+}
+
+@media(max-width:760px){
+  .output-title h2{
+    font-size:clamp(39px,10vw,48px)!important;
+    line-height:.96!important;
+  }
+  .publication-card .publication-action{
+    min-height:36px!important;
+    height:36px!important;
+    line-height:1!important;
+  }
+  .research-mosaic .project p{
+    margin-bottom:12px!important;
+  }
+}
