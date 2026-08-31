@@ -23,6 +23,8 @@
   <link rel="alternate" hreflang="zh-CN" href="https://biochemaiwill.github.io/" />
   <link rel="alternate" hreflang="en" href="https://biochemaiwill.github.io/?lang=en" />
   <link rel="alternate" hreflang="x-default" href="https://biochemaiwill.github.io/" />
+  <link rel="me" href="https://github.com/biochemaiwill" />
+  <link rel="me" href="https://orcid.org/0009-0006-8833-3070" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <title>吴天翔个人主页 | Tianxiang Wu / wutianxiang | 西安电子科技大学 · 清华大学智能产业研究院</title>
   <script type="application/ld+json">
@@ -40,7 +42,7 @@
         }
       },
       {
-        "@type": "WebPage",
+        "@type": "ProfilePage",
         "@id": "https://biochemaiwill.github.io/#webpage",
         "url": "https://biochemaiwill.github.io/",
         "name": "吴天翔个人主页 | Tianxiang Wu / wutianxiang | 西安电子科技大学 · 清华大学智能产业研究院",
@@ -88,8 +90,8 @@
     ]
   }
   </script>
-  <link rel="stylesheet" href="styles.css?v=20260831-08" />
-  <script defer src="script.js?v=20260831-08"></script>
+  <link rel="stylesheet" href="styles.css?v=20260831-10" />
+  <script defer src="script.js?v=20260831-10"></script>
 </head>
 <body>
   <div class="ambient-spotlight" aria-hidden="true"></div>
@@ -160,6 +162,9 @@
           <a class="btn btn-ghost" href="#outputs">
             <span data-i18n="hero.cta.outputs">View outputs</span><span>→</span>
           </a>
+          <button class="btn btn-ghost btn-qr" type="button" data-qr-open>
+            <span data-i18n="hero.cta.qr">Scan QR</span><span>▦</span>
+          </button>
           <a class="btn btn-ghost btn-external" href="https://orcid.org/0009-0006-8833-3070" target="_blank" rel="noreferrer">
             ORCID <span>↗</span>
           </a>
@@ -735,8 +740,8 @@
         <h2 data-i18n-html="contact.heading">Find me<br><em>online.</em></h2>
       </div>
       <div class="contact-links reveal">
-        <a href="https://github.com/biochemaiwill" target="_blank" rel="noreferrer"><span>GitHub</span><small data-i18n="contact.github">Code & projects</small><b>↗</b></a>
-        <a href="https://orcid.org/0009-0006-8833-3070" target="_blank" rel="noreferrer"><span>ORCID</span><small data-i18n="contact.orcid">Research identity</small><b>↗</b></a>
+        <a href="https://github.com/biochemaiwill" target="_blank" rel="me noreferrer"><span>GitHub</span><small data-i18n="contact.github">Code & projects</small><b>↗</b></a>
+        <a href="https://orcid.org/0009-0006-8833-3070" target="_blank" rel="me noreferrer"><span>ORCID</span><small data-i18n="contact.orcid">Research identity</small><b>↗</b></a>
         <div class="contact-qr">
           <a class="contact-qr-image" href="https://biochemaiwill.github.io/" target="_blank" rel="noreferrer" aria-label="Open Tianxiang Wu personal homepage">
             <img src="assets/qr/homepage-qr.svg?v=20260831-09" alt="QR code for Tianxiang Wu personal homepage" loading="lazy" />
@@ -751,6 +756,19 @@
       </div>
     </section>
   </main>
+
+  <div class="qr-modal" data-qr-modal aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="qr-modal-title">
+    <div class="qr-modal-panel">
+      <button class="qr-modal-close" type="button" data-qr-close aria-label="Close QR code">×</button>
+      <span class="qr-modal-kicker" data-i18n="qrModal.kicker">Share homepage</span>
+      <h2 id="qr-modal-title" data-i18n="qrModal.title">Scan to visit Tianxiang Wu's homepage</h2>
+      <a class="qr-modal-code" href="https://biochemaiwill.github.io/" target="_blank" rel="noreferrer">
+        <img src="assets/qr/homepage-qr.svg?v=20260831-09" alt="QR code for Tianxiang Wu personal homepage" />
+      </a>
+      <code>https://biochemaiwill.github.io/</code>
+      <button class="copy-link" type="button" data-copy-url="https://biochemaiwill.github.io/" data-i18n="contact.copyLink">Copy link</button>
+    </div>
+  </div>
 
   <footer class="site-footer">
     <span>© <span id="year"></span> <span data-i18n="footer.name">Tianxiang Wu</span></span>

@@ -31,6 +31,7 @@ const translations = {
     'portrait.badge3': 'Rank 2 / 96',
     'hero.cta.research': 'View research',
     'hero.cta.outputs': 'View outputs',
+    'hero.cta.qr': 'Scan QR',
     'visual.topline': 'RESEARCH GRAPH / LIVE',
     'visual.title': 'Research map',
     'visual.desc': 'An abstract network linking scientific data, molecular models, protein structure and drug discovery.',
@@ -256,6 +257,8 @@ const translations = {
     'contact.qrTitle': 'Scan to visit this homepage',
     'contact.copyLink': 'Copy link',
     'contact.copied': 'Copied',
+    'qrModal.kicker': 'Share homepage',
+    'qrModal.title': "Scan to visit Tianxiang Wu's homepage",
     'footer.name': 'Tianxiang Wu',
     'footer.domain': 'AI × Drug Discovery',
     'footer.top': 'Back to top ↑'
@@ -289,6 +292,7 @@ const translations = {
     'portrait.badge3': '专业方向 2 / 96',
     'hero.cta.research': '看研究项目',
     'hero.cta.outputs': '看论文成果',
+    'hero.cta.qr': '扫码访问',
     'visual.topline': '研究图谱 / LIVE',
     'visual.title': '研究图谱',
     'visual.desc': '连接科学数据、分子模型、蛋白结构与药物发现的抽象研究网络。',
@@ -514,6 +518,8 @@ const translations = {
     'contact.qrTitle': '扫码访问个人主页',
     'contact.copyLink': '复制链接',
     'contact.copied': '已复制',
+    'qrModal.kicker': '分享主页',
+    'qrModal.title': '扫码访问吴天翔个人主页',
     'footer.name': '吴天翔',
     'footer.domain': 'AI 药物发现',
     'footer.top': '回到顶部 ↑'
@@ -622,6 +628,32 @@ langToggle?.addEventListener('click', () => {
   const current = document.documentElement.lang === 'zh-CN' ? 'zh' : 'en';
   setLanguage(current === 'zh' ? 'en' : 'zh');
   setupTicker();
+});
+
+const qrModal = document.querySelector('[data-qr-modal]');
+const openQrModal = () => {
+  if (!qrModal) return;
+  qrModal.classList.add('open');
+  qrModal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+};
+const closeQrModal = () => {
+  if (!qrModal) return;
+  qrModal.classList.remove('open');
+  qrModal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+};
+document.querySelectorAll('[data-qr-open]').forEach((button) => {
+  button.addEventListener('click', openQrModal);
+});
+document.querySelectorAll('[data-qr-close]').forEach((button) => {
+  button.addEventListener('click', closeQrModal);
+});
+qrModal?.addEventListener('click', (event) => {
+  if (event.target === qrModal) closeQrModal();
+});
+window.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && qrModal?.classList.contains('open')) closeQrModal();
 });
 
 const copyButtons = document.querySelectorAll('[data-copy-url]');

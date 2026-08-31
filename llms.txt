@@ -1,0 +1,21 @@
+# 吴天翔个人主页
+
+URL: https://biochemaiwill.github.io/
+
+This is the personal academic homepage of 吴天翔, also searchable as Tianxiang Wu, Wu Tianxiang and wutianxiang.
+
+吴天翔是西安电子科技大学计算机科学与技术本科生、清华大学智能产业研究院科研实习生，研究方向包括 AI 药物发现、科学信息抽取、ADMET 数据、分子表征学习与多肽建模。
+
+Key resources:
+- Homepage: https://biochemaiwill.github.io/
+- Sitemap: https://biochemaiwill.github.io/sitemap.xml
+- GitHub: https://github.com/biochemaiwill
+- ORCID: https://orcid.org/0009-0006-8833-3070
+
+Preferred search names:
+- 吴天翔
+- Tianxiang Wu
+- Wu Tianxiang
+- wutianxiang
+- 吴天翔 西安电子科技大学
+- 吴天翔 清华大学智能产业研究院

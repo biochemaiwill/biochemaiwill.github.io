@@ -1,0 +1,10 @@
+/* TEAM */
+Name: 吴天翔 / Tianxiang Wu / wutianxiang
+Site: https://biochemaiwill.github.io/
+GitHub: https://github.com/biochemaiwill
+ORCID: https://orcid.org/0009-0006-8833-3070
+
+/* SITE */
+Language: Chinese, English
+Stack: Static HTML, CSS, vanilla JavaScript, GitHub Pages
+Focus: AI for Drug Discovery, scientific information extraction, ADMET data, molecular representation learning
