@@ -252,6 +252,10 @@ const translations = {
     'contact.heading': 'Find me<br><em>online.</em>',
     'contact.github': 'Code & projects',
     'contact.orcid': 'Research identity',
+    'contact.qrLabel': 'Quick access',
+    'contact.qrTitle': 'Scan to visit this homepage',
+    'contact.copyLink': 'Copy link',
+    'contact.copied': 'Copied',
     'footer.name': 'Tianxiang Wu',
     'footer.domain': 'AI × Drug Discovery',
     'footer.top': 'Back to top ↑'
@@ -506,6 +510,10 @@ const translations = {
     'contact.heading': '在线<br><em>找到我。</em>',
     'contact.github': '代码与项目',
     'contact.orcid': '研究身份',
+    'contact.qrLabel': '快捷访问',
+    'contact.qrTitle': '扫码访问个人主页',
+    'contact.copyLink': '复制链接',
+    'contact.copied': '已复制',
     'footer.name': '吴天翔',
     'footer.domain': 'AI 药物发现',
     'footer.top': '回到顶部 ↑'
@@ -614,6 +622,42 @@ langToggle?.addEventListener('click', () => {
   const current = document.documentElement.lang === 'zh-CN' ? 'zh' : 'en';
   setLanguage(current === 'zh' ? 'en' : 'zh');
   setupTicker();
+});
+
+const copyButtons = document.querySelectorAll('[data-copy-url]');
+copyButtons.forEach((button) => {
+  const originalKey = button.dataset.i18n;
+  const restoreLabel = () => {
+    const lang = document.documentElement.lang === 'zh-CN' ? 'zh' : 'en';
+    button.textContent = translations[lang][originalKey] || button.textContent;
+  };
+
+  button.addEventListener('click', async () => {
+    const url = button.dataset.copyUrl;
+    if (!url) return;
+
+    try {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(url);
+      } else {
+        const field = document.createElement('textarea');
+        field.value = url;
+        field.setAttribute('readonly', '');
+        field.style.position = 'fixed';
+        field.style.opacity = '0';
+        document.body.appendChild(field);
+        field.select();
+        document.execCommand('copy');
+        field.remove();
+      }
+
+      const lang = document.documentElement.lang === 'zh-CN' ? 'zh' : 'en';
+      button.textContent = translations[lang]['contact.copied'];
+      window.setTimeout(restoreLabel, 1400);
+    } catch (error) {
+      window.open(url, '_blank', 'noopener,noreferrer');
+    }
+  });
 });
 
 document.querySelectorAll('[data-flip-card]').forEach((card) => {
