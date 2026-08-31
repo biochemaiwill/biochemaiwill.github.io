@@ -73,6 +73,9 @@ const translations = {
     'spotlight.rank.note': 'Track ranking',
     'spotlight.service.kicker': 'Service',
     'spotlight.service.note': 'Volunteer service record',
+    'spotlight.media.kicker': 'Feature',
+    'spotlight.media.value': 'Media',
+    'spotlight.media.note': 'College feature story',
     scroll: 'Scroll to research',
     'profile.kicker': 'Academic snapshot',
     'profile.heading': 'A profile across <em>research, honors and service.</em>',
@@ -134,6 +137,16 @@ const translations = {
     'credentials.defense': 'Career-planning sharing session for junior students',
     'credentials.study': 'Study, academic exchange and peer support beyond coursework',
     'credentials.meeting': 'Student committee and campus service work',
+    'media.wechat.kicker': 'Public feature',
+    'media.wechat.title': 'College WeChat feature',
+    'media.wechat.desc': 'A college WeChat article presenting representative undergraduate work across research, academics, service and broader development',
+    'media.wechat.link': 'Read article',
+    'media.wechat.preview': 'View capture',
+    'media.freshman.kicker': 'Freshman publicity',
+    'media.freshman.title': 'Featured senior profile for incoming students',
+    'media.freshman.desc': 'Click the card to switch between the front and back sides of the college publicity material',
+    'media.freshman.link.front': 'View front side',
+    'media.freshman.link.back': 'View back side',
     'life.kicker': 'Life moments',
     'life.heading': 'Research, service<br><em>and life in motion</em>',
     'life.summary': 'Research training, industry forum participation, academic sharing, international exchange and high-level orchestra performance',
@@ -314,6 +327,9 @@ const translations = {
     'spotlight.rank.note': '专业方向排名',
     'spotlight.service.kicker': '服务',
     'spotlight.service.note': '累计志愿服务记录',
+    'spotlight.media.kicker': '报道',
+    'spotlight.media.value': '学院推文',
+    'spotlight.media.note': '国奖榜样专题报道',
     scroll: '查看研究',
     'profile.kicker': '学术概览',
     'profile.heading': '本科阶段的<em>综合发展总览。</em>',
@@ -375,6 +391,16 @@ const translations = {
     'credentials.defense': '向低年级同学进行生涯规划分享',
     'credentials.study': '课程之外的学习、交流与帮扶',
     'credentials.meeting': '学生工作与校园服务',
+    'media.wechat.kicker': '公开报道',
+    'media.wechat.title': '计科学子｜国奖榜样吴天翔',
+    'media.wechat.desc': '学院微信公众号专题推文，呈现本科阶段在科研、学业、服务与综合发展方面的代表性经历',
+    'media.wechat.link': '阅读原文',
+    'media.wechat.preview': '查看截图',
+    'media.freshman.kicker': '新生宣传',
+    'media.freshman.title': '新生入学宣传优秀学长材料',
+    'media.freshman.desc': '点击卡片切换正反面，展示学院面向新生宣传的优秀学长材料',
+    'media.freshman.link.front': '查看正面',
+    'media.freshman.link.back': '查看反面',
     'life.kicker': '综合发展',
     'life.heading': '科研、服务与<br><em>综合发展</em>',
     'life.summary': '科研实习、行业论坛交流、生涯规划分享、国际交流与高水平艺术团实践共同构成本科阶段的综合成长经历',
@@ -502,6 +528,18 @@ const saveLanguage = (lang) => {
   }
 };
 
+function updateMediaFlipLabels() {
+  const lang = document.documentElement.lang === 'zh-CN' ? 'zh' : 'en';
+  const copy = translations[lang];
+  document.querySelectorAll('[data-flip-card]').forEach((card) => {
+    const label = card.querySelector('.flip-trigger span');
+    if (!label) return;
+    label.textContent = card.classList.contains('is-flipped')
+      ? copy['media.freshman.link.front']
+      : copy['media.freshman.link.back'];
+  });
+}
+
 const setLanguage = (lang) => {
   const activeLang = translations[lang] ? lang : 'en';
   const copy = translations[activeLang];
@@ -530,6 +568,7 @@ const setLanguage = (lang) => {
   }
 
   saveLanguage(activeLang);
+  updateMediaFlipLabels();
 };
 
 const langToggle = document.querySelector('[data-lang-toggle]');
@@ -575,6 +614,19 @@ langToggle?.addEventListener('click', () => {
   const current = document.documentElement.lang === 'zh-CN' ? 'zh' : 'en';
   setLanguage(current === 'zh' ? 'en' : 'zh');
   setupTicker();
+});
+
+document.querySelectorAll('[data-flip-card]').forEach((card) => {
+  card.querySelectorAll('[data-flip-toggle]').forEach((button) => {
+    button.setAttribute('aria-pressed', String(card.classList.contains('is-flipped')));
+    button.addEventListener('click', () => {
+      const flipped = card.classList.toggle('is-flipped');
+      card.querySelectorAll('[data-flip-toggle]').forEach((control) => {
+        control.setAttribute('aria-pressed', String(flipped));
+      });
+      updateMediaFlipLabels();
+    });
+  });
 });
 window.addEventListener('resize', () => {
   window.clearTimeout(tickerResizeTimer);
