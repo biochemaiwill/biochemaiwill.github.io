@@ -923,6 +923,24 @@ if (matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion
   });
 }
 
+const setupImageStages = () => {
+  const stageSelector = '.credential-grid a, .life-gallery a, .publication-card a, .publication-thumb';
+  document.querySelectorAll(stageSelector).forEach((stage) => {
+    const image = stage.querySelector('img');
+    if (!image) return;
+
+    const src = image.currentSrc || image.getAttribute('src');
+    if (!src) return;
+
+    const absoluteSrc = new URL(src, document.baseURI).href.replace(/"/g, '%22');
+    stage.classList.add('image-stage');
+    stage.style.setProperty('--preview-image', `url("${absoluteSrc}")`);
+  });
+};
+
+setupImageStages();
+window.addEventListener('load', setupImageStages);
+
 const galleryLinks = document.querySelectorAll('.credential-grid a[href^="assets/"], .life-gallery a[href^="assets/"], .publication-card a[href^="assets/"]');
 if (galleryLinks.length) {
   const lightbox = document.createElement('div');
