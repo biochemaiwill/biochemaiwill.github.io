@@ -3,8 +3,8 @@ if (year) year.textContent = new Date().getFullYear();
 
 const translations = {
   en: {
-    metaTitle: 'Tianxiang Wu — AI × Drug Discovery',
-    metaDescription: 'Tianxiang Wu — research profile in AI for drug discovery, scientific information extraction, and molecular representation learning.',
+    metaTitle: 'Tianxiang Wu / Wu Tianxiang / wutianxiang — AI × Drug Discovery',
+    metaDescription: 'Tianxiang Wu, also searchable as Wu Tianxiang or wutianxiang, is a Computer Science undergraduate working on AI for drug discovery, scientific information extraction, ADMET data and molecular representation learning.',
     langButton: '中文',
     langLabel: 'Switch to Chinese',
     'brand.name': 'Tianxiang Wu',
@@ -256,8 +256,8 @@ const translations = {
     'footer.top': 'Back to top ↑'
   },
   zh: {
-    metaTitle: '吴天翔 / Tianxiang Wu — AI × 药物发现',
-    metaDescription: '吴天翔的研究主页：AI 药物发现、科学信息抽取、ADMET 数据与分子表征学习。',
+    metaTitle: '吴天翔 / Tianxiang Wu / wutianxiang — AI × 药物发现',
+    metaDescription: '吴天翔（Tianxiang Wu / Wu Tianxiang / wutianxiang）的个人学术主页：AI 药物发现、科学信息抽取、ADMET 数据与分子表征学习。',
     langButton: 'EN',
     langLabel: 'Switch to English',
     'brand.name': '吴天翔',
