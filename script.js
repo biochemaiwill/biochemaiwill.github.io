@@ -3,8 +3,8 @@ if (year) year.textContent = new Date().getFullYear();
 
 const translations = {
   en: {
-    metaTitle: 'Tianxiang Wu / Wu Tianxiang / wutianxiang — AI × Drug Discovery',
-    metaDescription: 'Tianxiang Wu, also searchable as Wu Tianxiang or wutianxiang, is a Computer Science undergraduate working on AI for drug discovery, scientific information extraction, ADMET data and molecular representation learning.',
+    metaTitle: 'Tianxiang Wu personal homepage / wutianxiang | Xidian University · Tsinghua AIR',
+    metaDescription: 'Tianxiang Wu, also searchable as Wu Tianxiang or wutianxiang, is a Computer Science undergraduate at Xidian University and a research intern at Tsinghua University Institute for AI Industry Research, working on AI for drug discovery, scientific information extraction, ADMET data and molecular representation learning.',
     langButton: '中文',
     langLabel: 'Switch to Chinese',
     'brand.name': 'Tianxiang Wu',
@@ -21,6 +21,7 @@ const translations = {
     'hero.name.first': 'Tianxiang',
     'hero.name.last': 'Wu',
     'hero.cnName': '吴天翔',
+    'hero.searchAlias': 'Tianxiang Wu · Wu Tianxiang · wutianxiang · 吴天翔',
     'hero.lede': 'Building <em>reliable scientific data systems</em> and <em>representation learning methods</em> for computational drug discovery.',
     'portrait.kicker': 'Academic profile',
     'portrait.name': 'Tianxiang Wu / 吴天翔',
@@ -256,8 +257,8 @@ const translations = {
     'footer.top': 'Back to top ↑'
   },
   zh: {
-    metaTitle: '吴天翔 / Tianxiang Wu / wutianxiang — AI × 药物发现',
-    metaDescription: '吴天翔（Tianxiang Wu / Wu Tianxiang / wutianxiang）的个人学术主页：AI 药物发现、科学信息抽取、ADMET 数据与分子表征学习。',
+    metaTitle: '吴天翔个人主页 | Tianxiang Wu / wutianxiang | 西安电子科技大学 · 清华大学智能产业研究院',
+    metaDescription: '吴天翔个人主页（Tianxiang Wu / Wu Tianxiang / wutianxiang）：西安电子科技大学计算机科学与技术本科生、清华大学智能产业研究院科研实习生，研究方向包括 AI 药物发现、科学信息抽取、ADMET 数据与分子表征学习。',
     langButton: 'EN',
     langLabel: 'Switch to English',
     'brand.name': '吴天翔',
@@ -274,6 +275,7 @@ const translations = {
     'hero.name.first': '吴天翔',
     'hero.name.last': 'Tianxiang Wu',
     'hero.cnName': '西安电子科技大学 · 计算机科学与技术',
+    'hero.searchAlias': '吴天翔 · Tianxiang Wu · Wu Tianxiang · wutianxiang',
     'hero.lede': '构建用于计算药物发现的<em>可靠科学数据系统</em>与<em>表征学习方法</em>。',
     'portrait.kicker': '个人学术主页',
     'portrait.name': '吴天翔 / Tianxiang Wu',
