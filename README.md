@@ -2,6 +2,8 @@
 
 Static academic website for GitHub Pages.
 
+Production URL: https://wutianxiang.cn/
+
 ## Deploy
 
 Create a **Repository** named exactly:
@@ -12,6 +14,7 @@ Then place all files from this folder in the repository root and enable GitHub P
 
 ## Main links
 
+- Website: https://wutianxiang.cn/
 - ORCID: https://orcid.org/0009-0006-8833-3070
 - GitHub: https://github.com/biochemaiwill
 

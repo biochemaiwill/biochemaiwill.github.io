@@ -1,6 +1,6 @@
 /* TEAM */
 Name: 吴天翔 / Tianxiang Wu / wutianxiang
-Site: https://biochemaiwill.github.io/
+Site: https://wutianxiang.cn/
 GitHub: https://github.com/biochemaiwill
 ORCID: https://orcid.org/0009-0006-8833-3070
 
