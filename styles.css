@@ -533,6 +533,16 @@ a:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
 .life-card img{position:relative;z-index:2;width:100%;height:auto!important;object-fit:contain!important;object-position:center!important;border-radius:calc(var(--radius) - 10px);background:#fff;box-shadow:0 18px 46px rgba(15,31,46,.08);transition:filter .24s ease,transform .24s ease}
 .life-card:hover img{filter:saturate(1.07) contrast(1.03)}
 .life-card:nth-child(2) img{object-position:center!important}
+.life-air{
+  grid-column:span 2!important;
+}
+.life-air a{
+  background:linear-gradient(145deg,#f8fbff 0,#edf7fb 56%,#e7f1f6 100%)!important;
+}
+.life-air img{
+  object-fit:contain!important;
+  object-position:center!important;
+}
 .life-card figcaption{background:rgba(255,255,255,.92)}
 @keyframes lifeSweep{0%,22%{transform:translateX(-90%) rotate(8deg)}48%,100%{transform:translateX(90%) rotate(8deg)}}
 @media(max-width:1050px){.life-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -2476,5 +2486,11 @@ a:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
   .publication-thumb.image-stage>img{
     max-width:calc(100% - 14px)!important;
     max-height:calc(100% - 14px)!important;
+  }
+}
+
+@media(min-width:761px){
+  .life-gallery .life-air{
+    grid-column:span 2!important;
   }
 }
