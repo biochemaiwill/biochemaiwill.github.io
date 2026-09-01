@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://wutianxiang.cn/</loc><lastmod>2026-08-31</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://www.wutianxiang.cn/</loc><lastmod>2026-08-31</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://wutianxiang.cn/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://wutianxiang.cn/assets/brand/wutianxiang-preview.jpg</image:loc>
+      <image:caption>吴天翔个人主页</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://wutianxiang.cn/assets/brand/wutianxiang-profile-1x1.jpg</image:loc>
+      <image:caption>吴天翔</image:caption>
+    </image:image>
+  </url>
 </urlset>
