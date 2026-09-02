@@ -2931,3 +2931,173 @@ a:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
     min-width:0!important;
   }
 }
+
+/* Life gallery rebuild: masonry photo wall, no equal-height stretching or empty gutters. */
+.life-section .scroll-shell{
+  overflow:visible!important;
+}
+
+.life-section .scroll-affordance,
+.life-section .scroll-controls,
+.life-section .scroll-rail{
+  display:none!important;
+}
+
+.life-gallery{
+  display:block!important;
+  columns:5 220px!important;
+  column-gap:16px!important;
+  overflow:visible!important;
+  padding-bottom:0!important;
+  cursor:default!important;
+}
+
+.life-gallery .life-card,
+.life-gallery .life-feature{
+  display:inline-grid!important;
+  width:100%!important;
+  grid-template-rows:auto auto!important;
+  grid-column:auto!important;
+  grid-row:auto!important;
+  margin:0 0 16px!important;
+  break-inside:avoid!important;
+  page-break-inside:avoid!important;
+  transform:none!important;
+  vertical-align:top!important;
+  border-radius:10px!important;
+  background:#fff!important;
+  box-shadow:0 16px 42px rgba(24,38,55,.12)!important;
+}
+
+.life-gallery .life-card:hover,
+.life-gallery .life-feature:hover{
+  transform:translateY(-3px)!important;
+  box-shadow:0 22px 58px rgba(24,38,55,.16)!important;
+}
+
+.life-gallery .life-card a,
+.life-gallery .life-feature a,
+.life-gallery .life-card:not(.life-feature) a,
+.life-gallery .life-card.life-campus a,
+.life-gallery .life-card.life-tennis a{
+  display:block!important;
+  width:100%!important;
+  height:auto!important;
+  min-height:0!important;
+  aspect-ratio:var(--frame-ratio,4/3)!important;
+  padding:0!important;
+  overflow:hidden!important;
+  background:#0b1220!important;
+}
+
+.life-gallery .life-card a:before,
+.life-gallery .life-feature a:before{
+  display:none!important;
+}
+
+.life-gallery .life-card img,
+.life-gallery .life-feature img,
+.life-gallery .life-campus img,
+.life-gallery .life-tennis img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:none!important;
+  max-height:none!important;
+  padding:0!important;
+  object-fit:cover!important;
+  object-position:center!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  background:#0b1220!important;
+}
+
+.life-gallery .life-feature{--frame-ratio:4/5}
+.life-gallery .life-campus{--frame-ratio:3/4}
+.life-gallery .life-award{--frame-ratio:3/4}
+.life-gallery .life-tpd{--frame-ratio:4/5}
+.life-gallery .life-research{--frame-ratio:4/3}
+.life-gallery .life-career{--frame-ratio:4/3}
+.life-gallery .life-orchestra{--frame-ratio:3/4}
+.life-gallery .life-air{--frame-ratio:4/3}
+.life-gallery .life-presentation{--frame-ratio:16/9}
+.life-gallery .life-tennis{--frame-ratio:1/1}
+
+.life-gallery .life-feature img,
+.life-gallery .life-campus img{
+  object-position:center 42%!important;
+}
+
+.life-gallery .life-award img{
+  object-position:center 36%!important;
+}
+
+.life-gallery .life-tpd img,
+.life-gallery .life-research img{
+  object-position:center 34%!important;
+}
+
+.life-gallery .life-presentation img{
+  object-position:center center!important;
+}
+
+.life-gallery .life-orchestra img{
+  object-position:center 22%!important;
+}
+
+.life-gallery .life-card figcaption,
+.life-gallery .life-feature figcaption{
+  min-height:0!important;
+  padding:11px 12px 12px!important;
+  border-top:1px solid rgba(11,18,32,.08)!important;
+  background:#fff!important;
+  font-size:12.5px!important;
+  line-height:1.35!important;
+}
+
+@media(max-width:1050px){
+  .life-gallery{
+    columns:3 220px!important;
+  }
+}
+
+@media(max-width:760px){
+  .life-gallery{
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    grid-auto-flow:row!important;
+    grid-auto-columns:auto!important;
+    grid-template-rows:none!important;
+    gap:12px!important;
+    overflow:visible!important;
+    scroll-snap-type:none!important;
+  }
+
+  .life-gallery .life-card,
+  .life-gallery .life-feature{
+    display:grid!important;
+    margin:0!important;
+    width:100%!important;
+    min-width:0!important;
+    scroll-snap-align:none!important;
+  }
+
+  .life-gallery .life-campus,
+  .life-gallery .life-award{
+    grid-column:auto!important;
+  }
+
+  .life-gallery .life-card figcaption,
+  .life-gallery .life-feature figcaption{
+    padding:9px 8px 10px!important;
+    font-size:11.5px!important;
+  }
+}
+
+@media(max-width:480px){
+  .life-gallery{
+    grid-template-columns:1fr!important;
+    grid-auto-flow:row!important;
+    grid-auto-columns:auto!important;
+  }
+}
