@@ -155,6 +155,8 @@ const translations = {
     'life.air': 'Tsinghua AIR research internship',
     'life.orchestra': 'Xidian Symphony Orchestra performance',
     'life.tpdForum': 'TPD 2026 Forum · Shanghai',
+    'life.tsinghuaGate': 'Tsinghua campus visit',
+    'life.tennisLeague': 'China University Tennis League',
     'arts.kicker': 'Arts record',
     'arts.title': 'Xidian Symphony Orchestra member',
     'arts.desc': 'Member of Xidian Symphony Orchestra, a Shaanxi high-level arts troupe and first-chair troupe of Shaanxi collegiate arts troupe; participated in major performances including the ICAI 2024 opening ceremony.',
@@ -416,6 +418,8 @@ const translations = {
     'life.air': '清华大学智能产业研究院科研实习',
     'life.orchestra': '西电交响乐团演出',
     'life.tpdForum': 'TPD 2026论坛 · 上海',
+    'life.tsinghuaGate': '清华园',
+    'life.tennisLeague': '中国大学生网球联赛',
     'arts.kicker': '艺术实践',
     'arts.title': '西电交响乐团成员',
     'arts.desc': '加入校交响乐团（陕西省高水平艺术团、陕西省大学生艺术团首席团），参与 ICAI2024 开幕式等重要文艺演出与比赛',
@@ -704,6 +708,47 @@ document.querySelectorAll('[data-flip-card]').forEach((card) => {
     });
   });
 });
+
+document.querySelectorAll('[data-pager]').forEach((pager) => {
+  const slides = Array.from(pager.querySelectorAll('[data-pager-slide]'));
+  const prev = pager.querySelector('[data-pager-prev]');
+  const next = pager.querySelector('[data-pager-next]');
+  const count = pager.querySelector('[data-pager-count]');
+  if (!slides.length || !prev || !next || !count) return;
+
+  let activeIndex = Math.max(0, slides.findIndex((slide) => slide.classList.contains('is-active')));
+
+  const render = () => {
+    slides.forEach((slide, index) => {
+      const active = index === activeIndex;
+      slide.classList.toggle('is-active', active);
+      slide.setAttribute('aria-hidden', String(!active));
+      slide.tabIndex = active ? 0 : -1;
+    });
+    count.textContent = `${activeIndex + 1} / ${slides.length}`;
+  };
+
+  const move = (step) => {
+    activeIndex = (activeIndex + step + slides.length) % slides.length;
+    render();
+  };
+
+  prev.addEventListener('click', (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    move(-1);
+  }, { capture: true });
+  next.addEventListener('click', (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    move(1);
+  }, { capture: true });
+  pager.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowLeft') move(-1);
+    if (event.key === 'ArrowRight') move(1);
+  });
+  render();
+});
 window.addEventListener('resize', () => {
   window.clearTimeout(tickerResizeTimer);
   tickerResizeTimer = window.setTimeout(setupTicker, 120);
@@ -949,6 +994,7 @@ if (matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion
     let suppressClick = false;
 
     scroller.addEventListener('pointerdown', (event) => {
+      if (event.target.closest('[data-pager] button')) return;
       if (event.button !== 0 || scroller.scrollWidth <= scroller.clientWidth + 8) return;
       dragging = true;
       moved = false;
