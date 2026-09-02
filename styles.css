@@ -2847,3 +2847,87 @@ a:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
     bottom:auto!important;
   }
 }
+
+/* Final evidence-fit pass: minimize blank gutters after all original assets are visible. */
+.credential-grid img,
+.credential-grid .fit-contain img,
+.credential-grid .material-poster img{
+  padding:2px!important;
+}
+
+.credential-grid .material-photo img,
+.credential-grid .material-poster img{
+  padding:0!important;
+}
+
+.national-scholarship-flip.is-flipped .flip-surface{
+  transform:rotateY(180deg);
+}
+
+.credential-grid .national-scholarship-flip{
+  display:grid!important;
+  grid-column:span 4!important;
+  grid-template-rows:minmax(0,auto) auto;
+  width:min(620px,100%)!important;
+  justify-self:center!important;
+}
+
+.credential-grid .national-scholarship-flip .flip-stage{
+  min-height:0!important;
+  padding:0!important;
+  overflow:hidden;
+  background:#fff!important;
+}
+
+.credential-grid .national-scholarship-flip .flip-surface{
+  width:100%;
+  height:auto!important;
+  min-height:0!important;
+  aspect-ratio:1749/1279;
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+  background:#fff;
+}
+
+.credential-grid .national-scholarship-flip .flip-surface:hover{
+  box-shadow:none;
+}
+
+.credential-grid .national-scholarship-flip .flip-surface img{
+  padding:0!important;
+  object-fit:contain!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  background:#fff!important;
+}
+
+.credential-grid .national-scholarship-flip figcaption{
+  gap:9px;
+  flex-direction:column;
+  padding:11px 12px 12px;
+}
+
+.credential-grid .national-scholarship-flip .scholarship-flip-trigger{
+  min-height:34px;
+  padding:0 13px;
+  border:1px solid rgba(11,18,32,.14);
+  border-radius:999px;
+  background:#f7f8f5;
+  color:#40505f;
+}
+
+.credential-grid .national-scholarship-flip .scholarship-flip-trigger:hover,
+.credential-grid .national-scholarship-flip .scholarship-flip-trigger:focus-visible{
+  background:#fff;
+  border-color:rgba(34,117,150,.45);
+  outline:none;
+}
+
+@media(max-width:760px){
+  .credential-grid .national-scholarship-flip{
+    width:calc(100vw - 42px)!important;
+    max-width:348px!important;
+    min-width:0!important;
+  }
+}

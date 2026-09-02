@@ -112,8 +112,8 @@
     ]
   }
   </script>
-  <link rel="stylesheet" href="styles.css?v=20260902-03" />
-  <script defer src="script.js?v=20260902-03"></script>
+  <link rel="stylesheet" href="styles.css?v=20260902-04" />
+  <script defer src="script.js?v=20260902-04"></script>
 </head>
 <body>
   <div class="ambient-spotlight" aria-hidden="true"></div>
@@ -619,7 +619,7 @@
               </div>
             </div>
           </article>
-          <article class="media-feature material-flip-card" data-flip-card>
+          <article class="media-feature material-flip-card" data-flip-card data-flip-front-label="media.freshman.link.front" data-flip-back-label="media.freshman.link.back">
             <div class="flip-stage">
               <button class="flip-surface" type="button" data-flip-toggle aria-label="Toggle freshman publicity material side">
                 <img class="flip-front" src="assets/evidence/freshman-senior-profile-front.jpg" alt="Freshman publicity material front side" loading="lazy" />
@@ -635,21 +635,17 @@
           </article>
         </div>
         <div class="credential-grid">
-          <figure class="fit-contain material-certificate national-scholarship-pager" id="record-national-scholarship" data-pager>
-            <div class="pager-stage" aria-label="National Scholarship certificate">
-              <a class="pager-slide is-active" href="assets/evidence/national-scholarship.jpg" target="_blank" rel="noreferrer" data-pager-slide>
-                <img src="assets/evidence/national-scholarship.jpg" alt="National Scholarship certificate front side" loading="eager" />
-              </a>
-              <a class="pager-slide" href="assets/evidence/national-scholarship-cover.jpg" target="_blank" rel="noreferrer" data-pager-slide>
-                <img src="assets/evidence/national-scholarship-cover.jpg" alt="National Scholarship certificate back side" loading="eager" />
-              </a>
-              <div class="pager-controls" aria-label="National Scholarship gallery controls">
-                <button type="button" data-pager-prev aria-label="Previous National Scholarship record">‹</button>
-                <span data-pager-count>1 / 2</span>
-                <button type="button" data-pager-next aria-label="Next National Scholarship record">›</button>
-              </div>
+          <figure class="fit-contain material-certificate national-scholarship-flip" id="record-national-scholarship" data-flip-card data-flip-front-label="media.scholarship.link.front" data-flip-back-label="media.scholarship.link.back">
+            <div class="flip-stage" aria-label="National Scholarship certificate">
+              <button class="flip-surface" type="button" data-flip-toggle aria-label="Toggle National Scholarship certificate side">
+                <img class="flip-front" src="assets/evidence/national-scholarship.jpg" alt="National Scholarship certificate inner side" loading="eager" />
+                <img class="flip-back" src="assets/evidence/national-scholarship-cover.jpg" alt="National Scholarship certificate cover side" loading="eager" />
+              </button>
             </div>
-            <figcaption data-i18n="credentials.nationalScholarship">National Scholarship, 2024-2025</figcaption>
+            <figcaption>
+              <span data-i18n="credentials.nationalScholarship">National Scholarship, 2024-2025</span>
+              <button class="media-feature-link flip-trigger scholarship-flip-trigger" type="button" data-flip-toggle><span data-i18n="media.scholarship.link.back">View cover side</span><b>↻</b></button>
+            </figcaption>
           </figure>
           <figure class="proof-feature fit-contain orcid-record">
             <a href="https://orcid.org/0009-0006-8833-3070" target="_blank" rel="noreferrer">

@@ -148,6 +148,8 @@ const translations = {
     'media.freshman.desc': 'Click the card to switch between the front and back sides of the college publicity material',
     'media.freshman.link.front': 'View front side',
     'media.freshman.link.back': 'View back side',
+    'media.scholarship.link.front': 'View certificate side',
+    'media.scholarship.link.back': 'View cover side',
     'life.kicker': 'Life moments',
     'life.heading': 'Research, service<br><em>and life in motion</em>',
     'life.summary': 'Research training, industry forum participation, academic sharing, international exchange and high-level orchestra performance',
@@ -413,6 +415,8 @@ const translations = {
     'media.freshman.desc': '点击卡片切换正反面，展示学院面向新生宣传的优秀学长材料',
     'media.freshman.link.front': '查看正面',
     'media.freshman.link.back': '查看反面',
+    'media.scholarship.link.front': '查看证书页',
+    'media.scholarship.link.back': '查看封面',
     'life.kicker': '综合发展',
     'life.heading': '科研、服务与<br><em>综合发展</em>',
     'life.summary': '科研实习、行业论坛交流、生涯规划分享、国际交流与高水平艺术团实践共同构成本科阶段的综合成长经历',
@@ -556,9 +560,11 @@ function updateMediaFlipLabels() {
   document.querySelectorAll('[data-flip-card]').forEach((card) => {
     const label = card.querySelector('.flip-trigger span');
     if (!label) return;
+    const frontKey = card.dataset.flipFrontLabel || 'media.freshman.link.front';
+    const backKey = card.dataset.flipBackLabel || 'media.freshman.link.back';
     label.textContent = card.classList.contains('is-flipped')
-      ? copy['media.freshman.link.front']
-      : copy['media.freshman.link.back'];
+      ? copy[frontKey]
+      : copy[backKey];
   });
 }
 
@@ -700,17 +706,27 @@ copyButtons.forEach((button) => {
   });
 });
 
-document.querySelectorAll('[data-flip-card]').forEach((card) => {
-  card.querySelectorAll('[data-flip-toggle]').forEach((button) => {
-    button.setAttribute('aria-pressed', String(card.classList.contains('is-flipped')));
-    button.addEventListener('click', () => {
-      const flipped = card.classList.toggle('is-flipped');
-      card.querySelectorAll('[data-flip-toggle]').forEach((control) => {
-        control.setAttribute('aria-pressed', String(flipped));
-      });
-      updateMediaFlipLabels();
-    });
+const setFlipState = (card, flipped) => {
+  card.classList.toggle('is-flipped', flipped);
+  card.querySelectorAll('[data-flip-toggle]').forEach((control) => {
+    control.setAttribute('aria-pressed', String(flipped));
   });
+  updateMediaFlipLabels();
+};
+
+document.querySelectorAll('[data-flip-card]').forEach((card) => {
+  setFlipState(card, card.classList.contains('is-flipped'));
+});
+
+document.addEventListener('click', (event) => {
+  const toggle = event.target.closest('[data-flip-toggle]');
+  if (!toggle) return;
+  const card = toggle.closest('[data-flip-card]');
+  if (!card) return;
+
+  event.preventDefault();
+  event.stopPropagation();
+  setFlipState(card, !card.classList.contains('is-flipped'));
 });
 
 document.querySelectorAll('[data-pager]').forEach((pager) => {
@@ -998,7 +1014,7 @@ if (matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion
     let suppressClick = false;
 
     scroller.addEventListener('pointerdown', (event) => {
-      if (event.target.closest('[data-pager] button')) return;
+      if (event.target.closest('[data-pager] button, [data-flip-toggle]')) return;
       if (event.button !== 0 || scroller.scrollWidth <= scroller.clientWidth + 8) return;
       dragging = true;
       moved = false;
