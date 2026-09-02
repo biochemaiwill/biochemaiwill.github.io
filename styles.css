@@ -3101,3 +3101,80 @@ a:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
     grid-auto-columns:auto!important;
   }
 }
+
+/* National Scholarship card: keep the flip interaction, but scale it like the rest of the evidence gallery. */
+.credential-grid .national-scholarship-flip{
+  grid-column:auto!important;
+  width:auto!important;
+  max-width:none!important;
+  justify-self:auto!important;
+  align-self:start!important;
+}
+
+.credential-grid .national-scholarship-flip .flip-stage{
+  display:block!important;
+  width:100%!important;
+  height:246px!important;
+  min-height:0!important;
+  padding:0!important;
+  overflow:hidden!important;
+}
+
+.credential-grid .national-scholarship-flip .flip-surface{
+  width:100%!important;
+  height:100%!important;
+  min-height:0!important;
+  aspect-ratio:auto!important;
+}
+
+.credential-grid .national-scholarship-flip .flip-surface img{
+  width:100%!important;
+  height:100%!important;
+  max-width:100%!important;
+  max-height:100%!important;
+  object-fit:contain!important;
+}
+
+.credential-grid .national-scholarship-flip figcaption{
+  min-height:0!important;
+  gap:7px!important;
+  padding:9px 10px 10px!important;
+  font-size:12px!important;
+  line-height:1.32!important;
+}
+
+.credential-grid .national-scholarship-flip .scholarship-flip-trigger{
+  min-height:30px!important;
+  padding:0 11px!important;
+  font-size:9px!important;
+}
+
+@media(min-width:761px) and (max-width:1599px){
+  .credential-grid .national-scholarship-flip .flip-stage{
+    height:246px!important;
+  }
+}
+
+@media(min-width:1600px){
+  .credential-grid .national-scholarship-flip .flip-stage{
+    height:238px!important;
+  }
+}
+
+@media(max-width:760px){
+  .credential-grid .national-scholarship-flip{
+    width:auto!important;
+    max-width:none!important;
+    min-width:0!important;
+  }
+
+  .credential-grid .national-scholarship-flip .flip-stage{
+    height:166px!important;
+  }
+}
+
+@media(max-width:480px){
+  .credential-grid .national-scholarship-flip .flip-stage{
+    height:190px!important;
+  }
+}
