@@ -2686,3 +2686,76 @@ a:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
     transition:none!important;
   }
 }
+
+/* Tight image framing: photo cards fill the frame; document evidence stays legible. */
+.life-gallery .life-card a,
+.life-gallery .life-feature a,
+.life-gallery .life-card:not(.life-feature) a,
+.life-gallery .life-card.life-campus a,
+.life-gallery .life-card.life-tennis a{
+  padding:0!important;
+  background:#0b1220!important;
+}
+
+.life-gallery .life-card img,
+.life-gallery .life-feature img,
+.life-gallery .life-campus img,
+.life-gallery .life-tennis img{
+  width:100%!important;
+  height:100%!important;
+  max-width:none!important;
+  max-height:none!important;
+  object-fit:cover!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+}
+
+.life-gallery .life-campus img{
+  object-position:center 44%!important;
+}
+
+.life-gallery .life-tennis img{
+  object-position:center 42%!important;
+}
+
+.credential-grid .material-photo .image-stage>img,
+.credential-grid .material-poster .image-stage>img{
+  width:100%!important;
+  height:100%!important;
+  max-width:none!important;
+  max-height:none!important;
+  object-fit:cover!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+}
+
+.credential-grid .fit-contain:not(.material-photo):not(.material-poster) .image-stage>img,
+.credential-grid .national-scholarship-pager .pager-slide>img{
+  max-width:100%!important;
+  max-height:100%!important;
+}
+
+.credential-grid .national-scholarship-pager .pager-stage{
+  padding:0!important;
+  min-height:clamp(430px,42vw,560px);
+}
+
+.credential-grid .national-scholarship-pager .pager-slide{
+  inset:0!important;
+  border:0;
+  border-radius:0;
+}
+
+@media(max-width:760px){
+  .credential-grid .national-scholarship-pager .pager-stage{
+    min-height:420px;
+  }
+
+  .credential-grid .national-scholarship-pager .pager-slide{
+    inset:0!important;
+  }
+
+  .national-scholarship-pager .pager-controls{
+    bottom:72px!important;
+  }
+}
