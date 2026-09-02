@@ -2714,8 +2714,46 @@ a:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
   object-position:center 44%!important;
 }
 
+.life-gallery .life-award img{
+  object-position:center center!important;
+}
+
+.life-gallery .life-presentation img{
+  object-position:center center!important;
+}
+
 .life-gallery .life-tennis img{
   object-position:center 42%!important;
+}
+
+.life-gallery .life-campus a,
+.life-gallery .life-award a{
+  height:auto!important;
+  aspect-ratio:1279/1706!important;
+}
+
+.life-gallery .life-presentation a{
+  height:auto!important;
+  aspect-ratio:1173/537!important;
+}
+
+.life-gallery .life-tennis a{
+  height:auto!important;
+  aspect-ratio:1049/983!important;
+}
+
+.life-gallery .life-card.life-ratio.life-card a,
+.life-gallery .life-card.life-ratio:not(.life-feature) a,
+.life-gallery .life-card.life-ratio.life-feature a{
+  height:auto!important;
+  aspect-ratio:var(--life-ratio)!important;
+  padding:0!important;
+}
+
+.life-gallery .life-card.life-ratio.life-card img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
 }
 
 .credential-grid .material-photo .image-stage>img,
@@ -2736,26 +2774,76 @@ a:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
 }
 
 .credential-grid .national-scholarship-pager .pager-stage{
+  display:flex!important;
+  flex-direction:column!important;
   padding:0!important;
-  min-height:clamp(430px,42vw,560px);
+  min-height:0!important;
+  background:#fff!important;
+}
+
+.credential-grid .national-scholarship-pager{
+  grid-column:span 4!important;
+  width:min(620px,100%)!important;
+  justify-self:center!important;
 }
 
 .credential-grid .national-scholarship-pager .pager-slide{
-  inset:0!important;
+  position:relative!important;
+  inset:auto!important;
+  display:none!important;
   border:0;
   border-radius:0;
+  width:100%!important;
+  height:auto!important;
+  min-height:0!important;
+  opacity:1!important;
+  pointer-events:auto!important;
+  transform:none!important;
+  transition:none!important;
+  box-shadow:none!important;
+  background:#fff!important;
+}
+
+.credential-grid .national-scholarship-pager .pager-slide.is-active{
+  display:block!important;
+}
+
+.credential-grid .national-scholarship-pager .pager-slide>img{
+  display:block!important;
+  width:100%!important;
+  height:auto!important;
+  max-width:100%!important;
+  max-height:none!important;
+  object-fit:contain!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+}
+
+.national-scholarship-pager .pager-controls{
+  position:relative!important;
+  left:auto!important;
+  bottom:auto!important;
+  align-self:center!important;
+  margin:12px 0 14px!important;
+  transform:none!important;
 }
 
 @media(max-width:760px){
+  .credential-grid .national-scholarship-pager{
+    width:calc(100vw - 42px)!important;
+    max-width:348px!important;
+    min-width:0!important;
+  }
+
   .credential-grid .national-scholarship-pager .pager-stage{
-    min-height:420px;
+    min-height:0!important;
   }
 
   .credential-grid .national-scholarship-pager .pager-slide{
-    inset:0!important;
+    inset:auto!important;
   }
 
   .national-scholarship-pager .pager-controls{
-    bottom:72px!important;
+    bottom:auto!important;
   }
 }
