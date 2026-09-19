@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://wutianxiang.cn/</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-09-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -16,6 +16,18 @@
     <image:image>
       <image:loc>https://wutianxiang.cn/assets/evidence/neurips-2026-ai4dd-submission.png</image:loc>
       <image:caption>NeurIPS 2026 AI4DD Workshop submission record</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://wutianxiang.cn/assets/evidence/iclr-2027-nailong-submission.png</image:loc>
+      <image:caption>ICLR 2027 submission record for NAILONG</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://wutianxiang.cn/assets/evidence/iclr-2027-unforkable-cache-submission.png</image:loc>
+      <image:caption>ICLR 2027 submission record for The Unforkable Cache</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://wutianxiang.cn/assets/evidence/iclr-2027-paper2skill-submission.png</image:loc>
+      <image:caption>ICLR 2027 submission record for Paper2Skill</image:caption>
     </image:image>
   </url>
 </urlset>
