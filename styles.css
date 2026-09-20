@@ -3178,3 +3178,42 @@ a:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
     height:190px!important;
   }
 }
+
+/* Publication thumbnails use the full media frame instead of centered, padded previews. */
+.publication-card > a.image-stage,
+.publication-card > .publication-thumb.image-stage{
+  display:block!important;
+  width:100%!important;
+  height:190px!important;
+  margin-top:0!important;
+  padding:0!important;
+  background:#fff!important;
+}
+
+.publication-card > a.image-stage:before,
+.publication-card > .publication-thumb.image-stage:before{
+  display:none!important;
+}
+
+.publication-card > a.image-stage > img,
+.publication-card > .publication-thumb.image-stage > img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:none!important;
+  max-height:none!important;
+  padding:0!important;
+  object-fit:fill!important;
+  object-position:center!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  background:#fff!important;
+}
+
+@media(max-width:760px){
+  .publication-card > a.image-stage,
+  .publication-card > .publication-thumb.image-stage{
+    height:auto!important;
+    aspect-ratio:1.9/1!important;
+  }
+}
