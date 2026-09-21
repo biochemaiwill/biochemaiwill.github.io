@@ -85,6 +85,7 @@ const translations = {
     scroll: 'Scroll to research',
     'profile.kicker': 'Academic snapshot',
     'profile.heading': 'Academic profile',
+    'profile.heading.desktop': 'A profile across <em>research, honors and service.</em>',
     'profile.summary': 'Computer Science undergraduate at Xidian University with research training across AIDD agents, ADMET data systems, molecular representation learning and peptide modeling; leading a national innovation project and an NSFC General Program subproject.',
     'metric.gpa.label': 'GPA',
     'metric.gpa.note': 'Core average 92+',
@@ -164,6 +165,7 @@ const translations = {
     'media.scholarship.link.back': 'View cover side',
     'life.kicker': 'Life moments',
     'life.heading': 'Beyond research',
+    'life.heading.desktop': 'Research, service<br><em>and life in motion</em>',
     'life.summary': 'Research training, industry forum participation, academic sharing, international exchange and high-level orchestra performance',
     'life.researchInstitute': 'Computational Bioinformatics Institute research training',
     'life.air': 'Tsinghua AIR research internship',
@@ -189,6 +191,7 @@ const translations = {
     'ticker.protein': 'Protein Modeling',
     'research.kicker': 'Selected research',
     'research.heading': 'Research projects',
+    'research.heading.desktop': 'From scientific data<br>to <em>drug discovery models.</em>',
     'research.summary': 'Representative work spans patent-scale data agents, condition-aware ADMET modeling, peptide engineering, 3D molecular pretraining, drug-discovery agents and protein-ligand foundation models.',
     'project1.type': '01 / Patent-scale scientific data agents',
     'status.ongoing': 'Ongoing',
@@ -244,6 +247,7 @@ const translations = {
     'principle3.desc': 'Data quality is part of the scientific method, not cleanup.',
     'experience.kicker': 'Experience',
     'experience.heading': 'Education & experience',
+    'experience.heading.desktop': 'Academic trajectory.',
     'experience.summary': 'Computer science → AI4Science → drug discovery.',
     'timeline.current': 'CURRENT',
     'timeline.intern.place': 'Tsinghua University · Institute for AI Industry Research',
@@ -255,6 +259,7 @@ const translations = {
     'timeline.degree.desc': 'Computer science training with a research focus on AI for scientific discovery.',
     'outputs.kicker': 'Publications & outputs',
     'outputs.heading': 'Papers & submissions',
+    'outputs.heading.desktop': 'Published and submitted<br><em>research outputs.</em>',
     'outputs.desc': 'Selected published and submitted work is presented with current status, authorship role and supporting records.',
     'outputs.orcid': 'View ORCID record',
     'outputs.paperLink': 'View published paper',
@@ -281,6 +286,7 @@ const translations = {
     'pub7.action': 'View submission record',
     'contact.kicker': 'Research · Collaboration · Academic exchange',
     'contact.heading': 'Get in touch',
+    'contact.heading.desktop': 'Find me<br><em>online.</em>',
     'contact.github': 'Code & projects',
     'contact.orcid': 'Research identity',
     'contact.qrLabel': 'Quick access',
@@ -376,6 +382,7 @@ const translations = {
     scroll: '查看研究',
     'profile.kicker': '学术概览',
     'profile.heading': '学术概览',
+    'profile.heading.desktop': '本科阶段的<em>综合发展总览。</em>',
     'profile.summary': '西安电子科技大学计算机科学与技术本科生，研究训练覆盖 AI 药物发现智能体、ADMET 数据系统、分子表征学习与多肽建模；主持国家级大创项目，并担任国家自然科学基金面上项目子课题负责人。',
     'metric.gpa.label': 'GPA',
     'metric.gpa.note': '核心课程均分 92+',
@@ -455,6 +462,7 @@ const translations = {
     'media.scholarship.link.back': '查看封面',
     'life.kicker': '综合发展',
     'life.heading': '科研之外',
+    'life.heading.desktop': '科研、服务与<br><em>综合发展</em>',
     'life.summary': '科研实习、行业论坛交流、生涯规划分享、国际交流与高水平艺术团实践共同构成本科阶段的综合成长经历',
     'life.researchInstitute': '计算生物信息学研究所科研训练',
     'life.air': '清华大学智能产业研究院科研实习',
@@ -480,6 +488,7 @@ const translations = {
     'ticker.protein': '蛋白质建模',
     'research.kicker': '代表性研究',
     'research.heading': '研究项目',
+    'research.heading.desktop': '从科学数据<br>到<em>药物发现模型。</em>',
     'research.summary': '代表性研究覆盖专利尺度数据智能体、条件感知 ADMET 建模、多肽工程、三维分子预训练、药物研发智能体与蛋白-配体基础模型。',
     'project1.type': '01 / 专利尺度科学数据智能体',
     'status.ongoing': '进行中',
@@ -535,6 +544,7 @@ const translations = {
     'principle3.desc': '数据质量不是清理工作，而是科学方法的一部分。',
     'experience.kicker': '经历',
     'experience.heading': '学习与研究经历',
+    'experience.heading.desktop': '学术轨迹。',
     'experience.summary': '计算机科学 → AI4Science → 药物发现。',
     'timeline.current': '当前',
     'timeline.intern.place': '清华大学智能产业研究院',
@@ -546,6 +556,7 @@ const translations = {
     'timeline.degree.desc': '计算机科学训练，研究兴趣聚焦于面向科学发现的 AI。',
     'outputs.kicker': '论文与产出',
     'outputs.heading': '论文与投稿',
+    'outputs.heading.desktop': '已发表与投稿中的<br><em>高水平研究产出。</em>',
     'outputs.desc': '已发表论文与投稿中稿件列明发表状态、作者贡献及相关学术记录。',
     'outputs.orcid': '查看 ORCID 记录',
     'outputs.paperLink': '查看已发表论文',
@@ -572,6 +583,7 @@ const translations = {
     'pub7.action': '查看投稿记录',
     'contact.kicker': '研究 · 合作 · 学术交流',
     'contact.heading': '联系与交流',
+    'contact.heading.desktop': '在线<br><em>找到我。</em>',
     'contact.github': '代码与项目',
     'contact.orcid': '研究身份',
     'contact.qrLabel': '快捷访问',
@@ -626,9 +638,11 @@ const updateControlLabels = () => {
   });
 };
 
+const mobileLayout = window.matchMedia('(max-width:760px)');
 const setLanguage = (lang) => {
   const activeLang = translations[lang] ? lang : 'en';
   const copy = translations[activeLang];
+  const resolveCopy = (key) => (!mobileLayout.matches && copy[`${key}.desktop`]) || copy[key];
 
   document.documentElement.lang = activeLang === 'zh' ? 'zh-CN' : 'en';
   document.title = copy.metaTitle;
@@ -637,12 +651,12 @@ const setLanguage = (lang) => {
   document.querySelector('meta[property="og:description"]')?.setAttribute('content', copy.metaDescription);
 
   document.querySelectorAll('[data-i18n]').forEach((el) => {
-    const value = copy[el.dataset.i18n];
+    const value = resolveCopy(el.dataset.i18n);
     if (value) el.textContent = value;
   });
 
   document.querySelectorAll('[data-i18n-html]').forEach((el) => {
-    const value = copy[el.dataset.i18nHtml];
+    const value = resolveCopy(el.dataset.i18nHtml);
     if (value) el.innerHTML = value;
   });
 
@@ -697,6 +711,9 @@ const setupTicker = () => {
 
 setLanguage(requestedLang || 'zh');
 setupTicker();
+mobileLayout.addEventListener('change', () => {
+  setLanguage(document.documentElement.lang === 'zh-CN' ? 'zh' : 'en');
+});
 langToggle?.addEventListener('click', () => {
   const current = document.documentElement.lang === 'zh-CN' ? 'zh' : 'en';
   setLanguage(current === 'zh' ? 'en' : 'zh');

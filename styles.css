@@ -3218,7 +3218,8 @@ a:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
   }
 }
 
-/* Editorial polish: shared spacing and readable type over the legacy component rules. */
+/* Keep the mobile polish; desktop retains the original design above. */
+@media(max-width:760px){
 :root{
   --ink:#16232b;
   --muted:#56656e;
@@ -3522,6 +3523,9 @@ html[lang] :is(.profile-lead,.section-heading,.output-title,.life-heading,.exper
   .lightbox{padding:64px 12px 24px}
   .lightbox-caption{font-size:12px}
 }
+}
+.qr-modal{visibility:hidden}
+.qr-modal.open{visibility:visible}
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .ticker-track{animation:none}
