@@ -7,6 +7,10 @@ const translations = {
     metaDescription: 'Tianxiang Wu, also searchable as Wu Tianxiang or wutianxiang, is a Computer Science undergraduate at Xidian University and a research intern at Tsinghua University Institute for AI Industry Research, working on AI for drug discovery, scientific information extraction, ADMET data and molecular representation learning.',
     langButton: '中文',
     langLabel: 'Switch to Chinese',
+    'ui.close': 'Close preview',
+    'ui.preview': 'Image preview',
+    'ui.previous': 'Previous items',
+    'ui.next': 'Next items',
     'brand.name': 'Tianxiang Wu',
     'nav.profile': 'Profile',
     'nav.research': 'Research',
@@ -80,7 +84,7 @@ const translations = {
     'spotlight.service.note': 'Volunteer service record',
     scroll: 'Scroll to research',
     'profile.kicker': 'Academic snapshot',
-    'profile.heading': 'A profile across <em>research, honors and service.</em>',
+    'profile.heading': 'Academic profile',
     'profile.summary': 'Computer Science undergraduate at Xidian University with research training across AIDD agents, ADMET data systems, molecular representation learning and peptide modeling; leading a national innovation project and an NSFC General Program subproject.',
     'metric.gpa.label': 'GPA',
     'metric.gpa.note': 'Core average 92+',
@@ -159,7 +163,7 @@ const translations = {
     'media.scholarship.link.front': 'View certificate side',
     'media.scholarship.link.back': 'View cover side',
     'life.kicker': 'Life moments',
-    'life.heading': 'Research, service<br><em>and life in motion</em>',
+    'life.heading': 'Beyond research',
     'life.summary': 'Research training, industry forum participation, academic sharing, international exchange and high-level orchestra performance',
     'life.researchInstitute': 'Computational Bioinformatics Institute research training',
     'life.air': 'Tsinghua AIR research internship',
@@ -184,7 +188,7 @@ const translations = {
     'ticker.mrl': 'Molecular Representation Learning',
     'ticker.protein': 'Protein Modeling',
     'research.kicker': 'Selected research',
-    'research.heading': 'From scientific data<br>to <em>drug discovery models.</em>',
+    'research.heading': 'Research projects',
     'research.summary': 'Representative work spans patent-scale data agents, condition-aware ADMET modeling, peptide engineering, 3D molecular pretraining, drug-discovery agents and protein-ligand foundation models.',
     'project1.type': '01 / Patent-scale scientific data agents',
     'status.ongoing': 'Ongoing',
@@ -239,7 +243,7 @@ const translations = {
     'principle3.title': 'Quality is research',
     'principle3.desc': 'Data quality is part of the scientific method, not cleanup.',
     'experience.kicker': 'Experience',
-    'experience.heading': 'Academic trajectory.',
+    'experience.heading': 'Education & experience',
     'experience.summary': 'Computer science → AI4Science → drug discovery.',
     'timeline.current': 'CURRENT',
     'timeline.intern.place': 'Tsinghua University · Institute for AI Industry Research',
@@ -250,7 +254,7 @@ const translations = {
     'timeline.degree.title': 'B.Sc. · Computer Science & Technology',
     'timeline.degree.desc': 'Computer science training with a research focus on AI for scientific discovery.',
     'outputs.kicker': 'Publications & outputs',
-    'outputs.heading': 'Published and submitted<br><em>research outputs.</em>',
+    'outputs.heading': 'Papers & submissions',
     'outputs.desc': 'Selected published and submitted work is presented with current status, authorship role and supporting records.',
     'outputs.orcid': 'View ORCID record',
     'outputs.paperLink': 'View published paper',
@@ -276,7 +280,7 @@ const translations = {
     'pub7.desc': 'Seventh author. The manuscript was submitted to ICLR 2027 on 19 September 2026.',
     'pub7.action': 'View submission record',
     'contact.kicker': 'Research · Collaboration · Academic exchange',
-    'contact.heading': 'Find me<br><em>online.</em>',
+    'contact.heading': 'Get in touch',
     'contact.github': 'Code & projects',
     'contact.orcid': 'Research identity',
     'contact.qrLabel': 'Quick access',
@@ -294,6 +298,10 @@ const translations = {
     metaDescription: '吴天翔个人主页（Tianxiang Wu / Wu Tianxiang / wutianxiang）：西安电子科技大学计算机科学与技术本科生、清华大学智能产业研究院科研实习生，研究方向包括 AI 药物发现、科学信息抽取、ADMET 数据与分子表征学习。',
     langButton: 'EN',
     langLabel: 'Switch to English',
+    'ui.close': '关闭预览',
+    'ui.preview': '图片预览',
+    'ui.previous': '上一组',
+    'ui.next': '下一组',
     'brand.name': '吴天翔',
     'nav.profile': '概览',
     'nav.research': '研究',
@@ -367,7 +375,7 @@ const translations = {
     'spotlight.service.note': '累计志愿服务记录',
     scroll: '查看研究',
     'profile.kicker': '学术概览',
-    'profile.heading': '本科阶段的<em>综合发展总览。</em>',
+    'profile.heading': '学术概览',
     'profile.summary': '西安电子科技大学计算机科学与技术本科生，研究训练覆盖 AI 药物发现智能体、ADMET 数据系统、分子表征学习与多肽建模；主持国家级大创项目，并担任国家自然科学基金面上项目子课题负责人。',
     'metric.gpa.label': 'GPA',
     'metric.gpa.note': '核心课程均分 92+',
@@ -446,7 +454,7 @@ const translations = {
     'media.scholarship.link.front': '查看证书页',
     'media.scholarship.link.back': '查看封面',
     'life.kicker': '综合发展',
-    'life.heading': '科研、服务与<br><em>综合发展</em>',
+    'life.heading': '科研之外',
     'life.summary': '科研实习、行业论坛交流、生涯规划分享、国际交流与高水平艺术团实践共同构成本科阶段的综合成长经历',
     'life.researchInstitute': '计算生物信息学研究所科研训练',
     'life.air': '清华大学智能产业研究院科研实习',
@@ -471,7 +479,7 @@ const translations = {
     'ticker.mrl': '分子表征学习',
     'ticker.protein': '蛋白质建模',
     'research.kicker': '代表性研究',
-    'research.heading': '从科学数据<br>到<em>药物发现模型。</em>',
+    'research.heading': '研究项目',
     'research.summary': '代表性研究覆盖专利尺度数据智能体、条件感知 ADMET 建模、多肽工程、三维分子预训练、药物研发智能体与蛋白-配体基础模型。',
     'project1.type': '01 / 专利尺度科学数据智能体',
     'status.ongoing': '进行中',
@@ -526,7 +534,7 @@ const translations = {
     'principle3.title': '质量也是研究',
     'principle3.desc': '数据质量不是清理工作，而是科学方法的一部分。',
     'experience.kicker': '经历',
-    'experience.heading': '学术轨迹。',
+    'experience.heading': '学习与研究经历',
     'experience.summary': '计算机科学 → AI4Science → 药物发现。',
     'timeline.current': '当前',
     'timeline.intern.place': '清华大学智能产业研究院',
@@ -537,7 +545,7 @@ const translations = {
     'timeline.degree.title': '本科 · 计算机科学与技术',
     'timeline.degree.desc': '计算机科学训练，研究兴趣聚焦于面向科学发现的 AI。',
     'outputs.kicker': '论文与产出',
-    'outputs.heading': '已发表与投稿中的<br><em>高水平研究产出。</em>',
+    'outputs.heading': '论文与投稿',
     'outputs.desc': '已发表论文与投稿中稿件列明发表状态、作者贡献及相关学术记录。',
     'outputs.orcid': '查看 ORCID 记录',
     'outputs.paperLink': '查看已发表论文',
@@ -563,7 +571,7 @@ const translations = {
     'pub7.desc': '第七作者。稿件于 2026 年 9 月 19 日投稿 ICLR 2027。',
     'pub7.action': '查看投稿记录',
     'contact.kicker': '研究 · 合作 · 学术交流',
-    'contact.heading': '在线<br><em>找到我。</em>',
+    'contact.heading': '联系与交流',
     'contact.github': '代码与项目',
     'contact.orcid': '研究身份',
     'contact.qrLabel': '快捷访问',
@@ -608,6 +616,16 @@ function updateMediaFlipLabels() {
   });
 }
 
+const updateControlLabels = () => {
+  const copy = translations[document.documentElement.lang === 'zh-CN' ? 'zh' : 'en'];
+  document.querySelectorAll('[data-i18n-label]').forEach((el) => {
+    const value = copy[el.dataset.i18nLabel];
+    if (!value) return;
+    el.setAttribute('aria-label', value);
+    if (el.tagName === 'BUTTON') el.title = value;
+  });
+};
+
 const setLanguage = (lang) => {
   const activeLang = translations[lang] ? lang : 'en';
   const copy = translations[activeLang];
@@ -637,6 +655,7 @@ const setLanguage = (lang) => {
 
   saveLanguage(activeLang);
   updateMediaFlipLabels();
+  updateControlLabels();
 };
 
 const langToggle = document.querySelector('[data-lang-toggle]');
@@ -682,20 +701,48 @@ langToggle?.addEventListener('click', () => {
   const current = document.documentElement.lang === 'zh-CN' ? 'zh' : 'en';
   setLanguage(current === 'zh' ? 'en' : 'zh');
   setupTicker();
+  window.dispatchEvent(new Event('resize'));
+});
+
+const dialogStates = new WeakMap();
+const openPreview = (dialog) => {
+  dialogStates.set(dialog, { focus: document.activeElement, overflow: document.body.style.overflow });
+  dialog.classList.add('open');
+  dialog.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+  dialog.querySelector('button')?.focus({ preventScroll: true });
+};
+const closePreview = (dialog) => {
+  const state = dialogStates.get(dialog);
+  dialog.classList.remove('open');
+  dialog.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = state?.overflow || '';
+  state?.focus?.focus({ preventScroll: true });
+};
+document.addEventListener('keydown', (event) => {
+  if (event.key !== 'Tab') return;
+  const dialog = document.querySelector('.qr-modal.open, .lightbox.open');
+  if (!dialog) return;
+  const controls = [...dialog.querySelectorAll('button, a[href]')].filter(el => !el.disabled);
+  const first = controls[0];
+  const last = controls[controls.length - 1];
+  if (event.shiftKey && document.activeElement === first) {
+    event.preventDefault();
+    last?.focus();
+  } else if (!event.shiftKey && document.activeElement === last) {
+    event.preventDefault();
+    first?.focus();
+  }
 });
 
 const qrModal = document.querySelector('[data-qr-modal]');
 const openQrModal = () => {
   if (!qrModal) return;
-  qrModal.classList.add('open');
-  qrModal.setAttribute('aria-hidden', 'false');
-  document.body.style.overflow = 'hidden';
+  openPreview(qrModal);
 };
 const closeQrModal = () => {
   if (!qrModal) return;
-  qrModal.classList.remove('open');
-  qrModal.setAttribute('aria-hidden', 'true');
-  document.body.style.overflow = '';
+  closePreview(qrModal);
 };
 document.querySelectorAll('[data-qr-open]').forEach((button) => {
   button.addEventListener('click', openQrModal);
@@ -876,9 +923,10 @@ let syncActiveNav = () => {};
 if (navLinks.length && sections.length) {
   syncActiveNav = () => {
     const marker = window.scrollY + Math.min(260, window.innerHeight * 0.35);
-    let active = sections[0];
+    let active = null;
     sections.forEach((item) => {
-      if (item.section.offsetTop <= marker) active = item;
+      const top = item.section.getBoundingClientRect().top + window.scrollY;
+      if (top <= marker) active = item;
     });
     if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) {
       active = sections[sections.length - 1];
@@ -890,7 +938,12 @@ if (navLinks.length && sections.length) {
       if (rect.top <= Math.min(720, window.innerHeight * 0.82) && rect.bottom > 90) active = hashMatch;
     }
 
-    navLinks.forEach((link) => link.classList.toggle('active', link.getAttribute('href') === active.href));
+    navLinks.forEach((link) => {
+      const current = link.getAttribute('href') === active?.href;
+      link.classList.toggle('active', current);
+      if (current) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
+    });
   };
   syncActiveNav();
   window.addEventListener('scroll', syncActiveNav, { passive: true });
@@ -907,7 +960,8 @@ if (internalAnchorLinks.length) {
 
     const horizontalScroller = target.closest('.credential-grid, .research-mosaic, .publication-list, .evidence-board, .life-gallery');
     if (horizontalScroller && horizontalScroller.scrollWidth > horizontalScroller.clientWidth + 8) {
-      const left = Math.max(0, target.offsetLeft - (horizontalScroller.clientWidth - target.clientWidth) / 2);
+      const relativeLeft = target.getBoundingClientRect().left - horizontalScroller.getBoundingClientRect().left + horizontalScroller.scrollLeft;
+      const left = Math.max(0, relativeLeft - (horizontalScroller.clientWidth - target.clientWidth) / 2);
       horizontalScroller.scrollTo({ left, behavior: smooth && !prefersReducedMotion ? 'smooth' : 'auto' });
     }
   };
@@ -964,17 +1018,16 @@ const setupHorizontalAffordances = () => {
 
       const controls = document.createElement('div');
       controls.className = 'scroll-controls';
-      controls.setAttribute('aria-hidden', 'true');
-      controls.innerHTML = '<button class="scroll-button scroll-button-prev" type="button" tabindex="-1"><span></span></button><button class="scroll-button scroll-button-next" type="button" tabindex="-1"><span></span></button>';
+      controls.innerHTML = '<button class="scroll-button scroll-button-prev" type="button" data-i18n-label="ui.previous"><span></span></button><button class="scroll-button scroll-button-next" type="button" data-i18n-label="ui.next"><span></span></button>';
       shell.appendChild(controls);
 
       hint.querySelector('[data-i18n="scroll.hint"]').textContent = translations[document.documentElement.lang === 'zh-CN' ? 'zh' : 'en']['scroll.hint'];
 
       controls.querySelector('.scroll-button-prev').addEventListener('click', () => {
-        scroller.scrollBy({ left: -Math.max(scroller.clientWidth * 0.82, 280), behavior: 'smooth' });
+        scroller.scrollBy({ left: -Math.max(scroller.clientWidth * 0.82, 280), behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
       });
       controls.querySelector('.scroll-button-next').addEventListener('click', () => {
-        scroller.scrollBy({ left: Math.max(scroller.clientWidth * 0.82, 280), behavior: 'smooth' });
+        scroller.scrollBy({ left: Math.max(scroller.clientWidth * 0.82, 280), behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
       });
     }
 
@@ -1003,6 +1056,7 @@ const setupHorizontalAffordances = () => {
 };
 
 setupHorizontalAffordances();
+updateControlLabels();
 
 if (matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
   const visual = document.querySelector('.portrait-card');
@@ -1090,20 +1144,6 @@ if (matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion
       event.stopPropagation();
     }, true);
 
-    scroller.addEventListener('wheel', (event) => {
-      const maxScroll = scroller.scrollWidth - scroller.clientWidth;
-      if (maxScroll <= 8) return;
-
-      const verticalIntent = Math.abs(event.deltaY) > Math.abs(event.deltaX);
-      if (!verticalIntent) return;
-
-      const atStart = scroller.scrollLeft <= 0;
-      const atEnd = scroller.scrollLeft >= maxScroll - 1;
-      if ((event.deltaY < 0 && atStart) || (event.deltaY > 0 && atEnd)) return;
-
-      event.preventDefault();
-      scroller.scrollBy({ left: event.deltaY, behavior: 'auto' });
-    }, { passive: false });
   });
 }
 
@@ -1131,26 +1171,27 @@ if (galleryLinks.length) {
   lightbox.className = 'lightbox';
   lightbox.setAttribute('role', 'dialog');
   lightbox.setAttribute('aria-modal', 'true');
-  lightbox.innerHTML = '<button class="lightbox-close" type="button" aria-label="Close preview">×</button><img alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="><div class="lightbox-caption"></div>';
+  lightbox.setAttribute('aria-hidden', 'true');
+  lightbox.dataset.i18nLabel = 'ui.preview';
+  lightbox.innerHTML = '<button class="lightbox-close" type="button" data-i18n-label="ui.close">×</button><img alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="><div class="lightbox-caption"></div>';
   document.body.appendChild(lightbox);
+  updateControlLabels();
 
   const lightboxImage = lightbox.querySelector('img');
   const lightboxCaption = lightbox.querySelector('.lightbox-caption');
   const closeLightbox = () => {
-    lightbox.classList.remove('open');
-    document.body.style.overflow = '';
+    closePreview(lightbox);
   };
 
   galleryLinks.forEach((link) => {
     link.addEventListener('click', (event) => {
-      const image = link.querySelector('img');
+      const image = link.querySelector('img') || link.closest('.publication-card')?.querySelector('img');
       if (!image) return;
       event.preventDefault();
       lightboxImage.src = link.href;
       lightboxImage.alt = image.alt || '';
       lightboxCaption.textContent = link.closest('figure, article')?.querySelector('figcaption, h3')?.textContent?.trim() || image.alt || '';
-      lightbox.classList.add('open');
-      document.body.style.overflow = 'hidden';
+      openPreview(lightbox);
     });
   });
 
