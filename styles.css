@@ -3526,6 +3526,12 @@ html[lang] :is(.profile-lead,.section-heading,.output-title,.life-heading,.exper
 }
 .qr-modal{visibility:hidden}
 .qr-modal.open{visibility:visible}
+.spotlight-card .scholarship-title,.metric .scholarship-title{
+  font-size:22px;line-height:1.25;letter-spacing:0;
+}
+.spotlight-card .scholarship-title small,.metric .scholarship-title small{
+  display:block;margin-top:6px;font:600 14px/1.4 var(--sans);letter-spacing:0;text-transform:none;color:inherit;
+}
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .ticker-track{animation:none}
