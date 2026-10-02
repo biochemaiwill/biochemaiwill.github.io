@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://wutianxiang.cn/</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -28,6 +28,10 @@
     <image:image>
       <image:loc>https://wutianxiang.cn/assets/evidence/iclr-2027-paper2skill-submission.png</image:loc>
       <image:caption>ICLR 2027 submission record for Paper2Skill</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://wutianxiang.cn/assets/evidence/volunteer-service-record.png</image:loc>
+      <image:caption>吴天翔志愿服务记录证明</image:caption>
     </image:image>
   </url>
 </urlset>
