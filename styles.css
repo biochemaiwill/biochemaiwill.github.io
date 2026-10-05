@@ -3530,6 +3530,16 @@ html[lang] :is(.profile-lead,.section-heading,.output-title,.life-heading,.exper
 .ticker-toggle{flex:0 0 32px;width:32px;height:32px;margin:0 8px;padding:0;display:grid;place-items:center;border:1px solid currentColor;border-radius:4px;background:transparent;color:inherit;cursor:pointer}
 .ticker-toggle[hidden],.ticker-toggle [hidden]{display:none}
 .ticker-toggle:focus-visible{outline:2px solid currentColor;outline-offset:-4px}
+#media-feature .media-feature-link{
+  width:100%;max-width:240px;height:56px;min-height:56px;justify-content:space-between;gap:10px;padding:8px 14px;border:1px solid #0e5f7a;border-radius:6px;background:#0e5f7a;color:#fff;box-shadow:0 4px 12px rgba(14,95,122,.16);font:700 14px/1.3 var(--sans);letter-spacing:0;text-transform:none;
+}
+#media-feature .media-feature-link span{min-width:0;font:inherit}
+#media-feature .media-feature-link b{flex:none;font-size:18px}
+#media-feature .media-feature-link:hover{background:#08445b;border-color:#08445b;color:#fff}
+#media-feature .media-feature-link:focus-visible{outline:2px solid #0e5f7a;outline-offset:3px}
+@media(min-width:1051px){
+  #media-feature .material-flip-card{grid-template-columns:52% minmax(0,1fr)}
+}
 .spotlight-card .scholarship-title,.metric .scholarship-title{
   line-height:1.25;letter-spacing:0;
 }
