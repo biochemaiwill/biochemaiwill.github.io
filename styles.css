@@ -3526,14 +3526,29 @@ html[lang] :is(.profile-lead,.section-heading,.output-title,.life-heading,.exper
 }
 .qr-modal{visibility:hidden}
 .qr-modal.open{visibility:visible}
+.ticker-viewport{flex:1;min-width:0;overflow:hidden}
+.ticker-toggle{flex:0 0 32px;width:32px;height:32px;margin:0 8px;padding:0;display:grid;place-items:center;border:1px solid currentColor;border-radius:4px;background:transparent;color:inherit;cursor:pointer}
+.ticker-toggle[hidden],.ticker-toggle [hidden]{display:none}
+.ticker-toggle:focus-visible{outline:2px solid currentColor;outline-offset:-4px}
 .spotlight-card .scholarship-title,.metric .scholarship-title{
-  font-size:22px;line-height:1.25;letter-spacing:0;
+  line-height:1.25;letter-spacing:0;
 }
 .spotlight-card .scholarship-title small,.metric .scholarship-title small{
   display:block;margin-top:6px;font:600 14px/1.4 var(--sans);letter-spacing:0;text-transform:none;color:inherit;
+}
+@media(min-width:1100px) and (max-width:1439px){
+  .spotlight-card:first-child{padding-inline:12px}
 }
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .ticker-track{animation:none}
   body *,body *:before,body *:after{animation:none!important;transition:none!important}
+  .ticker .ticker-track[data-ticker-enabled="true"]{animation:ticker 24s linear infinite!important}
+}
+.ticker .ticker-track[data-ticker-paused="true"]{animation-play-state:paused!important}
+@media(hover:hover) and (pointer:fine){
+  .ticker:hover .ticker-track{animation-play-state:paused!important}
+}
+@media(hover:none){
+  .ticker:hover .ticker-track{animation-play-state:running}
 }

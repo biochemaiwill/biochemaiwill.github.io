@@ -67,7 +67,7 @@ const translations = {
     'mobile.cta.research': 'View research projects',
     'mobile.cta.outputs': 'View publications',
     'spotlight.scholarship.kicker': 'National Scholarship',
-    'spotlight.scholarship.value': 'National Scholarship<small>(Two consecutive years)</small>',
+    'spotlight.scholarship.value': 'National<small>Scholarship (two consecutive years)</small>',
     'spotlight.scholarship.note': '2024-2025 / 2025-2026',
     'spotlight.paper.kicker': 'Publication',
     'spotlight.paper.value': 'CCF A',
@@ -93,7 +93,7 @@ const translations = {
     'metric.english.label': 'English',
     'metric.english.note': 'Literature reading',
     'metric.scholarship.label': 'National Scholarship',
-    'metric.scholarship.value': 'National Scholarship<small>(Two consecutive years)</small>',
+    'metric.scholarship.value': 'National<small>Scholarship (two consecutive years)</small>',
     'metric.scholarship.note': '2024-2025 & 2025-2026',
     'impact.innovation.kicker': 'Project',
     'impact.innovation.value': 'National Innovation Program',
@@ -189,6 +189,8 @@ const translations = {
     'ticker.admet': 'ADMET Data Infrastructure',
     'ticker.mrl': 'Molecular Representation Learning',
     'ticker.protein': 'Protein Modeling',
+    'ticker.play': 'Play research keywords',
+    'ticker.pause': 'Pause research keywords',
     'research.kicker': 'Selected research',
     'research.heading': 'Research projects',
     'research.heading.desktop': 'From scientific data<br>to <em>drug discovery models.</em>',
@@ -486,6 +488,8 @@ const translations = {
     'ticker.admet': 'ADMET 数据基础设施',
     'ticker.mrl': '分子表征学习',
     'ticker.protein': '蛋白质建模',
+    'ticker.play': '播放研究关键词滚动',
+    'ticker.pause': '暂停研究关键词滚动',
     'research.kicker': '代表性研究',
     'research.heading': '研究项目',
     'research.heading.desktop': '从科学数据<br>到<em>药物发现模型。</em>',
@@ -676,7 +680,31 @@ const langToggle = document.querySelector('[data-lang-toggle]');
 const queryLang = new URLSearchParams(window.location.search).get('lang');
 const requestedLang = translations[queryLang] ? queryLang : getSavedLanguage();
 const tickerTrack = document.querySelector('.ticker-track');
+const tickerToggle = document.querySelector('[data-ticker-toggle]');
+const tickerMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+let tickerPaused = tickerMotion.matches;
+let tickerMotionEnabled = !tickerMotion.matches;
 let tickerResizeTimer;
+const updateTickerPlayback = () => {
+  if (!tickerTrack || !tickerToggle) return;
+  tickerTrack.dataset.tickerEnabled = String(tickerMotionEnabled);
+  tickerTrack.dataset.tickerPaused = String(tickerPaused);
+  tickerToggle.hidden = !tickerMotion.matches;
+  tickerToggle.dataset.i18nLabel = tickerPaused ? 'ticker.play' : 'ticker.pause';
+  tickerToggle.querySelector('[data-ticker-play]').toggleAttribute('hidden', !tickerPaused);
+  tickerToggle.querySelector('[data-ticker-pause]').toggleAttribute('hidden', tickerPaused);
+  updateControlLabels();
+};
+tickerToggle?.addEventListener('click', () => {
+  tickerPaused = !tickerPaused;
+  if (!tickerPaused) tickerMotionEnabled = true;
+  updateTickerPlayback();
+});
+tickerMotion.addEventListener('change', () => {
+  tickerPaused = tickerMotion.matches;
+  tickerMotionEnabled = !tickerMotion.matches;
+  updateTickerPlayback();
+});
 const setupTicker = () => {
   if (!tickerTrack) return;
 
@@ -686,12 +714,12 @@ const setupTicker = () => {
 
   groups.slice(1).forEach((group) => group.remove());
   template.removeAttribute('aria-hidden');
-  tickerTrack.style.animation = 'none';
+  tickerTrack.style.setProperty('animation', 'none', 'important');
   tickerTrack.style.transform = 'translateX(0)';
 
   const groupWidth = template.getBoundingClientRect().width || template.scrollWidth;
   if (!groupWidth) {
-    tickerTrack.style.animation = '';
+    tickerTrack.style.removeProperty('animation');
     tickerTrack.style.transform = '';
     return;
   }
@@ -705,11 +733,12 @@ const setupTicker = () => {
   }
 
   tickerTrack.style.setProperty('--ticker-distance', `${groupWidth}px`);
-  tickerTrack.style.animation = '';
+  tickerTrack.style.removeProperty('animation');
   tickerTrack.style.transform = '';
 };
 
 setLanguage(requestedLang || 'zh');
+updateTickerPlayback();
 setupTicker();
 mobileLayout.addEventListener('change', () => {
   setLanguage(document.documentElement.lang === 'zh-CN' ? 'zh' : 'en');
