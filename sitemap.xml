@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://wutianxiang.cn/</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -32,6 +32,10 @@
     <image:image>
       <image:loc>https://wutianxiang.cn/assets/evidence/volunteer-service-record.png</image:loc>
       <image:caption>吴天翔志愿服务记录证明 · 714 小时</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://wutianxiang.cn/assets/evidence/pharmagents2-overview.png</image:loc>
+      <image:caption>PharmAgents2 系统概览 · arXiv:2611.07653 图1</image:caption>
     </image:image>
   </url>
 </urlset>

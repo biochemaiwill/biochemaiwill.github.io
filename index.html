@@ -114,8 +114,8 @@
     ]
   }
   </script>
-  <link rel="stylesheet" href="styles.css?v=20261110-01" />
-  <script defer src="script.js?v=20261110-01"></script>
+  <link rel="stylesheet" href="styles.css?v=20261120-01" />
+  <script defer src="script.js?v=20261120-01"></script>
 </head>
 <body>
   <div class="ambient-spotlight" aria-hidden="true"></div>
@@ -240,6 +240,7 @@
           <span data-i18n="spotlight.scholarship.kicker">国家奖学金</span>
           <strong class="scholarship-title" data-i18n-html="spotlight.scholarship.value">国家奖学金<small>（连续两年）</small></strong>
           <small data-i18n="spotlight.scholarship.note">2024-2025 / 2025-2026</small>
+          <small data-i18n="spotlight.byd.note">比亚迪奖学金 · 2025-2026</small>
         </a>
         <a class="spotlight-card" href="https://doi.org/10.1093/bioinformatics/btag618" target="_blank" rel="noreferrer">
           <span data-i18n="spotlight.paper.kicker">Publication</span>
@@ -276,7 +277,7 @@
         <div class="profile-lead reveal">
           <h2 data-i18n-html="profile.heading">本科阶段的<em>综合发展总览。</em></h2>
           <p data-i18n="profile.summary">Computer Science undergraduate at Xidian University with research training across AIDD agents, ADMET data systems, molecular representation learning and peptide modeling.</p>
-          <p data-i18n-html="profile.highlights">Bioinformatics（<strong class="highlight">CCF A</strong>）与 FCS（<strong class="highlight">CCF B / JCR Q1</strong>）论文已发表；获 2026 年全国大学生数学建模竞赛<strong class="highlight">陕西省一等奖</strong>、中国国际大学生创新大赛（2026）<strong class="highlight">陕西省银奖</strong>。</p>
+          <p data-i18n-html="profile.highlights">获 2025-2026 学年<strong class="highlight">比亚迪奖学金</strong>；Bioinformatics（<strong class="highlight">CCF A</strong>）与 FCS（<strong class="highlight">CCF B / JCR Q1</strong>）论文已发表；获 2026 年全国大学生数学建模竞赛<strong class="highlight">陕西省一等奖</strong>、中国国际大学生创新大赛（2026）<strong class="highlight">陕西省银奖</strong>。</p>
         </div>
         <div class="metric-grid reveal">
           <div class="metric"><span data-i18n="metric.gpa.label">GPA</span><strong>3.9 / 4.0</strong><small data-i18n="metric.gpa.note">Core average 92+</small></div>
@@ -315,6 +316,7 @@
           <h3 data-i18n="profile.awards.title">Scholarships & competitions</h3>
           <ul>
             <li data-i18n-html="profile.awards.item1">2024-2025、2025-2026 学年本科生<strong class="highlight">国家奖学金（连续两年）</strong>。</li>
+            <li id="award-byd-scholarship" data-i18n-html="profile.awards.byd">2025-2026 学年<strong class="highlight">比亚迪奖学金</strong>。</li>
             <li data-i18n-html="profile.awards.item2">Lenovo Scholarship, 2025-2026, the only recipient in the grade.</li>
             <li id="award-cumcm-2026" data-i18n-html="profile.awards.item5">2026 年全国大学生数学建模竞赛<strong class="highlight">陕西省一等奖</strong>。</li>
             <li id="award-innovation-2026" data-i18n-html="profile.awards.item6">中国国际大学生创新大赛（2026）<strong class="highlight">陕西省银奖</strong>。</li>
@@ -328,6 +330,7 @@
           <ul>
             <li data-i18n-html="profile.outputs.item1">Bioinformatics work on peptide engineering language models, published as second author / undergraduate lead author.</li>
             <li data-i18n-html="profile.outputs.item5">多肽性质预测系统性基准论文发表于 Frontiers of Computer Science（FCS，<strong class="highlight">CCF B / JCR Q1</strong>），第三作者。</li>
+            <li data-i18n-html="profile.outputs.pharmagents2">PharmAgents2 自主药物发现系统预印本，<strong class="highlight">arXiv:2611.07653</strong>，第17作者。</li>
             <li data-i18n-html="profile.outputs.item2">NAILONG manuscript submitted to ICLR 2027, a CCF A conference, as second author.</li>
             <li data-i18n-html="profile.outputs.item3">3D-MPG molecular pretraining manuscript submitted to AAAI 2027, a CCF A conference, as second author / undergraduate lead author.</li>
             <li data-i18n-html="profile.outputs.item4">The Unforkable Cache manuscript submitted to ICLR 2027, a CCF A conference, as third author.</li>
@@ -540,6 +543,17 @@
           </div>
           <a href="assets/evidence/peptide-benchmark-title.jpg" target="_blank" rel="noreferrer">
             <img src="assets/evidence/peptide-benchmark-title.jpg" alt="Peptide benchmark manuscript evidence" loading="lazy" />
+          </a>
+        </article>
+        <article class="publication-card" id="publication-pharmagents2">
+          <div>
+            <span data-i18n-html="pub8.status">预印本 · 2026 · <strong>arXiv</strong></span>
+            <h3>PharmAgents2: Towards Autonomous End-to-End Drug Discovery</h3>
+            <p data-i18n="pub8.desc">第17作者。结合 Paper2Skill 科学决策知识与 Self-Scaling Discovery 并行探索，构建端到端自主药物发现系统；2026 年 11 月 5 日提交 arXiv。</p>
+            <a class="publication-action" href="https://arxiv.org/abs/2611.07653" target="_blank" rel="noreferrer"><span data-i18n="pub8.action">访问预印本</span><b aria-hidden="true">↗</b></a>
+          </div>
+          <a href="https://arxiv.org/html/2611.07653v1#S1.fig1" target="_blank" rel="noreferrer">
+            <img src="assets/evidence/pharmagents2-overview.png" alt="PharmAgents2 system overview, Figure 1 from the arXiv preprint" loading="lazy" />
           </a>
         </article>
         <article class="publication-card" id="publication-iclr-nailong">

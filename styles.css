@@ -3545,6 +3545,8 @@ html[lang] :is(.profile-lead,.section-heading,.output-title,.life-heading,.exper
 }
 /* The section clips labels when the summary track is shifted upward. */
 .spotlight-track{transform:none}
+#publication-pharmagents2>a.image-stage{height:auto!important;aspect-ratio:851/980!important}
+#publication-pharmagents2>a.image-stage>img{object-fit:contain!important}
 .spotlight-card .scholarship-title small,.metric .scholarship-title small{
   display:block;margin-top:6px;font:600 14px/1.4 var(--sans);letter-spacing:0;text-transform:none;color:inherit;
 }
